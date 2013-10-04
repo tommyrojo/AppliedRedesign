@@ -178,6 +178,14 @@ body{
 
 #landing-content-gutter-left{
 	float: left;
+	background: url(images/Fibersim-Video.jpg) no-repeat;
+	height: 220px;
+	width: 35%;
+}
+
+#landing-content-gutter-left:hover{
+	float: left;
+	background: url(images/Fibersim-Video-Hov.jpg) no-repeat;
 	height: 220px;
 	width: 35%;
 }
