@@ -357,7 +357,7 @@ body{
 #content-partners{
 	float: left;
 	width: 1052px;
-	height: 120px;
+	height: 80px;
 	margin-top: 20px;
 	background-color: #F5F6F7;
 	border: 1px solid #CDCCCC;
@@ -367,10 +367,45 @@ body{
 
 #content-partners-images{
 	float:left;
-	height: 100px;
-	width:180px;
-	background-color: gray;
+	padding-left: 40px;
+	padding-top: 20px;
+	height: 40px;
+	width:140px;
 	margin-left: 20px;
+	color: #5B5B5C;
+	font-weight: bold;
+}
+
+#content-partners-images-1{
+	float:left;
+	height: 60px;
+	width:180px;
+	margin-left: 60px;
+	background: url(images/icons_partner_si.png) no-repeat;
+}
+
+#content-partners-images-2{
+	float:left;
+	height: 60px;
+	width:180px;
+	margin-left: 20px;
+	background: url(images/icons_partner_bct.png) no-repeat;
+}
+
+#content-partners-images-3{
+	float:left;
+	height: 60px;
+	width:180px;
+	margin-left: 20px;
+	background: url(images/icons_partner_pi.png) no-repeat;
+}
+
+#content-partners-images-4{
+	float:left;
+	height: 60px;
+	width:180px;
+	margin-left: 20px;
+	background: url(images/icons_partner_sh.png) no-repeat;
 }
 
 #footer{
@@ -415,8 +450,42 @@ td:hover{
 
 #spacer{
 	border: 1px solid #CDCCCC;
-	height: 10px;
-	width: 200px;
+	margin-top: 10px;
+	height: 4px;
+	width: 220px;
+}
+
+#follow-us{
+	margin-top: 10px;
+	color: #5B5B5C;
+	font-weight: bold;
+}
+
+#linkedin{
+	background: url(images/Icons_social_li.png) no-repeat;
+	float: left;
+	height: 36px;
+	width: 36px;
+	padding-top: 10px;
+	padding-right: 15px;
+}
+
+#youtube{
+	background: url(images/Icons_social_yt.png) no-repeat;
+	float: left;
+	height: 36px;
+	width: 36px;
+	padding-top: 10px;
+	padding-right: 15px;
+}
+
+#twitter{
+	background: url(images/Icons_social_tw.png) no-repeat;
+	float: left;
+	height: 36px;
+	width: 36px;
+	padding-top: 10px;
+	padding-right: 15px;
 }
 
 #content-news h5{

@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div id="circle-area-3" class="circle-area">
-						<div class="circle">
+						<div id="circle3" class="circle">
 							<div class="inner-circle-area">
 								<div class="inner-circle"></div>
 							</div>
@@ -86,10 +86,10 @@
 		</div>
 		<div id="content-partners">
 			<div id="content-partners-images">Our Partners:</div>
-			<div id="content-partners-images"></div>
-			<div id="content-partners-images"></div>
-			<div id="content-partners-images"></div>
-			<div id="content-partners-images"></div>
+			<div id="content-partners-images-1"></div>
+			<div id="content-partners-images-2"></div>
+			<div id="content-partners-images-3"></div>
+			<div id="content-partners-images-4"></div>
 		</div>
 		<div id="footer">
 			<div id="footer-left">
@@ -145,6 +145,10 @@
 					</tr>
 				</table>
 				<div id="spacer"></div>
+				<div id="follow-us">Follow us:</div>
+				<div>
+					<div id="linkedin"></div><div id="youtube"></div><div id="twitter"></div>
+				</div>
 			</div>
 		</div>
 		<div id="gutter">&nbsp;</div>
@@ -152,7 +156,7 @@
 </body>
 <script>
 	$(function(){ 
-
+		$("#circle3").css("background-color", "#F1592A")
 		$(".circle-area").hover(function(){
 			
 			var area = $(this).attr('id');
