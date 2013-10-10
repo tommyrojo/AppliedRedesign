@@ -39,22 +39,28 @@
 					</p>
 					<div>
 						<br/>
-						<TABLE>
+						<TABLE id="tblToggle">
 							<TR>
-								<TD><SPAN class="black-arrow">></SPAN>&nbsp;Benefits of Fibersim</TD></TR>
-								<TD><SPAN class="black-arrow">></SPAN>&nbsp;Features of Fibersim</TD></TR>
-								<TD><SPAN class="black-arrow">></SPAN>&nbsp;What's New in Fibersim 13</TD>
+								<TD ID="toggle1"><SPAN class="black-arrow">></SPAN>&nbsp;Benefits of Fibersim</TD>
+							</TR>
+							<TR>
+								<TD ID="toggle2"><SPAN class="black-arrow">></SPAN>&nbsp;Features of Fibersim</TD>
+							</TR>
+							<TR>
+								<TD ID="toggle3"><SPAN class="black-arrow">></SPAN>&nbsp;What's New in Fibersim 13</TD>
 							</TR>
 						</TABLE>
 					</div>
 				</div>
 				<div id="landing-content-video-right">
-					<div id="landing-content-video-right-area">
-						<div id="landing-content-video-right-area-text">video here</div>
-					</div>
-					<div id="landing-content-right-bottom">Interested in Fibersim solution?</div>
-					<div id="landing-content-video-right-button">
-						<div id="landing-content-video-right-button-text">Contact us for a free technical evaluation and pricing</div>
+					<div id="landing-content-right-swap">
+						<div id="landing-content-video-right-area">
+							<div id="landing-content-video-right-area-text">video here</div>
+						</div>
+						<div id="landing-content-right-bottom">Interested in Fibersim solution?</div>
+						<div id="landing-content-video-right-button">
+							<div id="landing-content-video-right-button-text">Contact us for a free technical evaluation and pricing</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -146,5 +152,22 @@
 		</div>
 		<div id="gutter">&nbsp;</div>
 	</div>
+	<div id="swap1" style="background-color: black">this is content area swap 1</div>
+	<div id="swap2" style="background-color: blue">this is content area swap 2</div>
+	<div id="swap3" style="background-color: red">this is content area swap 3</div>
 </body>
+<script>
+	$("#tblToggle").delegate('td','mouseover mouseleave', function(e) {
+	    if (e.type == 'mouseover') {
+	    	var swap = $("#" + e.toElement.id.replace("toggle","swap"));
+	    	$("#landing-content-right-swap").html(swap);
+	      // $(this).parent().addClass("hover");
+	      // $("colgroup").eq($(this).index()).addClass("hover");
+	    }
+	    else {
+	      // $(this).parent().removeClass("hover");
+	      // $("colgroup").eq($(this).index()).removeClass("hover");
+	    }
+	});
+</script>
 </html>
