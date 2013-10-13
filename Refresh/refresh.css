@@ -147,7 +147,7 @@ body{
 #training-content-area{
 	padding: 20px;
 	border: 1px solid #FFFFFF;
-	height: 380px;
+	height: 575px;
 	width: 992px;
 }
 
@@ -196,9 +196,28 @@ body{
 	color: #4D4D4E;
 }
 
-#syllabus-availability{
+#interested-in-training{
+	padding-top: 20px;
 	color: #7B9AA9;
 	font-weight: bold;
+}
+
+#syllabus{
+	color: #7B9AA9;
+	font-weight: bold;
+}
+
+#syllabus:hover{
+	color: #455154;
+}
+
+#availability{
+	color: #7B9AA9;
+	font-weight: bold;
+}
+
+#availability:hover{
+	color: #455154;
 }
 
 #landing-content-video-right-area{
@@ -397,6 +416,22 @@ body{
 {
 	padding-top: 5px;
 	padding-left: 35px;
+	text-shadow: 2px 2px 5px #000000;
+}
+
+#training-content-button{
+	margin-top: 10px;
+	background-color: #F1592A;
+	width: 100px;
+	height: 30px;
+	box-shadow: 5px 5px 15px #888888;
+}
+
+#training-content-button-text
+{
+	padding-top: 5px;
+	padding-left: 20px;
+	color: #ffffff;
 	text-shadow: 2px 2px 5px #000000;
 }
 
