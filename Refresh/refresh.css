@@ -128,7 +128,23 @@ body{
 	border: 1px solid #CDCCCC;
 }
 
+#training-content-CAE-banner{
+	background: url(images/CAE_Training_Header.jpg);
+	width: 1072px;
+	height: 211px;
+	margin-top: 20px;
+	background-color: #5B5B5C;
+	border: 1px solid #CDCCCC;
+}
+
 #landing-content-video{
+	padding: 20px;
+	border: 1px solid #FFFFFF;
+	height: 380px;
+	width: 992px;
+}
+
+#training-content-area{
 	padding: 20px;
 	border: 1px solid #FFFFFF;
 	height: 380px;
@@ -141,11 +157,48 @@ body{
 	width: 50%;
 }
 
+#training-content-area-left{
+	font-size: 13px;
+	float: left;
+	color: #4D4D4E;
+	width: 50%;
+	padding-right: 50px;
+}
+
+#training-details{
+	padding-left: 30px;
+}
+
+#training-content-area-right{
+	float:left;
+	font-size: 13px;
+	width: 40%;
+	padding-left: 40px;
+	color: #4D4D4E;
+	border: 1px solid #FFFFFF;
+}
+
 #landing-content-video-right{
 	float:left;
 	width: 45%;
 	padding-left: 20px;
 	padding-top: 20px;
+}
+
+#training-content-area-right h3{
+	width: 100%;
+	text-align: center;
+	color: #4D4D4E;
+}
+
+#training-content-area-right-course-description{
+	text-align: center;
+	color: #4D4D4E;
+}
+
+#syllabus-availability{
+	color: #7B9AA9;
+	font-weight: bold;
 }
 
 #landing-content-video-right-area{
@@ -210,6 +263,10 @@ body{
 	color: #7B9AA9;
 	width: 310px;
 	padding: 5px;
+}
+
+#case-studies td:hover{
+	color: #455154;
 }
 
 #landing-content-gutter-right-text{
@@ -447,6 +504,16 @@ td{
 td:hover{
 	color: orange;
 }
+
+#tblTraining td{
+	color: #4D4D4E;
+	font-size: 12px;
+	font-weight: bold;
+};
+
+#tblTraining td:hover{
+	color: orange;
+};
 
 #spacer{
 	border: 1px solid #CDCCCC;
