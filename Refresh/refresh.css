@@ -151,6 +151,13 @@ body{
 	width: 992px;
 }
 
+#contact-content-area{
+	padding: 20px;
+	border: 1px solid #FFFFFF;
+	height: 275px;
+	width: 992px;
+}
+
 #landing-content-video-left{
 	float: left;
 	color: #4D4D4E;
@@ -165,6 +172,19 @@ body{
 	padding-right: 50px;
 }
 
+#contact-content-area-left{
+	font-size: 13px;
+	float: left;
+	color: #4D4D4E;
+	width: 40%;
+	padding-right: 50px;
+	padding-left: 20px;
+}
+
+#contact-content-area-left h2{
+	color: #7B9AA9;
+}
+
 #training-details{
 	padding-left: 30px;
 }
@@ -177,6 +197,17 @@ body{
 	color: #4D4D4E;
 	border: 1px solid #FFFFFF;
 }
+
+#contact-content-area-right{
+	float:left;
+	font-size: 13px;
+	width: 40%;
+	height: 100%;
+	padding-top: 16px;
+	padding-left: 40px;
+	color: #4D4D4E;
+}
+
 
 #landing-content-video-right{
 	float:left;
@@ -439,6 +470,17 @@ body{
 	float: left;
 	width: 1052px;
 	height: 700px;
+	margin-top: 20px;
+	background-color: #F5F6F7;
+	border: 1px solid #CDCCCC;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+#contact-content-main{
+	float: left;
+	width: 1052px;
+	height: 340px;
 	margin-top: 20px;
 	background-color: #F5F6F7;
 	border: 1px solid #CDCCCC;
