@@ -279,25 +279,32 @@ body{
 	margin-top: 30px;
 }
 
+#landing-video{
+	height: 220px;
+	background: url(../images/Fibersim-Video.jpg) no-repeat;
+}
+
+#landing-video:hover{
+	background: url(../images/Fibersim-Video-Hov.jpg) no-repeat;
+}
+
 #landing-content-gutter-left{
 	float: left;
-	background: url(../images/Fibersim-Video.jpg) no-repeat;
+	padding-left: 20px;
 	height: 220px;
-	width: 35%;
+	width: 25%;
 }
 
 #landing-content-gutter-left:hover{
 	float: left;
-	background: url(../images/Fibersim-Video-Hov.jpg) no-repeat;
 	height: 220px;
-	width: 35%;
 }
 
 .label{
 	float: left;
 	padding-left: 7px;
 	padding-bottom: 5px;
-	width: 300px;
+	width: 315px;
 	color: black;
 	font-size: 14px;
 }
@@ -306,7 +313,7 @@ body{
 	float: left;
 	border: 1px solid #FFFFFF;
 	height: 220px;
-	width: 63%;
+	width: 71%;
 }
 
 #landing-content-gutter-right td{
