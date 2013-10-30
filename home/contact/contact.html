@@ -1,14 +1,14 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="refresh.css">
+	<link rel="stylesheet" type="text/css" href="../css/refresh.css">
 </head>
-<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="js/knockout-2.3.0.js"></script>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/knockout-2.3.0.js"></script>
 <style>
   #imgButton:hover {
     width: 93px;
     height: 29px;
-    background: url('images/ContactButtonHov.png') no-repeat; border: none;
+    background: url('../images/ContactButtonHov.png') no-repeat; border: none;
   }
 
   #txtTrial{
@@ -116,12 +116,28 @@
 						    <tr>
 						      <td class="label">Phone&nbsp;<span class="chevron">>></span></td><td class="field"><input type="text" name="Phone"></td>
 						    </tr>
+						    <tr>
+						    	<td class="label">Product&nbsp;<span class="chevron">>></span></td><td class="field">
+						    		<select id="product-select">
+						    			<option value="nx">NX</option>
+						    			<option value="nxfordesign">NX CAD</option>
+						    			<option value="nxformanufacturing">NX CAM</option>
+						    			<option value="nxforsimulation">NX CAE</option>
+						    			<option value="tecnomatix">NX CMM</option>
+					    				<option value="fibersim">Fibersim</option>
+					    				<option value="teamcenterplm">Teamcenter</option>
+					    				<option value="bct">BCT</option>
+					    				<option value="femap">Femap</option>
+				    					<option value="tooling">Post-Sim Kits</option>
+						    		</select>
+						    	</td>
+						    </tr>
 					    	<tr>
 						      <td class="label" valign="top">Comments&nbsp;<span class="chevron">>></span></td><td><textarea id="text-area-field" rows="4" cols="30" name="Comments"></textarea></td>
 						    </tr>
 						    <tr>
 						      <td colspan="3">
-						        <img id="imgButton" src="images\ContactButton.png" width="93" height="29">
+						        <img id="imgButton" src="..\images\ContactButton.png" width="93" height="29">
 						        <button type="submit" style="border: 0; background: transparent;"></button>
 						      </td>
 						    </tr>
@@ -193,4 +209,51 @@
 		<div id="gutter">&nbsp;</div>
 	</div>
 </body>
+<script>
+
+	var urlParams;
+	(
+		window.onpopstate = function () {
+	    	var match,
+	        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+	        search = /([^&=]+)=?([^&]*)/g,
+	        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+	        query  = window.location.search.substring(1);
+
+	    	urlParams = {};
+		    while (match = search.exec(query))
+		       urlParams[decode(match[1])] = decode(match[2]);
+		}
+	)();
+
+	if (urlParams["pageRef"] !== null)
+		var bannerToSwap = $("#landing-content-banner");
+		var referralPage = urlParams["pageRef"];
+
+		//we add 7 to the start position because "images/" is 7 characters long and we want to start after that.
+		var startPos = bannerToSwap.css("background").lastIndexOf("images/") + 7;
+		var endPos = bannerToSwap.css("background").lastIndexOf("_Header.jpg") - startPos;
+
+		var pageToReplace = bannerToSwap.css("background").substr(startPos, endPos);
+		var newBackgroundUrl = bannerToSwap.css("background").replace(pageToReplace, referralPage)
+
+		var hintForFileName = referralPage + "_Header.jpg"
+
+		bannerToSwap.css("background", newBackgroundUrl);
+
+		$("#product-select").children().each(function(element, index, array){
+			if (index.value === referralPage){
+				index.selected = true;
+			};
+		});
+
+		//we're going to place the value of the page in the text of the area
+		//so you can see that the change is happening. Comment out this below
+		//when the banners are in place. You will want to name the images like 
+		//this PAGENAME_Header.jpg, so for example bct would be bct_Header.jpg. 
+		//Pay attention to the case, since your host is on a linux box, it will 
+		//not show up if you enter it Bct_Header.jpg or BCT_Header.jgg
+		bannerToSwap.html("this is where you will need to place your new banner image file (home/images) and this is what it will need to be named " + hintForFileName);
+
+</script>
 </html>

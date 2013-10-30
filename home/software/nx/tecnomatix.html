@@ -59,7 +59,7 @@
 						</div>
 						<div id="landing-content-right-bottom">Interested in Fibersim solution?</div>
 						<div id="landing-content-video-right-button">
-							<div id="landing-content-video-right-button-text">Contact us for a free technical evaluation and pricing</div>
+							<div id="landing-content-video-right-button-text" class="contact-us">Contact us for a free technical evaluation and pricing</div>
 						</div>
 					</div>
 					<div id="landing-content-right-swap-2" style="background-color: #DDDDDD; display: none">
@@ -124,7 +124,7 @@
 						<td>&nbsp;</td>
 						<td>+<span class="menu-item"> LS-Dyna Training</span></td>
 						<td>+ <span class="menu-item">Fibersim 13</span></td>
-						<td>Contact Us</td>
+						<td class="contact-us">Contact Us</td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
@@ -166,6 +166,13 @@
 	</div>
 </body>
 <script>
+	var pathArray = location.pathname.split("/");
+	var length = pathArray.length - 1;
+	filename = pathArray[length].replace(".html","");
+
+	$(".contact-us").click(function(e){
+		document.location.href = "../../contact/contact.html?pageRef=" + filename;
+	});
 	$("#tblToggle").delegate('td','mouseover mouseleave', function(e) {
 	    if (e.type == 'mouseover') {
 	    	var swap1 = $("#landing-content-right-swap-1");

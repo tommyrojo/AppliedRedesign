@@ -621,6 +621,12 @@ td:hover{
 	padding-right: 15px;
 }
 
+#product-select{
+	border: none; 
+	width: 250px; 
+	padding-left: 5px;
+}
+
 #youtube{
 	background: url(../images/Icons_social_yt.png) no-repeat;
 	float: left;
