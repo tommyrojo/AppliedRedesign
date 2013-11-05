@@ -1607,8 +1607,8 @@
             $(this).css("color","orange");
         }
         else {
-            if (clicked === "" && $(this).attr('id') !== "toggle1")
-                $(this).css("color","#F1592A");
+            if (clicked === "" && $(this).attr('id') === "toggle1")
+                $(this).css("color","orange");
             else if($(this).attr('id') !== clicked)
                 $(this).css("color","#F1592A");
         }
