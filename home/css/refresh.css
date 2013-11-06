@@ -520,7 +520,7 @@ body{
 #content-partners-images-1{
 	float:left;
 	height: 60px;
-	width:180px;
+	width:114px;
 	margin-left: 60px;
 	background: url(../images/icons_partner_si.png) no-repeat;
 }
@@ -528,7 +528,7 @@ body{
 #content-partners-images-2{
 	float:left;
 	height: 60px;
-	width:180px;
+	width:143px;
 	margin-left: 20px;
 	background: url(../images/icons_partner_bct.png) no-repeat;
 }
@@ -536,15 +536,15 @@ body{
 #content-partners-images-3{
 	float:left;
 	height: 60px;
-	width:180px;
+	width:182px;
 	margin-left: 20px;
 	background: url(../images/icons_partner_pi.png) no-repeat;
 }
 
 #content-partners-images-4{
 	float:left;
-	height: 60px;
-	width:180px;
+	height: 58px;
+	width:144px;
 	margin-left: 20px;
 	background: url(../images/icons_partner_sh.png) no-repeat;
 }
