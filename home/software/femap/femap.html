@@ -65,10 +65,10 @@ f<html>
 							<div id="landing-content-video-right-button-text" class="contact-us">Contact us for a free technical evaluation and pricing</div>
 						</div>
 					</div>
-					<div id="landing-content-right-swap-2" style="background-color: #DDDDDD; display: none">
+					<div id="landing-content-right-swap-2" style="color: #4D4D4E; display: none">
 					 	page swap 1 is here: you will need to add your new page content
 					</div>
-					<div id="landing-content-right-swap-3" style="background-color: #CCCCCC; display: none">
+					<div id="landing-content-right-swap-3" style="color: #4D4D4E; display: none">
 					
 						<p>Femap Version 11</p>
 						<p>Since its inception, Femap development has been driven by the needs of our customers to solve increasingly complex engineering problems, and have been delivered with regular software updates. Version 11 is no exception.</p>
@@ -83,7 +83,7 @@ f<html>
 						<p>NX Nastran Integration and Customer-Driven Enhancements</p>
 						<p>Femap version 11 ships with NX Nastran 8.5 and extends support of NX Nastran, further tightening the integration between the pre- and postprocessor and solver. In addition, there are numerous other customer-driven enhancements that aid meshing, add analysis functionality, improve model visualization and expand usability.</p>
 					</div>
-					<div id="landing-content-right-swap-4" style="background-color: #BBBBBB; display: none	">
+					<div id="landing-content-right-swap-4" style="color: #4D4D4E; display: none	">
 						<p>Femap with NX Nastran</p>
 						<p>Interactively supports a broad range of capabilities</p>
 						<p>The range of capabilities in the base module includes linear and statics, normal modes, buckling, basic nonlinear and heat transfer. In addition NX Nastran for Femap includes additional options for dynamics – that includes transient/dynamic, frequency/harmonic response, response spectrum, random response DDAM (Dynamic Design Analysis Method) – as well as advanced nonlinear analysis, aeroelasticity, superelements, optimization, rotor dynamics and DMAP (Direct Matrix Abstraction Program).</p>
@@ -95,7 +95,7 @@ f<html>
 						<p>VisQ solution job management</p>
 						<p>VisQ actively manages NX Nastran solutions from Femap, and provides users with advanced tools to define, schedule and track simulations</p>
 					</div>
-					<div id="landing-content-right-swap-5" style="background-color: #BBBBBB; display: none	">
+					<div id="landing-content-right-swap-5" style="color: #4D4D4E; display: none	">
 						<p>Femap Online Trial</p>
 						<p>Download a Free 45-Day Trial</p>
 						<p>Try Femap with NX Nastran and explore the state-of-the-art modeling functionality of Femap with the powerful analysis capabilities of the industry-leading NX Nastran solver. See how these comprehensive simulation and analysis applications can help you save money and reduce time to market through optimized designs, reduced prototyping and physical testing. In this free offering you will get access to the full version of Femap with NX Nastran as well as Dynamic Response and Design Optimization. There are no restrictions on the number of saves, model sizes or other factors that would limit your ability to simulate and analyze complete product designs.</p>
@@ -204,57 +204,70 @@ f<html>
 	$(".contact-us").click(function(e){
 		document.location.href = "../../contact/contact.html?pageRef=" + filename;
 	});
+	
+	var clicked = "";
+    $("#toggle1").css("color","orange");
 
-	$("#tblToggle").delegate('td','mouseover mouseleave', function(e) {
-	    if (e.type == 'mouseover') {
-	    	var swap1 = $("#landing-content-right-swap-1");
-	    	var swap2 = $("#landing-content-right-swap-2");
-	    	var swap3 = $("#landing-content-right-swap-3");
-	    	var swap4 = $("#landing-content-right-swap-4");
-	    	var swap5 = $("#landing-content-right-swap-5");
+	$("#tblToggle").delegate('td','click', function(e) {
+		var swap1 = $("#landing-content-right-swap-1");
+		var swap2 = $("#landing-content-right-swap-2");
+		var swap3 = $("#landing-content-right-swap-3");
+		var swap4 = $("#landing-content-right-swap-4");
+		var swap5 = $("#landing-content-right-swap-5");
+		
+		var which = e.toElement.id;
+		clicked = which;
+		e.toElement.style.color = 'orange';
+		
+		$("#tblToggle td").each(function(){
+			if(which !== $(this).attr('id'))
+				$(this).css("color","#F1592A");
+		});
 
-	    	var which = e.toElement.id;
 
-	    	if(which === "toggle1")
-	    	{
-	    		swap1.css("display","block");
-	    		swap3.css("display","none");
-	    		swap4.css("display","none");
-	    		swap5.css("display","none");
-	    	}
-	    	if(which === "toggle2")
-	    	{
-	    		swap1.css("display","none");
-	    		swap2.css("display","none");
-	    		swap3.css("display","block");
-	    		swap4.css("display","none");
-	    		swap5.css("display","none");
-	    	}
-	    	if(which === "toggle3")
-	    	{
-	    		swap1.css("display","none");
-	    		swap2.css("display","none");
-	    		swap3.css("display","none");
-	    		swap4.css("display","block");
-	    		swap5.css("display","none");
-	    	}
-	    	if(which === "toggle4")
-	    	{
-	    		swap1.css("display","none");
-	    		swap2.css("display","none");
-	    		swap3.css("display","none");
-	    		swap4.css("display","none");
-	    		swap5.css("display","block");
-	    	}
-	    		    	
-
-	      // $(this).parent().addClass("hover");
-	      // $("colgroup").eq($(this).index()).addClass("hover");
-	    }
-	    else {
-	      // $(this).parent().removeClass("hover");
-	      // $("colgroup").eq($(this).index()).removeClass("hover");
-	    }
+		if(which === "toggle1")
+		{
+			swap1.css("display","block");
+			swap3.css("display","none");
+			swap4.css("display","none");
+			swap5.css("display","none");
+		}
+		if(which === "toggle2")
+		{
+			swap1.css("display","none");
+			swap2.css("display","none");
+			swap3.css("display","block");
+			swap4.css("display","none");
+			swap5.css("display","none");
+		}
+		if(which === "toggle3")
+		{
+			swap1.css("display","none");
+			swap2.css("display","none");
+			swap3.css("display","none");
+			swap4.css("display","block");
+			swap5.css("display","none");
+		}
+		if(which === "toggle4")
+		{
+			swap1.css("display","none");
+			swap2.css("display","none");
+			swap3.css("display","none");
+			swap4.css("display","none");
+			swap5.css("display","block");
+		}
 	});
+	
+	$("#tblToggle").delegate('td','mouseover mouseleave', function(e) {
+        if (e.type == 'mouseover') {
+            $(this).css("color","orange");
+        }
+        else {
+            if (clicked === "" && $(this).attr('id') === "toggle1")
+                $(this).css("color","orange");
+            else if($(this).attr('id') !== clicked)
+                $(this).css("color","#F1592A");
+        }
+    });
 </script>
 </html>
