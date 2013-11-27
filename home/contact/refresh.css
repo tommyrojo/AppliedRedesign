@@ -75,6 +75,7 @@ body{
 }
 
 #content-video-left{
+	font-size: 13px;
 	float:left;
 	width: 45%;
 	padding-left: 35px;
