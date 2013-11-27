@@ -242,6 +242,7 @@ body{
 }
 
 #contact-content-area{
+	font-size: 13px;
 	padding: 20px;
 	border: 1px solid #FFFFFF;
 	height: 275px;
@@ -249,6 +250,7 @@ body{
 }
 
 #landing-content-video-left{
+	font-size: 13px;
 	float: left;
 	color: #4D4D4E;
 	width: 50%;
