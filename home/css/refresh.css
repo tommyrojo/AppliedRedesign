@@ -200,32 +200,6 @@ body{
 	border: 1px solid #CDCCCC;
 }
 
-#nx-cad-more{
-        background: url(../images/nx-cad-more.gif) no-repeat;
-        float: left;
-        height: 96px;
-        width: 496px;
-        padding-top: 30px;
-        padding-right: 0px;
-}
-
-#nx-cam-more{
-        background: url(../images/nx-cam-more.gif) no-repeat;
-        float: left;
-        height: 96px;
-        width: 496px;
-        padding-top: 30px;
-        padding-right: 0px;
-}
-
-#nx-cae-more{
-        background: url(../images/nx-cae-more.gif) no-repeat;
-        float: left;
-        height: 96px;
-        width: 496px;
-        padding-top: 30px;
-        padding-right: 0px;
-}
 
 #landing-content-video{
 	padding: 20px;
