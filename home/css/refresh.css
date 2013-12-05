@@ -292,7 +292,7 @@ body{
 	color: #4D4D4E;
 }
 
-#training-content-area-right h3{
+#training-content-area-right {
 	width: 100%;
 	text-align: center;
 	color: #4D4D4E;
@@ -501,7 +501,7 @@ body{
 #content-training-picture{
 	width: 662px;
 	height: 330px;
-	background-image: url(../images/NX_Training.PNG);
+	background-image: url(../images/bucket-nx.jpg);
 	background-repeat: no-repeat;
 }	
 
