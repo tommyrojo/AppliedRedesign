@@ -450,32 +450,51 @@ body{
 }
 
 #training-label-emphasis{
-	padding-top: 24px;
+	padding-top: 10px;
 	padding-left: 20px;
 	font-weight: 600;
 	float: left;
 	font-size: 24px;
+	font-style: oblique;
 }
 
 .training-label{
 	float: left;
-	padding-top: 30px;
 	padding-left: 20px;
+	padding-top: 18px;
+	font-size: 13px;
 }
 
 .training-small-label{
 	float: left;
-	padding-top: 5px;
+	padding-top: 13px;
 	padding-left: 20px;
 }
 
 .training-small-text{
 	color: #BDCCD4;
 	float: left;
-	padding-top: 10px;
+	padding-top: 16px;
 	padding-left: 20px;
-	font-size: 10px;
-}
+	font-size: 12px;
+	font-weight: bold;
+	}
+	
+.training-small-text a:link {
+color: #BDCCD4;
+text-decoration: none;}
+
+.training-small-text a:visited {
+color: #BDCCD4;
+text-decoration: none;}
+
+.training-small-text a:hover {
+color: #orange;
+text-decoration: none;}
+
+.training-small-text a:active {
+color: #orange;
+text-decoration: none;}
 
 #content-news{
 	float: left;
@@ -753,3 +772,35 @@ td:hover{
 .menu-item:hover{
 	color: black;
 }
+
+.newsletter-join a:link{
+	color: #F1592A;
+	text-decoration: none;}
+	
+.newsletter-join a:visited{
+	color: #F1592A;
+	text-decoration: none;}
+
+.newsletter-join a:hover{
+	color: orange;
+	text-decoration: none;}
+
+.newsletter-join a:active{
+	color: orange;
+	text-decoration: none;}
+
+.newsletter-blurb a:link{
+	color: #5B4B5C;
+	text-decoration: none;}
+
+.newsletter-blurb a:visited{
+	color: #5B4B5C;
+	text-decoration: none;}
+
+.newsletter-blurb a:hover{
+	color: black;
+	text-decoration: none;}
+
+.newsletter-blurb a:active{
+	color: black;
+	text-decoration: none;}
