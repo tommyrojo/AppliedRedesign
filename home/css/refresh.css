@@ -331,8 +331,8 @@ body{
 	font-size: 13px;
 	width: 100%;
 	height: 64%;
-	padding-left: 20px;
-	padding-top: 20px;
+	padding-left: 0px;
+	padding-top: 0px;
 	background-color: #708793;
 	border: 1px solid #CDCCCC;
 	opacity: .5;
