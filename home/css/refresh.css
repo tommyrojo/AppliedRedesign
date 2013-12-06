@@ -346,6 +346,13 @@ body{
  	-webkit-transition: opacity .5s linear;
 }
 
+#landing-content-about-right-area {
+	width: 445px;
+	height: 296px;
+	background-image: url(..images/about/portland.jpg);
+	background-repeat: no-repeat;
+}
+
 #landing-content-right-bottom{
 	padding-top: 20px;
 	color: #7B9AA9;
@@ -847,4 +854,3 @@ td:hover{
 .newsletter-blurb a:active{
 	color: black;
 	text-decoration: none;}
-
