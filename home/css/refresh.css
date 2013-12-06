@@ -343,7 +343,7 @@ body{
 #landing-content-about-right-area {
 	width: 445px;
 	height: 296px;
-	background-image: url(..images/about/portland.jpg);
+	background-image: url(../images/about/portland.jpg);
 	background-repeat: no-repeat;
 }
 
