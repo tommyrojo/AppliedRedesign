@@ -624,6 +624,17 @@ text-decoration: none;}
 	padding-left: 20px;
 }
 
+#about-content-main{
+	float: left;
+	width: 1052px;
+	height: 500px;
+	margin-top: 20px;
+	background-color: #F5F6F7;
+	border: 1px solid #CDCCCC;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
 #contact-content-main{
 	float: left;
 	width: 1052px;
@@ -848,3 +859,10 @@ td:hover{
 .newsletter-blurb a:active{
 	color: black;
 	text-decoration: none;}
+	
+#caption {font-style:italic; font-size:12px; padding-top: 10px;}
+	
+.copy-link a:link {color:#F1592A; text-decoration: "none"; font-weight: bold;}      /* unvisited link */
+.copy-link a:visited {color:#F1592A; text-decoration: "none"; font-weight: bold;}  /* visited link */
+.copy-link a:hover {color:orange; text-decoration: "none"; font-weight: bold;}  /* mouse over link */
+.copy-link a:active {color:#orange; text-decoration: "none"; font-weight: bold;}  /* selected link */
