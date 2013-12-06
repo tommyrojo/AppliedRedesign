@@ -333,17 +333,11 @@ body{
 	height: 64%;
 	padding-left: 0px;
 	padding-top: 0px;
-	background-color: #708793;
 	border: 1px solid #CDCCCC;
-	opacity: .5;
-	filter: alpha(opacity=50);
- 	-webkit-transition: opacity .5s linear;
 }
 
 #landing-content-video-right-area:hover{
-	opacity: 1;
-	filter: alpha(opacity=100);
- 	-webkit-transition: opacity .5s linear;
+
 }
 
 #landing-content-about-right-area {
