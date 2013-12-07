@@ -230,6 +230,14 @@ body{
 	width: 50%;
 }
 
+#logo-wall{
+	font-size: 13px;
+	float: left;
+	color: #4D4D4E;
+	width: 100%;
+	padding-top: 20px;
+}
+
 #training-content-area-left{
 	font-size: 13px;
 	float: left;
