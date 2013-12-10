@@ -843,18 +843,22 @@ td:hover{
 
 .newsletter-join a:link{
 	color: #F1592A;
+	font-size: 20px;
 	text-decoration: none;}
 	
 .newsletter-join a:visited{
 	color: #F1592A;
+		font-size: 20px;
 	text-decoration: none;}
 
 .newsletter-join a:hover{
 	color: orange;
+		font-size: 20px;
 	text-decoration: none;}
 
 .newsletter-join a:active{
 	color: orange;
+		font-size: 20px;
 	text-decoration: none;}
 
 .newsletter-blurb a:link{
