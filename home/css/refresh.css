@@ -338,10 +338,8 @@ body{
 #landing-content-video-right-area{
 	font-size: 13px;
 	width: 100%;
-	height: 64%;
 	padding-left: 0px;
 	padding-top: 0px;
-	border: 1px solid #CDCCCC;
 }
 
 #landing-content-video-right-area:hover{
@@ -404,7 +402,7 @@ body{
 #landing-content-gutter-right{
 	float: left;
 	border: 1px solid #FFFFFF;
-	height: 220px;
+	height: 193px;
 	width: 71%;
 }
 
@@ -568,13 +566,12 @@ text-decoration: none;}
 
 #landing-content-video-right-area-text{
     text-align: center;
-    padding-top: 100px;
 }
 
 #landing-content-video-right-button{
 	margin-top: 10px;
 	background-color: #F1592A;
-	width: 180px;
+	width: 400px;
 	height: 30px;
 	box-shadow: 5px 5px 15px #888888;
 }
@@ -624,11 +621,20 @@ text-decoration: none;}
 #landing-content-main{
 	float: left;
 	width: 1052px;
-	height: 780px;
+	height: 480px;
 	margin-top: 20px;
 	background-color: #F5F6F7;
 	border: 1px solid #CDCCCC;
 	padding-top: 20px;
+	padding-left: 20px;
+}
+
+#landing-content-sub{
+	float: left;
+	width: 1052px;
+	margin-top: 20px;
+	background-color: #F5F6F7;
+	border: 1px solid #CDCCCC;
 	padding-left: 20px;
 }
 
