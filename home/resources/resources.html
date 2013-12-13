@@ -23,73 +23,20 @@
 				<li></li>
 			</ul>
 		</div>
-		<div id="content-video">
-			<div id="content-video-left">
-				<p class="emphasis">Applied CAx is a gold-level Siemens PLM solution partner.</p>
-				<p>As a value-added software reseller, we provide solutions, training and support for the world's best engineering software.</p>
-				<p>Established as a joint venture of <span class="emphasis">Shepra Design</span> and <span class="emphasis">Predictive Engineering</span>, our technical expertise is backed by a combined staff of 20 engineering professionals, including mechanical designers, CNC machinists, FEA specialists and Teamcenter/PLM architects.</p>
-			</div>
-			<div id="content-video-right">
-				<div id="content-video-right-area">
-					<div id="content-video-right-area-text">video here</div>
+		<div id="about-content-main">
+			<div id="landing-content-video">
+			  <div id="landing-content-video-left">
+					<h1>CAx Knowledge Center</h1>
+					<p>Our engineers have pooled together video resources into the Applied CAx Knowledge Center. Here you will find original recorded webinars, technical seminars and useful tips & tricks videos for CAD / CAM / CAE and more.</p>
+					<p>Be sure to join the <span class="menu-item"><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=v5odganab&p=oi&m=1113476676565&sit=eq8jkb8hb" target="blank">Applied CAx Newsletter</a></span>. Signing up for our newsletter grants you special access to our premium resources section in addition to the latest webinars announcements, promotions and training opportunities.</p>
+					<p>CAD - Include Div for 3x CAD Videos (YouTube Embed)</p>
+					<p>CAM - Include Div for 3x CAM Videos (YouTube Embed)</p>
+					<p>CAE - Include Div for 3x CAE Videos (YouTube Embed)</p>
 				</div>
-			</div>
-		</div>
-		<div id="content-news">
-			<div><h5>News, Events & Promos:</h5></div>
-			<div id="content-news-container-selected">NX 8.5 released. Read more on Siemens PLM website</div>
-			<div id="content-news-container">Teamcenter 10 update. What you need to know</div>
-			<div id="content-news-container">Femap Symposium 2013 was a huge sucess. Video Recap</div>
-			<div id="content-news-container">Applied CAx & Sherpa Design amongst 100 fastest growing</div>
-			<div id="content-news-container">Femap Symposium 2013 was a huge sucess. Video Recap</div>
-			<div id="content-news-container">Applied CAx & Sherpa Design amongst 100 fastest growing</div>
-		</div>
-		<div id="content-training">
-			<div id="content-training-border">
-				<div id="content-training-picture">
-					<span></span>
-				</div>
-				<div class="item-picture-gutter">
-					<div id="circle-area-1" class="circle-area">
-						<div class="circle">	
-							<div class="inner-circle-area">
-								<div class="inner-circle"></div>
-							</div>
-						</div>
-					</div>
-					<div id="circle-area-2" class="circle-area">
-						<div class="circle">
-							<div class="inner-circle-area">
-								<div class="inner-circle"></div>
-							</div>
-						</div>
-					</div>
-					<div id="circle-area-3" class="circle-area">
-						<div id="circle3" class="circle">
-							<div class="inner-circle-area">
-								<div class="inner-circle"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div id="training-label-emphasis">NX Training</div><div class="training-label">|</div><div id="training-label" class="training-label">Fall  Schedule</div>
-					<div style="clear:both"></div>
-					<div id="training-1" class="training-small-text">NX CAD Foundations</div>
-					<div class="training-small-label">|</div>
-					<div id="training-2" class="training-small-text">NX CAM Dundamentals</div>
-					<div class="training-small-label">|</div>
-					<div id="training-3" class="training-small-text">NX CAE Advanced Simulation</div>
-				</div>
-			</div>
-		</div>
-		<div id="content-partners">
-			<div id="content-partners-images">Our Partners:</div>
-			<div id="content-partners-images-1"></div>
-			<div id="content-partners-images-2"></div>
-			<div id="content-partners-images-3"></div>
-			<div id="content-partners-images-4"></div>
-		</div>
+                
+                
+                </div></div>
+
 		<div id="footer">
 			<div id="footer-left">
 				<table>
@@ -151,75 +98,15 @@
 		</div>
 		<div id="gutter">&nbsp;</div>
 	</div>
+
 </body>
 <script>
-	$(function(){ 
-		$("#circle3").css("background-color", "#F1592A")
-		$(".circle-area").hover(function(){
-			
-			var area = $(this).attr('id');
-			$("#content-training-picture").css( "opacity",.7);
+	var pathArray = location.pathname.split("/");
+	var length = pathArray.length - 1;
+	filename = pathArray[length].replace(".html","");
 
-			var circle1 = $("#circle-area-1").children();
-			var circle2 = $("#circle-area-2").children();
-			var circle3 = $("#circle-area-3").children();
-
-			var sectionLabel = $("#training-label-emphasis");
-			var sectionSubLabel = $("#training-label");
-			
-			var training1 = $("#training-1");
-			var training2 = $("#training-2");
-			var training3 = $("#training-3");
-
-			if(area === "circle-area-3"){
-				$("#content-training-picture").css( "background-image", "url(images/NX_Training.PNG)");
-
-				sectionLabel.html("NX Training");
-				sectionSubLabel.html("Fall Schedule");
-
-				training1.html("NX Training Foundations");
-				training2.html("NX CAM Fundamentals");
-				training3.html("NX CAE Simulation");
-
-				$(this).children().css("background-color","#F1592A");
-				
-				circle1.css("background-color","#A8A8A8");
-				circle2.css("background-color","#A8A8A8");
-			}
-			else if(area === "circle-area-2"){
-				$("#content-training-picture").css( "background-image", "url(images/cameras.jpg)");
-
-				sectionLabel.html("AB Training");
-				sectionSubLabel.html("Winter Schedule");
-
-				training1.html("AB Training Foundations");
-				training2.html("AB CAM Fundamentals");
-				training3.html("AB CAE Simulation");
-				
-				$(this).children().css("background-color","#F1592A");
-
-				circle1.css("background-color","#A8A8A8");
-				circle3.css("background-color","#A8A8A8");
-			}
-			else if(area === "circle-area-1"){
-				$("#content-training-picture").css( "background-image", "url(images/rocket.jpg)");
-
-				sectionLabel.html("CD Training");
-				sectionSubLabel.html("Fall Schedule");
-
-				training1.html("CD Training Foundations");
-				training2.html("CD CAM Fundamentals");
-				training3.html("CD CAE Simulation");
-
-				$(this).children().css("background-color","#F1592A");
-
-				circle2.css("background-color","#A8A8A8");
-				circle3.css("background-color","#A8A8A8");
-			}
-
-		},function() {
-			$("#content-training-picture").css( "opacity",1);
-		});
+	$(".contact-us").click(function(e){
+		document.location.href = "../../contact/contact.html?pageRef=" + filename;
 	});
 </script>
 </html>
