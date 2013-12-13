@@ -1,0 +1,22 @@
+fix bct landing-content-main and landing-content-video make 74 px taller
+femap
+	737
+	601
+fibersim (does this need the hover then click to select like the others?)
+	250
+	466
+	571
+	671
+nx (not sure if the HTML is out of line or of this is a new template)
+
+nx cad (minor fix up)
+nx for manufacturing
+nx for simulation
+nx for design (need to apply click and select)
+	570
+	770
+	805
+
+tecnomatix (doesn't seem to be ready for changes)
+tooling (make video fit, move contact us down, make page taller for case studies section)
+teamcenterplm
