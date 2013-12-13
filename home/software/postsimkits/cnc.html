@@ -105,6 +105,8 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="landing-content-sub">	
 			<div id="landing-content-gutter">
 				<div id="landing-content-gutter-left">
 					<div id="landing-video">
@@ -200,6 +202,8 @@
 	var pathArray = location.pathname.split("/");
 	var length = pathArray.length - 1;
 	filename = pathArray[length].replace(".html","");
+	$("#landing-content-video").css("height", "596px");
+	$("#landing-content-main").css("height", "656px");
 	
 	var clicked = "";
     $("#toggle1").css("color","orange");

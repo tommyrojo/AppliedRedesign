@@ -104,6 +104,8 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="landing-content-sub">	
 			<div id="landing-content-gutter">
 				<div id="landing-content-gutter-left">
 					<div id="landing-video">
@@ -199,6 +201,8 @@
 	var pathArray = location.pathname.split("/");
 	var length = pathArray.length - 1;
 	filename = pathArray[length].replace(".html","");
+	$("#landing-content-video").css("height", "420px");
+	$("#landing-content-main").css("height", "460px");
 
 	$(".contact-us").click(function(e){
 		document.location.href = "../../contact/contact.html?pageRef=" + filename;
@@ -214,12 +218,16 @@
 
 	    	if(which === "toggle1")
 	    	{
+    			$("#landing-content-video").css("height", "420px");
+				$("#landing-content-main").css("height", "460px");
 	    		swap1.css("display","block");
 	    		swap3.css("display","none");
 	    		swap4.css("display","none");
 	    	}
 	    	if(which === "toggle2")
 	    	{
+	    		$("#landing-content-video").css("height", "1867px");
+				$("#landing-content-main").css("height", "1927px");
 	    		swap1.css("display","none");
 	    		swap2.css("display","none");
 	    		swap3.css("display","block");
@@ -227,6 +235,8 @@
 	    	}
 	    	if(which === "toggle3")
 	    	{
+	    		$("#landing-content-video").css("height", "892px");
+				$("#landing-content-main").css("height", "952px");
 	    		swap1.css("display","none");
 	    		swap2.css("display","none");
 	    		swap3.css("display","none");
