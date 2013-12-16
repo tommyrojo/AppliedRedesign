@@ -291,13 +291,10 @@ body{
 	color: #4D4D4E;
 }
 
-#landing-content-nx-right{
-	float:left;
-	width: 45%;
-	padding-left: 20px;
+#landing-content-right-nx{	
 	font-size: 13px;
 	color: #4D4D4E;
-}
+	text-align:left;}
 
 #training-content-area-right {
 	width: 100%;
@@ -889,3 +886,4 @@ td:hover{
 .copy-link a:visited {color:#F1592A; text-decoration: "none"; font-weight: bold;}  /* visited link */
 .copy-link a:hover {color:orange; text-decoration: "none"; font-weight: bold;}  /* mouse over link */
 .copy-link a:active {color:#orange; text-decoration: "none"; font-weight: bold;}  /* selected link */
+
