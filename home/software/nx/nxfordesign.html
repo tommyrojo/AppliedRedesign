@@ -143,7 +143,6 @@ With NX, efficiency and cost savings extend beyond the design process to all pha
 				</div>
 			</div>
 		</div>
-				<div id="footer">
 			<div id="footer-left">
 				<table>
 					<tr>
@@ -151,37 +150,37 @@ With NX, efficiency and cost savings extend beyond the design process to all pha
 					</tr>
 					<tr>
 						<td>Support</td>
-						<td>+ <span class="menu-item">NX CAD</span></td>
+						<td>+ <span id="training-cad" class="menu-item">NX CAD</span></td>
 						<td>+ <span class="menu-item">NX 9</span></td>
-						<td>News + Events</td>
+						<td><span id='resources-news' class="menu-item">News + Events</span></td>
 					</tr>
 					<tr>
 						<td class="contact-us">Contact</td>
-						<td>+ <span class="menu-item">NX CAM</span></td>
-						<td>+ <span class="menu-item">Femap 11</span></td>
-						<td>Our Story</td>
+						<td>+ <span id="training-cam" class="menu-item">NX CAM</span></td>
+						<td>+ <span id="software-femap" class="menu-item">Femap 11</span></td>
+						<td><span id='resources-story' class="menu-item">Our Story</span></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">NX CAE</span></td>
-						<td>+ <span class="menu-item">Fibersim 13</span></td>                   <td>Our Clients</td>
+						<td>+ <span id="training-cae" class="menu-item">NX CAE</span></td>
+						<td>+ <span id="software-fibersim" class="menu-item">Fibersim 13</span></td><td><span id='resources-clients' class="menu-item">Our Clients</span></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">Femap & NX Nastran</span></td>
-						<td>+ <span class="menu-item">Teamcenter 10</span></td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">BCT Solutions</span></td>
+						<td>+ <span id="training-femap" class="menu-item">Femap & NX Nastran</span></td>
+						<td>+ <span id="software-teamcenter" class="menu-item">Teamcenter 10</span></td>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">CNC Programming</span></td>
+						<td>+ <span id="software-bct" class="menu-item">BCT Solutions</span></td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>+ <span id="software-postsimkits" class="menu-item">CNC Programming</span></td>
 						<td>&nbsp;</td>
 					</tr>
 				</table>
@@ -219,6 +218,56 @@ With NX, efficiency and cost savings extend beyond the design process to all pha
 
 	var clicked = "";
     $("#toggle1").css("color","orange");
+
+        $(".menu-item").click(function(){
+    	var item = $(this)[0].id;
+    	
+    	if(item.substr(0,5) === 'home-')
+    	{
+    		var page = item.substr(5, item.length);
+
+    		if(page === "index")
+    			document.location.href = "../../index.html"
+    		else if(page === "support")
+    			document.location.href = "../../support/support.html"
+    		else if(page === "contact")
+    			document.location.href = "../../contact/contact.html"
+    	}
+    	else if(item.substr(0,9) === 'training-')
+    	{
+    		var page = item.substr(9, item.length);
+    		document.location.href = "../../training/training.html?pageref=" + page;
+    	}
+    	else if(item.substr(0,9) === 'software-')
+    	{
+    		var page = item.substr(9, item.length);
+
+    		if(page === "nx")
+    			document.location.href = "../../software/nx/nx.html";
+    		else if(page === "femap")
+    			document.location.href = "../../software/femap/femap.html";
+    		else if(page === "fibersim")
+    			document.location.href = "../../software/fibersim/fibersim.html";
+    		else if(page === "teamcenter")
+    			document.location.href = "../../software/teamcenter/teamcenterplm.html";
+    		else if(page === "bct")
+    			document.location.href = "../../software/bct/bct.html";
+    		else if(page === "postsimkits")
+    			document.location.href = "../../software/postsimkits/cnc.html";
+    	}
+    	else if(item.substr(0,10) === 'resources-')
+    	{
+    		var page = item.substr(10, item.length);
+
+    		if(page === 'news')
+    			document.location.href = "../../about/news.html";
+    		else if (page === 'story')
+    			document.location.href = "../../about/ourstory.html";
+    		else if (page === 'clients')
+    			document.location.href = "../../about/ourclients.html";
+    	}
+
+    })
 
 	$("#tblToggle").delegate('td','click', function(e) {
 	    	var swap1 = $("#landing-content-right-swap-1");

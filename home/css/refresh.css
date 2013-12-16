@@ -878,7 +878,7 @@ td:hover{
 	text-decoration: none;}
 	
 #caption {font-style:italic; font-size:12px; padding-top: 10px;}
-	
+
 .copy-link a:link {color:#F1592A; text-decoration: "none"; font-weight: bold;}      /* unvisited link */
 .copy-link a:visited {color:#F1592A; text-decoration: "none"; font-weight: bold;}  /* visited link */
 .copy-link a:hover {color:orange; text-decoration: "none"; font-weight: bold;}  /* mouse over link */
