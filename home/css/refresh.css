@@ -843,6 +843,10 @@ td:hover{
 	color: black;
 }
 
+.landing-subtitle{
+	font-size: 19px;
+	font-style: italic;}
+
 .newsletter-join a:link{
 	color: #F1592A;
 	font-size: 20px;
