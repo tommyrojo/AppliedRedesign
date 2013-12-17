@@ -211,7 +211,7 @@ body{
 #training-content-area{
 	padding: 20px;
 	border: 1px solid #FFFFFF;
-	height: 925px;
+	height: 905px;
 	width: 992px;
 }
 
@@ -267,7 +267,7 @@ body{
 	float:left;
 	font-size: 13px;
 	width: 40%;
-	padding-left: 40px;
+	margin-top: 20px;
 	color: #4D4D4E;
 	border: 1px solid #FFFFFF;
 }

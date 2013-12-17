@@ -22,7 +22,7 @@
                 <div id="training-content-training-banner"></div>
                 
                 
-                <div id="landing-content-main">
+                <div id="landing-content-main" style="height:967px">
                         <div id="training-content-area">
                                 <div id="training-content-area-left">
                                         <p>
@@ -1039,47 +1039,47 @@
                 </div>
 		<div id="footer">
 			<div id="footer-left">
-				<table>
-					<tr>
-						<td width="80px">Home</td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
-					</tr>
-					<tr>
-						<td>Support</td>
-						<td>+ <span class="menu-item">NX CAD</span></td>
-						<td>+ <span class="menu-item">NX 9</span></td>
-						<td>News + Events</td>
-					</tr>
-					<tr>
-						<td class="contact-us">Contact</td>
-						<td>+ <span class="menu-item">NX CAM</span></td>
-						<td>+ <span class="menu-item">Femap 11</span></td>
-						<td>Our Story</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">NX CAE</span></td>
-						<td>+ <span class="menu-item">Fibersim 13</span></td>                   <td>Our Clients</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">Femap & NX Nastran</span></td>
-						<td>+ <span class="menu-item">Teamcenter 10</span></td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">BCT Solutions</span></td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">CNC Programming</span></td>
-						<td>&nbsp;</td>
-					</tr>
-				</table>
-			</div>
+                <table>
+                    <tr>
+                        <td width="80px">Home</td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
+                    </tr>
+                    <tr>
+                        <td>Support</td>
+                        <td>+ <span id="training-cad" class="menu-item">NX CAD</span></td>
+                        <td>+ <span class="menu-item">NX 9</span></td>
+                        <td><span id='resources-news' class="menu-item">News + Events</span></td>
+                    </tr>
+                    <tr>
+                        <td class="contact-us">Contact</td>
+                        <td>+ <span id="training-cam" class="menu-item">NX CAM</span></td>
+                        <td>+ <span id="software-femap" class="menu-item">Femap 11</span></td>
+                        <td><span id='resources-story' class="menu-item">Our Story</span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="training-cae" class="menu-item">NX CAE</span></td>
+                        <td>+ <span id="software-fibersim" class="menu-item">Fibersim 13</span></td><td><span id='resources-clients' class="menu-item">Our Clients</span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="training-femap" class="menu-item">Femap & NX Nastran</span></td>
+                        <td>+ <span id="software-teamcenter" class="menu-item">Teamcenter 10</span></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="software-bct" class="menu-item">BCT Solutions</span></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="software-postsimkits" class="menu-item">CNC Programming</span></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
 			<div id="footer-right">	
 				<table>
 					<tr>
@@ -1102,6 +1102,56 @@
 <script>
     var clicked = "";
     $("#toggle1").css("color","orange");
+
+    $(".menu-item").click(function(){
+        var item = $(this)[0].id;
+        
+        if(item.substr(0,5) === 'home-')
+        {
+            var page = item.substr(5, item.length);
+
+            if(page === "index")
+                document.location.href = "../index.html"
+            else if(page === "support")
+                document.location.href = "../support/support.html"
+            else if(page === "contact")
+                document.location.href = "../contact/contact.html"
+        }
+        else if(item.substr(0,9) === 'training-')
+        {
+            var page = item.substr(9, item.length);
+            document.location.href = "../training/training.html?pageref=" + page;
+        }
+        else if(item.substr(0,9) === 'software-')
+        {
+            var page = item.substr(9, item.length);
+
+            if(page === "nx")
+                document.location.href = "../software/nx/nx.html";
+            else if(page === "femap")
+                document.location.href = "../software/femap/femap.html";
+            else if(page === "fibersim")
+                document.location.href = "../software/fibersim/fibersim.html";
+            else if(page === "teamcenter")
+                document.location.href = "../software/teamcenter/teamcenterplm.html";
+            else if(page === "bct")
+                document.location.href = "../software/bct/bct.html";
+            else if(page === "postsimkits")
+                document.location.href = "../software/postsimkits/cnc.html";
+        }
+        else if(item.substr(0,10) === 'resources-')
+        {
+            var page = item.substr(10, item.length);
+
+            if(page === 'news')
+                document.location.href = "../about/news.html";
+            else if (page === 'story')
+                document.location.href = "../about/ourstory.html";
+            else if (page === 'clients')
+                document.location.href = "../about/ourclients.html";
+        }
+
+    })  
 
     $("#tblToggle").delegate('td','click', function(e){
 
@@ -1137,6 +1187,7 @@
 
             if(which === "toggle1")
             {
+                $("#landing-content-main").css("height","967px");
                 swap1.css("display","block");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1160,6 +1211,8 @@
             }
             if(which === "toggle2")
             {
+                $("#training-content-area").css("height","965px");
+                $("#landing-content-main").css("height","1040px");
                 swap1.css("display","none");
                 swap2.css("display","block");
                 swap3.css("display","none");
@@ -1183,6 +1236,8 @@
             }
             if(which === "toggle3")
             {
+                $("#training-content-area").css("height","955px");
+                $("#landing-content-main").css("height","1040px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","block");
@@ -1206,6 +1261,8 @@
             }
             if(which === "toggle4")
             {
+                $("#training-content-area").css("height","955px");
+                $("#landing-content-main").css("height","1040px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1229,6 +1286,8 @@
             }
             if(which === "toggle5")
             {
+                $("#training-content-area").css("height","1300px");
+                $("#landing-content-main").css("height","1370px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1252,6 +1311,8 @@
             }
             if(which === "toggle6")
             {
+                $("#training-content-area").css("height","965px");
+                $("#landing-content-main").css("height","1050px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1275,6 +1336,8 @@
             }
             if(which === "toggle7")
             {
+                $("#training-content-area").css("height","955px");
+                $("#landing-content-main").css("height","1040px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1298,6 +1361,8 @@
             }
             if(which === "toggle8")
             {
+                $("#training-content-area").css("height","955px");
+                $("#landing-content-main").css("height","1040px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1321,6 +1386,8 @@
             }
             if(which === "toggle9")
             {
+                $("#training-content-area").css("height","955px");
+                $("#landing-content-main").css("height","1040px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1344,6 +1411,8 @@
             }
             if(which === "toggle10")
             {
+                $("#training-content-area").css("height","1120px");
+                $("#landing-content-main").css("height","1180px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1367,6 +1436,8 @@
             }
             if(which === "toggle11")
             {
+                $("#training-content-area").css("height","985px");
+                $("#landing-content-main").css("height","1060px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1390,6 +1461,8 @@
             }
             if(which === "toggle12")
             {
+                $("#training-content-area").css("height","1170px");
+                $("#landing-content-main").css("height","1240px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1413,6 +1486,8 @@
             }
             if(which === "toggle13")
             {
+                $("#training-content-area").css("height","1325px");
+                $("#landing-content-main").css("height","1390px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1436,6 +1511,8 @@
             }
             if(which === "toggle14")
             {
+                $("#training-content-area").css("height","1105px");
+                $("#landing-content-main").css("height","1165px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1459,6 +1536,8 @@
             }
             if(which === "toggle15")
             {
+                $("#training-content-area").css("height","1200px");
+                $("#landing-content-main").css("height","1250px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1482,6 +1561,8 @@
             }
             if(which === "toggle16")
             {
+                $("#training-content-area").css("height","1095px");
+                $("#landing-content-main").css("height","1150px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1505,6 +1586,8 @@
             }
             if(which === "toggle17")
             {
+                $("#training-content-area").css("height","1125px");
+                $("#landing-content-main").css("height","1190px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1528,6 +1611,8 @@
             }
             if(which === "toggle18")
             {
+                $("#training-content-area").css("height","1125px");
+                $("#landing-content-main").css("height","1190px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1551,6 +1636,8 @@
             }
             if(which === "toggle19")
             {
+                $("#training-content-area").css("height","1075px");
+                $("#landing-content-main").css("height","1150px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -1574,6 +1661,8 @@
             }
             if(which === "toggle20")
             {
+                $("#training-content-area").css("height","1075px");
+                $("#landing-content-main").css("height","1150px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
