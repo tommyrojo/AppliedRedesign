@@ -143,7 +143,7 @@
 					<tr>
 						<td>Support</td>
 						<td>+ <span id="training-cad" class="menu-item">NX CAD</span></td>
-						<td>+ <span class="menu-item">NX 9</span></td>
+						<td>+ <span id="software-nx" class="menu-item">NX 9</span></td>
 						<td><span id='resources-news' class="menu-item">News + Events</span></td>
 					</tr>
 					<tr>
@@ -189,7 +189,7 @@
 				<div id="spacer"></div>
 				<div id="follow-us">Follow us:</div>
 				<div>
-					<div id="linkedin"></div><div id="youtube"></div><div id="twitter"></div>
+					<div id="linkedin" class="media"></div><div id="youtube" class="media"></div><div id="twitter" class="media"></div>
 				</div>
 			</div>
 		</div>
@@ -208,9 +208,20 @@
 	var clicked = "";
     $("#toggle1").css("color","orange");
 
-        $(".menu-item").click(function(){
-    	var item = $(this)[0].id;
-    	
+	$(".media").click(function(){
+        var item = $(this)[0].id;
+
+        if(item.substr(0,8) === 'linkedin')
+        	document.location.href = "http://www.linkedin.com/company/applied-cax-llc";
+        else if(item.substr(0,7) === 'youtube')
+        	document.location.href = "http://www.youtube.com/user/AppliedCAx";
+        else if(item.substr(0,7) === 'twitter')
+        	document.location.href = "https://twitter.com/AppliedCAx";
+	});
+
+    $(".menu-item").click(function(){
+	var item = $(this)[0].id;
+	
     	if(item.substr(0,5) === 'home-')
     	{
     		var page = item.substr(5, item.length);

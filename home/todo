@@ -5,6 +5,7 @@ nx
 	used to be buttons here, no longer? looked good :(
 tooling (make video fit, move contact us down, make page taller for case studies section)
 
+-contact page no image by default
 -fix all pages so they make sense for demo
 -Update Footer to be uniform across all pages with links
 -Update Menu to be uniform across all pages and make fit
@@ -14,8 +15,11 @@ tooling (make video fit, move contact us down, make page taller for case studies
 	update contact page with file upload
 	update training page with file upload/contact page tabbing to show how to better manage that tall list of courses
 	play with a quick responsive update, at least for the menu
+	orgainze javascript and css
 
 training (need permanant fix for all styling)
 	NX CAD Release 967px
 	foundation 967px
 	synchronous 967px
+
+cnc (fix page)
