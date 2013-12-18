@@ -6,7 +6,10 @@ nx
 tooling (make video fit, move contact us down, make page taller for case studies section)
 
 -contact page no image by default
+-resize resources page
+-contact page QA
 -fix all pages so they make sense for demo
+-tab control for news items: general, cad, cam, cae, all 
 -Update Footer to be uniform across all pages with links
 -Update Menu to be uniform across all pages and make fit
 -update PDF and white paper links
@@ -23,3 +26,13 @@ training (need permanant fix for all styling)
 	synchronous 967px
 
 cnc (fix page)
+
+ NX CAD: Release Upgrade training 	495
+Foundation 445
+NX CAD: Synchronous Modeling 400 	
+NX CAD: Advanced Drafting 345
+NX CAM: Intermediate Techniques for Multi-Axis 495
+Fundamentals 790
+NX CAE: Advanced Simulation 701
+Femap & NX Nastran: Foundation, Advanced & Customization  938
+thermal flow 642
