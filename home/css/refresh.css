@@ -5,9 +5,8 @@ body{
 }
 
 #page-wrap {
-     width: 1072px;
-     margin: 0 auto 0;
-     position: static;
+     width: 1072;
+     margin: 0 auto;
 }
 
 #header{
@@ -440,9 +439,37 @@ body{
 	font-weight: bold;
 }
 
+.landing-nx-select-copy{
+	padding-top: 20px;
+	color: #7B9AA9;
+	font-weight: bold;
+	font-size: 13px;
+}
+
 #landing-content-gutter{
 	margin-top: 30px;
 }
+
+.landing-nx-select{
+position: relative;
+border: none;
+width: 400px;
+height: 78px;
+padding-top: 20px;}
+
+.landing-nx-select img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.nx-landing-select-hov{
+position: absolute;
+top: 20;
+left: 0;
+display: none;}
+
+.landing-nx-select:hover .nx-landing-select-hov {
+display: block;}
 
 #landing-video{
 	height: 220px;
