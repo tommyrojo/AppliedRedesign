@@ -443,12 +443,94 @@ body{
 
 #landing-video{
 	height: 220px;
-	background: url(../images/Fibersim-Video.jpg) no-repeat;
+	background: url(../images/promo_placeholder.jpg) no-repeat;
 }
 
 #landing-video:hover{
-	background: url(../images/Fibersim-Video-Hov.jpg) no-repeat;
+	background: url(../images/promo_placeholder.jpg) no-repeat;
 }
+
+#landing-video-nx{
+	height: 220px;
+	background: url(../images/promo_jpl.jpg) no-repeat;
+}
+
+#landing-video-nx:hover{
+	background: url(../images/promo_jpl.jpg) no-repeat;
+}
+
+#landing-video-nx-cad{
+	height: 220px;
+	background: url(../images/promo_steinhobel.jpg) no-repeat;
+}
+
+#landing-video-nx-cad:hover{
+	background: url(../images/promo_steinhobel.jpg) no-repeat;
+}
+
+#landing-video-nx-cam{
+	height: 220px;
+	background: url(../images/promo_minco.jpg) no-repeat;
+}
+
+#landing-video-nx-cam:hover{
+	background: url(../images/promo_minco.jpg) no-repeat;
+}
+
+#landing-video-nx-cae{
+	height: 220px;
+	background: url(../images/promo_graham.jpg) no-repeat;
+}
+
+#landing-video-nx-cae:hover{
+	background: url(../images/promo_graham.jpg) no-repeat;
+}
+
+#landing-video-femap{
+	height: 220px;
+	background: url(../images/promo_placeholder.jpg) no-repeat;
+}
+
+#landing-video-femap:hover{
+	background: url(../images/promo_placeholder.jpg) no-repeat;
+}
+
+#landing-video-teamcenter{
+	height: 220px;
+	background: url(../images/promo_placeholder.jpg) no-repeat;
+}
+
+#landing-video-teamcenter:hover{
+	background: url(../images/promo_placeholder.jpg) no-repeat;
+}
+
+#landing-video-fibersim{
+	height: 220px;
+	background: url(../images/promo_aerostructures.jpg) no-repeat;
+}
+
+#landing-video-fibersim:hover{
+	background: url(../images/promo_aerostructures.jpg) no-repeat;
+}
+
+#landing-video-bct{
+	height: 220px;
+	background: url(../images/promo_placeholder.jpg) no-repeat;
+}
+
+#landing-video-bct:hover{
+	background: url(../images/promo_placeholder.jpg) no-repeat;
+}
+
+#landing-video-cnc{
+	height: 220px;
+	background: url(../images/promo_placeholder.jpg) no-repeat;
+}
+
+#landing-video-cnc:hover{
+	background: url(../images/promo_placeholder.jpg) no-repeat;
+}
+
 
 #landing-content-gutter-left{
 	float: left;
