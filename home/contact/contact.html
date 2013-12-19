@@ -209,7 +209,7 @@
 		}
 	)();
 
-	if (urlParams["pageRef"] !== null)
+	if (urlParams["pageRef"] !== undefined){
 		var bannerToSwap = $("#landing-content-banner");
 		var referralPage = urlParams["pageRef"];
 
@@ -220,9 +220,11 @@
 		var pageToReplace = bannerToSwap.css("background").substr(startPos, endPos);
 		var newBackgroundUrl = bannerToSwap.css("background").replace(pageToReplace, referralPage)
 
-		var hintForFileName = referralPage + "_Header.jpg"
+		var NewFileName = "url('../images/" + referralPage + "_Header.jpg') "
 
-		bannerToSwap.css("background", newBackgroundUrl);
+		bannerToSwap.css("background-image", NewFileName);
+		bannerToSwap.css("height","211px");
+		bannerToSwap.css("width","1072px");
 
 		$("#product-select").children().each(function(element, index, array){
 			if (index.value === referralPage){
@@ -230,13 +232,18 @@
 			};
 		});
 
+		$("#landing-content-banner").css("display","block");
+
 		//we're going to place the value of the page in the text of the area
 		//so you can see that the change is happening. Comment out this below
 		//when the banners are in place. You will want to name the images like 
 		//this PAGENAME_Header.jpg, so for example bct would be bct_Header.jpg. 
 		//Pay attention to the case, since your host is on a linux box, it will 
 		//not show up if you enter it Bct_Header.jpg or BCT_Header.jgg
-		bannerToSwap.html("this is where you will need to place your new banner image file (home/images) and this is what it will need to be named " + hintForFileName);
-
+		bannerToSwap.html("this is where you will need to place your new banner image file (home/images) and this is what it will need to be named " + NewFileName);
+	}
+	else{
+		$("#landing-content-banner").css("display","none");
+	}
 </script>
 </html>
