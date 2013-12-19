@@ -144,13 +144,14 @@ With NX, efficiency and cost savings extend beyond the design process to all pha
 				</div>
 			</div>
 		</div>
+		<div id="footer">
 			<div id="footer-left">
 				<table>
 					<tr>
-						<td width="80px">Home</td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
+						<td width="80px"><span id="home-index" class="home-item">Home</span></td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
 					</tr>
 					<tr>
-						<td>Support</td>
+						<td><span id="home-support" class="home-item">Support</span></td>
 						<td>+ <span id="training-cad" class="menu-item">NX CAD</span></td>
 						<td>+ <span id="software-nx" class="menu-item">NX 9</span></td>
 						<td><span id='resources-news' class="menu-item">News + Events</span></td>
@@ -209,8 +210,9 @@ With NX, efficiency and cost savings extend beyond the design process to all pha
 	var pathArray = location.pathname.split("/");
 	var length = pathArray.length - 1;
 	filename = pathArray[length].replace(".html","");
-	$("#landing-content-video").css("height", "570px");
-	$("#landing-content-main").css("height", "630px");
+
+	$("#landing-content-video").css("height", "600px");
+	$("#landing-content-main").css("height", "660px");
 
 
 	$(".contact-us").click(function(e){
@@ -228,12 +230,9 @@ With NX, efficiency and cost savings extend beyond the design process to all pha
         	document.location.href = "https://twitter.com/AppliedCAx";
 	});
 
-	var clicked = "";
-    $("#toggle1").css("color","orange");
-
-        $(".menu-item").click(function(){
-    	var item = $(this)[0].id;
-    	
+    $(".home-item").click(function(){
+        var item = $(this)[0].id;
+        
     	if(item.substr(0,5) === 'home-')
     	{
     		var page = item.substr(5, item.length);
@@ -245,7 +244,17 @@ With NX, efficiency and cost savings extend beyond the design process to all pha
     		else if(page === "contact")
     			document.location.href = "../../contact/contact.html"
     	}
-    	else if(item.substr(0,9) === 'training-')
+
+    });
+
+
+	var clicked = "";
+    $("#toggle1").css("color","orange");
+
+        $(".menu-item").click(function(){
+    	var item = $(this)[0].id;
+    	
+		if(item.substr(0,9) === 'training-')
     	{
     		var page = item.substr(9, item.length);
     		document.location.href = "../../training/training.html?pageref=" + page;
@@ -298,16 +307,16 @@ With NX, efficiency and cost savings extend beyond the design process to all pha
 
 	    	if(which === "toggle1")
 	    	{
-				$("#landing-content-video").css("height", "570px");
-				$("#landing-content-main").css("height", "630px");
+				$("#landing-content-video").css("height", "600px");
+				$("#landing-content-main").css("height", "660px");
 	    		swap1.css("display","block");
 	    		swap3.css("display","none");
 	    		swap4.css("display","none");
 	    	}
 	    	if(which === "toggle2")
 	    	{
-	    		$("#landing-content-video").css("height", "770px");
-				$("#landing-content-main").css("height", "830px");
+	    		$("#landing-content-video").css("height", "830px");
+				$("#landing-content-main").css("height", "890px");
 	    		swap1.css("display","none");
 	    		swap2.css("display","none");
 	    		swap3.css("display","block");
@@ -315,8 +324,8 @@ With NX, efficiency and cost savings extend beyond the design process to all pha
 	    	}
 	    	if(which === "toggle3")
 	    	{
-	    		$("#landing-content-video").css("height", "805px");
-				$("#landing-content-main").css("height", "865px");
+	    		$("#landing-content-video").css("height", "845px");
+				$("#landing-content-main").css("height", "905px");
 	    		swap1.css("display","none");
 	    		swap2.css("display","none");
 	    		swap3.css("display","none");

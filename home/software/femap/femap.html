@@ -139,10 +139,10 @@
 			<div id="footer-left">
 				<table>
 					<tr>
-						<td width="80px">Home</td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
+						<td width="80px"><span id="home-index" class="home-item">Home</span></td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
 					</tr>
 					<tr>
-						<td>Support</td>
+						<td><span id="home-support" class="home-item">Support</span></td>
 						<td>+ <span id="training-cad" class="menu-item">NX CAD</span></td>
 						<td>+ <span id="software-nx" class="menu-item">NX 9</span></td>
 						<td><span id='resources-news' class="menu-item">News + Events</span></td>
@@ -220,21 +220,27 @@
         	document.location.href = "https://twitter.com/AppliedCAx";
 	});
 
+    $(".home-item").click(function(){
+        var item = $(this)[0].id;
+        
+        if(item.substr(0,5) === 'home-')
+        {
+            var page = item.substr(5, item.length);
+
+            if(page === "index")
+                document.location.href = "../../index.html"
+            else if(page === "support")
+                document.location.href = "../../support/support.html"
+            else if(page === "contact")
+                document.location.href = "../../contact/contact.html"
+        }
+
+    });
+
     $(".menu-item").click(function(){
 	var item = $(this)[0].id;
 	
-    	if(item.substr(0,5) === 'home-')
-    	{
-    		var page = item.substr(5, item.length);
-
-    		if(page === "index")
-    			document.location.href = "../../index.html"
-    		else if(page === "support")
-    			document.location.href = "../../support/support.html"
-    		else if(page === "contact")
-    			document.location.href = "../../contact/contact.html"
-    	}
-    	else if(item.substr(0,9) === 'training-')
+    	if(item.substr(0,9) === 'training-')
     	{
     		var page = item.substr(9, item.length);
     		document.location.href = "../../training/training.html?pageref=" + page;
@@ -298,8 +304,8 @@
 		}
 		if(which === "toggle2")
 		{
-			$("#landing-content-video").css("height", "737px");
-			$("#landing-content-main").css("height", "797");
+			$("#landing-content-video").css("height", "767px");
+			$("#landing-content-main").css("height", "827");
 			swap1.css("display","none");
 			swap2.css("display","none");
 			swap3.css("display","block");

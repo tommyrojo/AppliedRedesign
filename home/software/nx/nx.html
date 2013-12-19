@@ -99,10 +99,10 @@
 			<div id="footer-left">
 				<table>
 					<tr>
-						<td width="80px">Home</td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
+						<td width="80px"><span id="home-index" class="home-item">Home</span></td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
 					</tr>
 					<tr>
-						<td>Support</td>
+						<td><span id="home-support" class="home-item">Support</span></td>
 						<td>+ <span id="training-cad" class="menu-item">NX CAD</span></td>
                         <td>+ <span id="software-nx" class="menu-item">NX 9</span></td>
 						<td><span id='resources-news' class="menu-item">News + Events</span></td>
@@ -149,9 +149,9 @@
 				</table>
 				<div id="spacer"></div>
 				<div id="follow-us">Follow us:</div>
-				<div>
-					<div id="linkedin" class="media"></div><div id="youtube" class="media"></div><div id="twitter" class="media"></div>
-				</div>
+                <div>
+                    <div id="linkedin" class="media"></div><div id="youtube" class="media"></div><div id="twitter" class="media"></div>
+                </div>
 			</div>
 		</div>
 		<div id="gutter">&nbsp;</div>
@@ -161,6 +161,8 @@
 	var pathArray = location.pathname.split("/");
 	var length = pathArray.length - 1;
 	filename = pathArray[length].replace(".html","");
+
+	$("#landing-content-video").css("height", "720px")
 
 	$(".contact-us").click(function(e){
 		document.location.href = "../../contact/contact.html?pageRef=" + filename;
@@ -176,6 +178,24 @@
         else if(item.substr(0,7) === 'twitter')
         	document.location.href = "https://twitter.com/AppliedCAx";
 	});
+
+    $(".home-item").click(function(){
+        var item = $(this)[0].id;
+        
+        if(item.substr(0,5) === 'home-')
+        {
+            var page = item.substr(5, item.length);
+
+            if(page === "index")
+                document.location.href = "../../index.html"
+            else if(page === "support")
+                document.location.href = "../../support/support.html"
+            else if(page === "contact")
+                document.location.href = "../contact/contact.html"
+        }
+
+    });
+
 
     $(".menu-item").click(function(){
     	var item = $(this)[0].id;
