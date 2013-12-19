@@ -203,6 +203,11 @@ body{
 	border: 1px solid #CDCCCC;
 }
 
+#landing-content-banner{
+	padding-top: 20px;
+	width: 1072px;
+	height: 211px;
+}
 
 #landing-content-video{
 	padding: 20px;
