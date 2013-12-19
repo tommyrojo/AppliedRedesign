@@ -1,7 +1,11 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/refresh.css">
+	<title>Applied CAx - Siemens PLM Solution Partner</title>
+	<meta name="description" content="Applied CAx provides clients with the world's most advanced engineering software, training and support. CAD, CAM, CAE, PLM - We do this every day.">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="refresh.css">
 </head>
+
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="js/knockout-2.3.0.js"></script>
 <style>
@@ -40,13 +44,12 @@
 		</div>
 		<div id="outer">
 			<div id="content-news">
-				<div><h5>News, Events & Promos:</h5></div>
-				<div id="content-news-container-selected">NX 8.5 released. Read more on Siemens PLM website</div>
-				<div id="content-news-container">Teamcenter 10 update. What you need to know</div>
-				<div id="content-news-container">Femap Symposium 2013 was a huge sucess. Video Recap</div>
-				<div id="content-news-container">Applied CAx & Sherpa Design amongst 100 fastest growing</div>
-				<div id="content-news-container">Femap Symposium 2013 was a huge sucess. Video Recap</div>
-				<div id="content-news-container">Applied CAx & Sherpa Design amongst 100 fastest growing</div>
+				<div><h4>News, Events & Promos:</h4></div>
+				<div id="content-news-container">DMG-Mori DMU 50 5-Axis CNC has been delivered to our shop. <span class="news-link"><a href="../news/news.html">See the pics and hear our plans</a></span></div>
+				<div id="content-news-container">CNC/CAM Manufacturing Webinar: Moving to 5-Axis Machining is now posted. <span class="news-link"><a href="../news/news.html">Watch the recording</a></span></div>
+				<div id="content-news-container">Femap & NX Nastran "Best Practices" Technical Seminar is now posted. <span class="news-link"><a href="../news/news.html">Watch the recording</a></span></div>
+				<div id="content-news-container">Applied CAx & Sherpa Design amongst 100 fastest growing regional companies. <span class="news-link"><a href="../news/news.html">See where we rank</a></span></div>
+				<div id="content-news-container">Femap Symposium 2013 in Cincinnati is a huge sucess. <span class="news-link"><a href="../news/news.html">Watch the video recap</a></span></div>
 			</div>
 			<div id="content-training">
 				<div id="content-training-border">
@@ -77,12 +80,12 @@
 						</div>
 					</div>
 					<div>
-						<div id="training-label-emphasis">Get NX</div><div id="training-label" class="training-label">The most advanced CAD/CAM/CAE software.</div>
+						<div id="training-label-emphasis">Get NX</div><div id="training-label" class="training-label">Integrated product design, engineering and manufacturing solution from Siemens PLM.</div>
 						<div style="clear:both"></div>
-						<div id="training-1" class="training-small-text"><a href="software/nx/nxfordesign.html">NX for Design (CAD)</a></div>
-						<div class="training-small-label">//</div>
+                        <div id="training-1" class="training-small-text"><a href="software/nx/nxfordesign.html">NX for Design (CAD)</a></div>
+
 						<div id="training-2" class="training-small-text"><a href="software/nx/nxformanufacturing.html">NX for Manufacturing (CAM)</a></div>
-						<div class="training-small-label">//</div>
+
 						<div id="training-3" class="training-small-text"><a href="software/nx/nxforsimulation.html">NX for Simulation (CAE)</a></div>
 					</div>
 				</div>
@@ -261,7 +264,7 @@
 				$("#content-training-picture").css( "background-image", "url(images/bucket-nx.jpg)");
 
 				sectionLabel.html("Get NX");
-				sectionSubLabel.html("The most advanced CAD/CAM/CAE software.");
+				sectionSubLabel.html("Integrated product design, engineering and manufacturing solution from Siemens PLM.");
 
 				training1.html("NX for Design (CAD)");
 				training2.html("NX for Manufacturing (CAM)");
@@ -275,8 +278,8 @@
 			else if(area === "circle-area-2"){
 				$("#content-training-picture").css( "background-image", "url(images/bucket-femap.jpg)");
 
-				sectionLabel.html("Get Femap & NX Nastran");
-				sectionSubLabel.html("The leading FEA pre- and post-processor.");
+				sectionLabel.html("Femap & NX Nastran");
+				sectionSubLabel.html("The world's leading CAD-independent pre- and post-processor for advanced FEA.");
 
 				training1.html("Femap & NX Nastran");
 				training2.html("Training Opportunities");
@@ -291,9 +294,11 @@
 				$("#content-training-picture").css( "background-image", "url(images/bucket-bct.jpg)");
 
 				sectionLabel.html("BCT Technology");
-				sectionSubLabel.html("Q/A software for NX, Solid Edge and Teamcenter.");
+				sectionSubLabel.html("Advanced First Article Inspection & Q/A software add-ons for NX, Solid Edge and Teamcenter.");
 
-				training1.html("Learn more about BCT software add-ons");
+				training1.html("BCT Inspector Suite");
+				training2.html("BCT 3-D Raster Suite");
+				training3.html("");
 
 				$(this).children().css("background-color","#F1592A");
 
