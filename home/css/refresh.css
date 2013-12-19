@@ -442,11 +442,11 @@ body{
 
 #landing-video{
 	height: 220px;
-	background: url(../images/Fibersim-Video.jpg) no-repeat;
+	background: url(../images/promo_placeholder.jpg) no-repeat;
 }
 
 #landing-video:hover{
-	background: url(../images/Fibersim-Video-Hov.jpg) no-repeat;
+	background: url(../images/promo_placeholder.jpg) no-repeat;
 }
 
 #landing-video-nx{
@@ -505,11 +505,11 @@ body{
 
 #landing-video-fibersim{
 	height: 220px;
-	background: url(../images/Fibersim-Video.jpg) no-repeat;
+	background: url(../images/promo_aerostructures.jpg) no-repeat;
 }
 
 #landing-video-fibersim:hover{
-	background: url(../images/Fibersim-Video-Hov.jpg) no-repeat;
+	background: url(../images/promo_aerostructures.jpg) no-repeat;
 }
 
 #landing-video-bct{
