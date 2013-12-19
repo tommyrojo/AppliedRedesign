@@ -18,6 +18,7 @@ body{
 	height: 50px;
 	background-color: #F5F6F7;
 	border-top: 1px solid #CDCCCC;
+	padding-left: 40px;
 }
 
 #header-left{
@@ -58,7 +59,7 @@ body{
 {
 	display: inline;
 	list-style-type: none;
-	padding-right: 4%;
+	padding-right: 7%;
 	color: #F1592A;
 }
 
@@ -553,31 +554,28 @@ body{
 
 #training-label-emphasis{
 	padding-top: 10px;
-	padding-left: 20px;
+	padding-left: 5px;
 	font-weight: 600;
-	float: left;
 	font-size: 24px;
 	font-style: oblique;
 }
 
 .training-label{
-	float: left;
-	padding-left: 20px;
-	padding-top: 18px;
+	padding-left: 5px;
 	font-size: 13px;
 }
 
 .training-small-label{
 	float: left;
 	padding-top: 13px;
-	padding-left: 20px;
+	padding-left: 5px;
 }
 
 .training-small-text{
 	color: #BDCCD4;
 	float: left;
 	padding-top: 16px;
-	padding-left: 20px;
+	padding-left: 5px;
 	font-size: 12px;
 	font-weight: bold;
 	}
