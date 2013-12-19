@@ -5,8 +5,9 @@ body{
 }
 
 #page-wrap {
-     width: 1072;
-     margin: 0 auto;
+     width: 1072px;
+     margin: 0 auto 0;
+     position: static;
 }
 
 #header{
