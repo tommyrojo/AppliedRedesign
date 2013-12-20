@@ -24,7 +24,7 @@
   }
   
   .label {
-    width: 100px;
+    width: 150px;
     height: 30px;
     text-align: right;
     padding-right: 20px;
@@ -72,8 +72,8 @@
 			</ul>
 		</div>
 		<div id="landing-content-banner"></div>
-		<div id="contact-content-main">
-			<div id="contact-content-area">
+		<div id="contact-content-main" style="height: 465px">
+			<div id="contact-content-area" style="height: 400px">
 				<div id="contact-content-area-left">
 					<h2>Client Support</h2>
 					<p>Contact us with support issues regarding your software. Our engineers will follow up soon to determine a solution.</p>
@@ -93,20 +93,11 @@
 				<div id="contact-content-area-right">
 					<form action="thankyou.php" method="post">
 					    <table class="contact">
-						    <tr>
-						      <td class="label">Your Name&nbsp;<span class="chevron">></span></td>
+						    <tr width="550px">
+						      <td class="label">Sold to ID&nbsp;<span class="chevron">></span></td>
 						      <td class="field">
-						      		<input type="text" name="realname">
+						      		<input type="text" name="soldtoid">
 					      		</td>
-						    </tr>
-						    <tr>
-						      <td class="label">Company&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="Company"></td>
-						    </tr>
-						    <tr>
-						      <td class="label">Email&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="email"></td>
-						    </tr>
-						    <tr>
-						      <td class="label">Phone&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="Phone"></td>
 						    </tr>
 						    <tr>
 						    	<td class="label">Product&nbsp;<span class="chevron">></span></td><td class="field">
@@ -123,12 +114,42 @@
 						    		</select>
 						    	</td>
 						    </tr>
+						    <tr>
+						      <td class="label">Company Name&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="Company"></td>
+						    </tr>
+						    <tr>
+						    	<td class="label">Country&nbsp;<span class="chevron">></span></td><td class="field">
+						    		<select id="country-select">
+						    			<option value="USA">USA</option>
+						    			<option value="Canada">Canada</option>
+						    		</select>
+						    	</td>
+						    </tr>
+						    <tr>
+						      <td class="label">Company Website&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="website"></td>
+						    </tr>
+						    <tr>
+						      <td class="label">Contact Full Name&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="fullname"></td>
+						    </tr>
+						    <tr>
+						      <td class="label">Email&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="email"></td>
+						    </tr>
+						    <tr>
+						      <td class="label">Phone&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="Phone"></td>
+						    </tr>
+
 					    	<tr>
-						      <td class="label" valign="top">Comments&nbsp;<span class="chevron">></span></td><td><textarea id="text-area-field" rows="4" cols="30" name="Comments"></textarea></td>
+						      <td class="label" valign="top">Problem Description&nbsp;<span class="chevron">></span></td><td><textarea id="text-area-field" rows="4" cols="30" name="Comments"></textarea></td>
+						    </tr>
+						    <tr>
+						    	<td colspan="3" style="float: right">
+						    		<button type="submit" style="border: 1; color: #FFFFFF; background-color: #F1592A;">Attachment</button>       
+						    		<button type="submit" style="border: 1; color: #FFFFFF; background-color: #F1592A;">Submit</button>
+						    	</td>
 						    </tr>
 						    <tr>
 						      <td colspan="3">
-						        <button type="submit" style="border: 0; background: transparent;">Submit</button>
+						 
 						      </td>
 						    </tr>
 					  </table>

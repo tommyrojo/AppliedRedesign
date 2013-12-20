@@ -208,6 +208,9 @@
 	var length = pathArray.length - 1;
 	filename = pathArray[length].replace(".html","");
 
+	$("#landing-content-video").css("height", "466px");
+	$("#landing-content-main").css("height", "526px");
+
 	$(".contact-us").click(function(e){
 		document.location.href = "../../contact/contact.html?pageRef=" + filename;
 	});
@@ -296,8 +299,8 @@
 
 	    	if(which === "toggle1")
 	    	{
-	    		$("#landing-content-video").css("height", "420px");
-	    		$("#landing-content-main").css("height", "480px");
+	    		$("#landing-content-video").css("height", "466px");
+	    		$("#landing-content-main").css("height", "526px");
 	    		swap1.css("display","block");
 	    		swap3.css("display","none");
 	    		swap4.css("display","none");

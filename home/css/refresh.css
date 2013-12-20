@@ -223,7 +223,7 @@ body{
 	font-size: 13px;
 	padding: 20px;
 	border: 1px solid #FFFFFF;
-	height: 275px;
+	height: 325px;
 	width: 992px;
 }
 
@@ -843,7 +843,7 @@ text-decoration: none;}
 #contact-content-main{
 	float: left;
 	width: 1052px;
-	height: 340px;
+	height: 390px;
 	margin-top: 20px;
 	background-color: #F5F6F7;
 	border: 1px solid #CDCCCC;
