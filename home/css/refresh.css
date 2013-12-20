@@ -1191,3 +1191,6 @@ padding-top: 10px;}
 .intro-copy-link a:hover {color:orange; text-decoration: none;}
 .intro-copy-link a:active {color:#orange; text-decoration: none;}
 
+.news-item-date {font-weight: normal; font-size: 11px;
+color: #666;
+padding-right: 5px;}
