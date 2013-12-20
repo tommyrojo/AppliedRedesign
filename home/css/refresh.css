@@ -318,13 +318,26 @@ body{
 	padding-top: 20px;
 }
 
-#training-content-area-left{
+#news-content-area-left{
 	font-size: 13px;
 	float: left;
 	color: #4D4D4E;
-	width: 50%;
+	width: 40%;
 	padding-right: 50px;
 }
+
+#news-content-area-right{
+	float:left;
+	font-size: 13px;
+	width: 50%;
+	margin-top: 20px;
+	color: #4D4D4E;
+	border: 1px solid #CCCCCC;
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
 
 #contact-content-area-left{
 	font-size: 13px;
