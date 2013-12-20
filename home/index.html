@@ -21,13 +21,13 @@
 		</div>
 		<div id="header-gutter">
 			<ul id="navlist">
-				<li>Home</li>
-				<li>News + Events</li>
-				<li>Software</li>  
-				<li>Training</li>
-				<li>Resources</li>
-				<li>Support</li>
-				<li>Contact</li>
+				<li id="index">Home</li>
+				<li id="news">News + Events</li>
+				<li id="software">Software</li>  
+				<li id="training">Training</li>
+				<li id="resources">Resources</li>
+				<li id="support">Support</li>
+				<li id="contact-us">Contact</li>
 			</ul>
 		</div>
 		<div id="content-video">
@@ -163,6 +163,10 @@
 </body>
 <script>
 	$(function(){ 
+
+		$("#navlist").click(function(e){
+			;
+		})
 		$("#circle3").css("background-color", "#F1592A")
 
 		$('[id^=content-partners-images-]').click(function(){
