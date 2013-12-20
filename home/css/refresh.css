@@ -350,6 +350,9 @@ body{
 	margin-top: 20px;
 	color: #4D4D4E;
 	border: 1px solid #FFFFFF;
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 #contact-content-area-right{
@@ -375,11 +378,6 @@ body{
 	font-size: 13px;
 	color: #4D4D4E;
 	text-align:left;}
-
-#training-content-area-right {
-	text-align: center;
-	color: #4D4D4E;
-}
 
 #training-content-area-right-course-description{
 	text-align: center;
@@ -1192,3 +1190,4 @@ padding-top: 10px;}
 .intro-copy-link a:visited {color:#FDFCE8; text-decoration: none;}
 .intro-copy-link a:hover {color:orange; text-decoration: none;}
 .intro-copy-link a:active {color:#orange; text-decoration: none;}
+
