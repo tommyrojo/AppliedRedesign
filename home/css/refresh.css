@@ -1205,6 +1205,8 @@ padding-top: 10px;}
 color: #666;
 padding-right: 5px;}
 
+.content-about-container-text {padding: right}
+
 #content-about-container{
 	border-left: 8px solid #F1592A;
 	padding: 10px;
@@ -1273,3 +1275,5 @@ padding-right: 5px;}
 	filter: alpha(opacity=100);
  	-webkit-transition: opacity .5s linear;
 }
+
+
