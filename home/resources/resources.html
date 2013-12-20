@@ -58,47 +58,47 @@
 
 		<div id="footer">
 			<div id="footer-left">
-				<table>
-					<tr>
-						<td width="80px">Home</td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
-					</tr>
-					<tr>
-						<td>Support</td>
-						<td>+ <span class="menu-item">NX CAD</span></td>
-						<td>+ <span class="menu-item">NX 9</span></td>
-						<td>News + Events</td>
-					</tr>
-					<tr>
-						<td class="contact-us">Contact</td>
-						<td>+ <span class="menu-item">NX CAM</span></td>
-						<td>+ <span class="menu-item">Femap 11</span></td>
-						<td>Our Story</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">NX CAE</span></td>
-						<td>+ <span class="menu-item">Fibersim 13</span></td>                   <td>Our Clients</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">Femap & NX Nastran</span></td>
-						<td>+ <span class="menu-item">Teamcenter 10</span></td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">BCT Solutions</span></td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">CNC Programming</span></td>
-						<td>&nbsp;</td>
-					</tr>
-				</table>
-			</div>
+                <table>
+                    <tr>
+                        <td width="80px"><span id="home-index" class="home-item">Home</span></td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
+                    </tr>
+                    <tr>
+                        <td><span id="home-support" class="home-item">Support</span></td>
+                        <td>+ <span id="training-cad" class="menu-item">NX CAD</span></td>
+                        <td>+ <span id="software-nx" class="menu-item">NX 9</span></td>
+                        <td><span id='resources-news' class="menu-item">News + Events</span></td>
+                    </tr>
+                    <tr>
+                        <td class="contact-us">Contact</td>
+                        <td>+ <span id="training-cam" class="menu-item">NX CAM</span></td>
+                        <td>+ <span id="software-femap" class="menu-item">Femap 11</span></td>
+                        <td><span id='resources-story' class="menu-item">Our Story</span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="training-cae" class="menu-item">NX CAE</span></td>
+                        <td>+ <span id="software-fibersim" class="menu-item">Fibersim 13</span></td><td><span id='resources-clients' class="menu-item">Our Clients</span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="training-femap" class="menu-item">Femap & NX Nastran</span></td>
+                        <td>+ <span id="software-teamcenter" class="menu-item">Teamcenter 10</span></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="software-bct" class="menu-item">BCT Solutions</span></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="software-postsimkits" class="menu-item">CNC Programming</span></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
 			<div id="footer-right">	
 				<table>
 					<tr>
@@ -124,8 +124,78 @@
 	var length = pathArray.length - 1;
 	filename = pathArray[length].replace(".html","");
 
-	$(".contact-us").click(function(e){
-		document.location.href = "../../contact/contact.html?pageRef=" + filename;
-	});
+	$("#about-content-main").css("height","1080px");
+	$("#landing-content-video").css("height","1020px");
+
+$(".contact-us").click(function(e){
+        document.location.href = "../contact/contact.html?pageRef=" + filename;
+    });
+
+    $(".media").click(function(){
+        var item = $(this)[0].id;
+
+        if(item.substr(0,8) === 'linkedin')
+            document.location.href = "http://www.linkedin.com/company/applied-cax-llc";
+        else if(item.substr(0,7) === 'youtube')
+            document.location.href = "http://www.youtube.com/user/AppliedCAx";
+        else if(item.substr(0,7) === 'twitter')
+            document.location.href = "https://twitter.com/AppliedCAx";
+    });
+
+    $(".home-item").click(function(){
+        var item = $(this)[0].id;
+        
+        if(item.substr(0,5) === 'home-')
+        {
+            var page = item.substr(5, item.length);
+
+            if(page === "index")
+                document.location.href = "../index.html"
+            else if(page === "support")
+                document.location.href = "../support/support.html"
+            else if(page === "contact")
+                document.location.href = "../contact/contact.html"
+        }
+
+    });
+
+    $(".menu-item").click(function(){
+        var item = $(this)[0].id;
+
+        if(item.substr(0,9) === 'training-')
+        {
+            var page = item.substr(9, item.length);
+            document.location.href = "../training/training.html?pageref=" + page;
+        }
+        else if(item.substr(0,9) === 'software-')
+        {
+            var page = item.substr(9, item.length);
+
+            if(page === "nx")
+                document.location.href = "../software/nx/nx.html";
+            else if(page === "femap")
+                document.location.href = "../software/femap/femap.html";
+            else if(page === "fibersim")
+                document.location.href = "../software/fibersim/fibersim.html";
+            else if(page === "teamcenter")
+                document.location.href = "../software/teamcenter/teamcenterplm.html";
+            else if(page === "bct")
+                document.location.href = "../software/bct/bct.html";
+            else if(page === "postsimkits")
+                document.location.href = "../software/postsimkits/cnc.html";
+        }
+        else if(item.substr(0,10) === 'resources-')
+        {
+            var page = item.substr(10, item.length);
+
+            if(page === 'news')
+                document.location.href = "../about/news.html";
+            else if (page === 'story')
+                document.location.href = "../about/ourstory.html";
+            else if (page === 'clients')
+                document.location.href = "../about/ourclients.html";
+        }
+
+    })  
 </script>
 </html>
