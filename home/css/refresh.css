@@ -764,8 +764,19 @@ text-decoration: none;}
 	border-left: 1px white;
 	width: 400px;
 	height: 30px;
-	box-shadow: 5px 5px 15px #888888;
+	box-shadow: 2px 2px 2px #888888;
 }
+
+#landing-content-video-right-button:hover{
+	margin-top: 10px;
+	background-color: orange;
+	border-top: 1px white;
+	border-left: 1px white;
+	width: 400px;
+	height: 30px;
+	box-shadow: 2px 2px 2px #888888;
+}
+
 
 #landing-content-video-right-button-text
 {	text-shadow: 2px 2px 5px #000000;
@@ -774,6 +785,7 @@ text-decoration: none;}
 	line-height: 30px;
 	color: white;
 	font-weight: bold;
+	box-shadow: 1px 1px 1px #000000;
 }
 
 #landing-content-video-left-button{
@@ -1194,3 +1206,74 @@ padding-top: 10px;}
 .news-item-date {font-weight: normal; font-size: 11px;
 color: #666;
 padding-right: 5px;}
+
+#content-about-container{
+	border-left: 8px solid #F1592A;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #4D4D4E;
+	background-color: white;
+	width: 420px;
+	box-shadow: 2px 2px 2px #888888;
+}
+
+#content-about-container:hover{
+	border-left: 8px solid #F1592A;
+	padding: 10px;
+	margin: 10px;
+	color: #4D4D4E;
+	width: 420px;
+	opacity: 1;
+	filter: alpha(opacity=100);
+ 	-webkit-transition: opacity .5s linear;
+}
+
+#content-about-container-sd{
+	border-left: 8px solid #F1A931;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #4D4D4E;
+	background-color: white;
+	width: 420px;
+	box-shadow: 2px 2px 2px #888888;
+}
+
+#content-about-container-sd:hover{
+	border-left: 8px solid #F1A931;
+	padding: 10px;
+	margin: 10px;
+	color: #4D4D4E;
+	width: 420px;
+	opacity: 1;
+	filter: alpha(opacity=100);
+ 	-webkit-transition: opacity .5s linear;
+}
+
+#content-about-container-pe{
+	border-left: 8px solid #2E5173;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #4D4D4E;
+	background-color: white;
+	width: 420px;
+	box-shadow: 2px 2px 2px #888888;
+}
+
+#content-about-container-pe:hover{
+	border-left: 8px solid #2E5173;
+	padding: 10px;
+	margin: 10px;
+	color: #4D4D4E;
+	width: 420px;
+	opacity: 1;
+	filter: alpha(opacity=100);
+ 	-webkit-transition: opacity .5s linear;
+}
+
+
