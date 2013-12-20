@@ -6,7 +6,7 @@ $(function(){
 		document.location.href = "http://sandbox.appliedcax.com/home/about/news.html";
 	})
 	$("#software").click(function(){
-		document.location.href = "http://sandbox.appliedcax.com/home/software/fibersim.html";
+		document.location.href = "http://sandbox.appliedcax.com/home/software/fibersim/fibersim.html";
 	})
 	$("#training").click(function(){
 		document.location.href = "http://sandbox.appliedcax.com/home/training/training.html";
