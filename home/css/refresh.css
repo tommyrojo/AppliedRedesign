@@ -78,7 +78,7 @@ body{
 }
 
 #content-video-left{
-	font-size: 14px;
+	font-size: 13px;
 	float:left;
 	width: 45%;
 	padding-left: 35px;
@@ -676,7 +676,7 @@ display: block;}
 	padding-top: 10px;
 	padding-left: 20px;
 	font-size: 14px;
-	color:#F4F4F4;
+	color:#FFFFFF;
 }
 
 .training-small-label{
@@ -684,11 +684,11 @@ display: block;}
 	padding-top: 10px;
 	padding-left: 20px;
 	font-size: 12px;
-	color: #F4F4F4;
+	color: #FFFFFF;
 }
 
 .training-small-text{
-	color: #BDCCD4;
+	color: #FFFFFF;
 	float: left;
 	padding-top: 10px;
 	padding-left: 20px;
@@ -697,19 +697,19 @@ display: block;}
 	}
 	
 .training-small-text a:link {
-color: #BDCCD4;
+	color: #FDFCE8;
 text-decoration: none;}
 
 .training-small-text a:visited {
-color: #BDCCD4;
+	color: #FDFCE8;
 text-decoration: none;}
 
 .training-small-text a:hover {
-color: #orange;
+color: orange;
 text-decoration: none;}
 
 .training-small-text a:active {
-color: #orange;
+color: orange;
 text-decoration: none;}
 
 #content-news{
@@ -876,7 +876,6 @@ text-decoration: none;}
 
 #content-partners-images{
 	float:left;
-	padding-left: 40px;
 	padding-top: 20px;
 	height: 40px;
 	width:140px;
@@ -1023,7 +1022,6 @@ td:hover{
 	padding: 10px;
 	margin: 10px;
 	color: #7B9AA9;
-	font-size: 12px;
 	height: 30px;
 	width: 270px;
 	box-shadow: 2px 2px 2px #888888;
@@ -1034,17 +1032,16 @@ td:hover{
 	padding: 10px;
 	margin: 10px;
 	color: #4D4D4E;
-	font-size: 12px;
 	height: 30px;
 	width: 270px;
 	opacity: 1;
-	background-color:#F9F9F9;
+	background-color:#FFFFFF;
 	filter: alpha(opacity=100);
  	-webkit-transition: opacity .5s linear;
 }
 
 .news-item {
-	font-size: 13px;}
+	font-size: 12px;}
 
 .news-item a:link{
 	color: #4D4D4E;
@@ -1197,11 +1194,12 @@ padding-top: 10px;}
 #intro-link-gutter {width: 75%;
 border-top: thin dotted;
 padding-top: 10px;}
+
 .intro-copy-link {font-weight: bold;}
 .intro-copy-link a:link {color:#FDFCE8; text-decoration: none;}
 .intro-copy-link a:visited {color:#FDFCE8; text-decoration: none;}
 .intro-copy-link a:hover {color:orange; text-decoration: none;}
-.intro-copy-link a:active {color:#orange; text-decoration: none;}
+.intro-copy-link a:active {color:orange; text-decoration: none;}
 
 .news-item-date {font-weight: normal; font-size: 11px;
 color: #666;
@@ -1275,5 +1273,3 @@ padding-right: 5px;}
 	filter: alpha(opacity=100);
  	-webkit-transition: opacity .5s linear;
 }
-
-
