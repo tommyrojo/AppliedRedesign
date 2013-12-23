@@ -208,7 +208,7 @@ body{
 #landing-content-video{
 	padding: 20px;
 	border: 1px solid #FFFFFF;
-	height: 420px;
+	height: 480px;
 	width: 992px;
 }
 
@@ -770,74 +770,155 @@ text-decoration: none;}
     text-align: center;
 }
 
-#landing-content-video-right-button{
+#landing-content-video-right-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
 	margin-top: 10px;
-	background-color: #F1592A;
-	border-top: 1px white;
-	border-left: 1px white;
-	width: 400px;
-	height: 30px;
-	box-shadow: 2px 2px 2px #888888;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffcf57), color-stop(1, #f1582a) );
+	background:-moz-linear-gradient( center top, #ffcf57 5%, #f1582a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcf57', endColorstr='#f1582a');
+	background-color:#ffcf57;
+	-webkit-border-top-left-radius:4px;
+	-moz-border-radius-topleft:4px;
+	border-top-left-radius:4px;
+	-webkit-border-top-right-radius:4px;
+	-moz-border-radius-topright:4px;
+	border-top-right-radius:4px;
+	-webkit-border-bottom-right-radius:4px;
+	-moz-border-radius-bottomright:4px;
+	border-bottom-right-radius:4px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-bottomleft:4px;
+	border-bottom-left-radius:4px;
+	text-indent:0;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:30px;
+	width:300px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #4d4d4d;
 }
+#landing-content-video-right-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f1582a), color-stop(1, #ffcf57) );
+	background:-moz-linear-gradient( center top, #f1582a 5%, #ffcf57 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1582a', endColorstr='#ffcf57');
+	background-color:#f1582a;
+}#landing-content-video-right-button:active {
+	position:relative;
+	top:1px;}
 
-#landing-content-video-right-button:hover{
+
+
+
+
+#landing-content-video-left-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
 	margin-top: 10px;
-	background-color: orange;
-	border-top: 1px white;
-	border-left: 1px white;
-	width: 400px;
-	height: 30px;
-	box-shadow: 2px 2px 2px #888888;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffcf57), color-stop(1, #f1582a) );
+	background:-moz-linear-gradient( center top, #ffcf57 5%, #f1582a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcf57', endColorstr='#f1582a');
+	background-color:#ffcf57;
+	-webkit-border-top-left-radius:4px;
+	-moz-border-radius-topleft:4px;
+	border-top-left-radius:4px;
+	-webkit-border-top-right-radius:4px;
+	-moz-border-radius-topright:4px;
+	border-top-right-radius:4px;
+	-webkit-border-bottom-right-radius:4px;
+	-moz-border-radius-bottomright:4px;
+	border-bottom-right-radius:4px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-bottomleft:4px;
+	border-bottom-left-radius:4px;
+	text-indent:0;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:30px;
+	width:300px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #4d4d4d;
 }
-
-
-#landing-content-video-right-button-text
-{	text-shadow: 2px 2px 5px #000000;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 30px;
-	color: white;
-	font-weight: bold;
-	box-shadow: 1px 1px 1px #000000;
-}
-
-#landing-content-video-left-button{
+#landing-content-video-left-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f1582a), color-stop(1, #ffcf57) );
+	background:-moz-linear-gradient( center top, #f1582a 5%, #ffcf57 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1582a', endColorstr='#ffcf57');
+	background-color:#f1582a;
+}#landing-content-video-left-button:active {
+	position:relative;
+	top:1px;}
+	
+	
+	
+	
+	
+	
+	
+	#training-content-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
 	margin-top: 10px;
-	background-color: #F1592A;
-	width: 180px;
-	height: 30px;
-	box-shadow: 5px 5px 15px #888888;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffcf57), color-stop(1, #f1582a) );
+	background:-moz-linear-gradient( center top, #ffcf57 5%, #f1582a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcf57', endColorstr='#f1582a');
+	background-color:#ffcf57;
+	-webkit-border-top-left-radius:4px;
+	-moz-border-radius-topleft:4px;
+	border-top-left-radius:4px;
+	-webkit-border-top-right-radius:4px;
+	-moz-border-radius-topright:4px;
+	border-top-right-radius:4px;
+	-webkit-border-bottom-right-radius:4px;
+	-moz-border-radius-bottomright:4px;
+	border-bottom-right-radius:4px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-bottomleft:4px;
+	border-bottom-left-radius:4px;
+	text-indent:0;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:30px;
+	width:300px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #4d4d4d;
 }
-
-#landing-content-video-left-button-text
-{	text-shadow: 2px 2px 5px #000000;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 30px;
-	color: white;
-	font-weight: bold;
-}
-
-#training-content-button{
-	margin-top: 10px;
-	background-color: #F1592A;
-	width: 100px;
-	height: 30px;
-	box-shadow: 5px 5px 15px #888888;
-}
-
-#training-content-button-text
-{
-	padding-top: 5px;
-	padding-left: 20px;
-	color: #ffffff;
-	text-shadow: 2px 2px 5px #000000;
-}
+#training-content-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f1582a), color-stop(1, #ffcf57) );
+	background:-moz-linear-gradient( center top, #f1582a 5%, #ffcf57 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1582a', endColorstr='#ffcf57');
+	background-color:#f1582a;
+}#training-content-button:active {
+	position:relative;
+	top:1px;}
 
 #landing-content-main{
 	float: left;
 	width: 1052px;
-	height: 480px;
+	height: 540px;
 	margin-top: 20px;
 	background-color: #F5F6F7;
 	border: 1px solid #CDCCCC;
