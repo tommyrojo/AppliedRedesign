@@ -297,9 +297,9 @@ With NX, efficiency and cost savings extend beyond the design process to all pha
 	    	var swap3 = $("#landing-content-right-swap-3");
 	    	var swap4 = $("#landing-content-right-swap-4");
 
-			var which = e.toElement.id;
+			var which = this.id;
 			clicked = which;
-			e.toElement.style.color = 'orange';
+			this.style.color = 'orange';
 			
 			$("#tblToggle td").each(function(){
 				if(which !== $(this).attr('id'))
