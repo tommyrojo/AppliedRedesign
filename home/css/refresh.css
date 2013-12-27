@@ -362,7 +362,7 @@ body{
 	width: 40%;
 	margin-top: 20px;
 	color: #4D4D4E;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #CCCCCC;
 	text-align: left;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -1033,6 +1033,29 @@ text-decoration: none;}
 	margin-left:20px;	
 }
 
+#subfooter{
+	float: left;
+	width: 1072px;
+	background-color: #F5F6F7;
+	border: 1px solid #CDCCCC;
+	border-top: none;
+	color: #7B9AA9;
+	font-size: 11px;
+}
+
+.address{
+	float: left;
+	padding: 20px;}
+	
+.divider{
+	padding-left: 5px;
+	padding-right: 5px;}
+
+.copyright{
+	float: right;
+	padding: 20px;
+}
+
 #gutter{	
 	float: left;
 	width: 1200px;
@@ -1269,11 +1292,13 @@ color: #5B5B5C;}
 	text-decoration: none;}
 	
 #caption {font-style:italic; font-size:12px; padding-top: 10px;}
+#newstitle {font-weight:bold; font-size: 16px; padding-top: 20px;}
+#newsdate {font-style:italic; font-size:12px; padding-top: 4px; padding-bottom: 16px; border-bottom: dotted thin}
 
 .copy-link {font-weight: bold;}
 .copy-link a:link {color:#F1592A; text-decoration: none;}
 .copy-link a:visited {color:#F1592A; text-decoration: none;}
-.copy-link a:hover {color:orange; text-decoration: none;}
+.copy-link a:hover {color:#orange; text-decoration: none;}
 .copy-link a:active {color:#orange; text-decoration: none;}
 
 #intro-link-gutter {width: 75%;
@@ -1382,3 +1407,4 @@ background-repeat: no-repeat;
 height: 415px;
 width: 600px;
 background-position: left top; }
+
