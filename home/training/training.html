@@ -2,7 +2,7 @@
 <head>
     <title>Training Courses for NX CAD, CAM, CAE, Femap and NX Nastran - Applied CAx</title>
     <meta name="description" content="Applied CAx provides clients with the world's most advanced engineering software, training and support. CAD, CAM, CAE, PLM - We do this every day.">
-        <link rel="stylesheet" type="css/text/css" href="../css/refresh.css">
+        <link rel="stylesheet" type="text/css" href="../css/refresh.css">
 </head>
 <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../js/knockout-2.3.0.js"></script>
@@ -1236,9 +1236,9 @@
             var swap19 = $("#landing-content-right-swap-19");
             var swap20 = $("#landing-content-right-swap-20");
 
-            var which = e.toElement.id;
+            var which = this.id;
             clicked = which;
-            e.toElement.style.color = 'orange';
+            this.style.color = 'orange';
             
             $("#tblToggle td").each(function(){
                 if(which !== $(this).attr('id'))
