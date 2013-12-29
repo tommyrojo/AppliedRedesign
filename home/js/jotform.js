@@ -19,10 +19,20 @@ var JotForm = {
      */
     conditions: {},
     /**
+     * All calculations defined on the form
+     * @var Object
+     */
+    calculations: {},
+    /**
      * Condition Values
      * @var Object
      */
     condValues: {},
+    /**
+     * Progress bar object above form
+     * @var Object
+     */
+    progressBar: false,    
     /**
      * All JotForm forms on the page
      * @var Array
@@ -220,8 +230,7 @@ var JotForm = {
                 }
                 
                 this.handleFormCollapse();
-                this.handlePages();
-
+                this.handlePages()
 
 				// If form is hosted in an iframe, calculate the iframe height
 				if (window.parent && window.parent != window) {
@@ -234,6 +243,8 @@ var JotForm = {
                 this.initSpinnerInputs();
                 this.initNumberInputs();
                 this.setConditionEvents();
+                this.setCalculationEvents();
+                this.setCalculationResultReadOnly();
                 this.prePopulations();
                 this.handleAutoCompletes();
                 this.handleTextareaLimits();
@@ -248,11 +259,19 @@ var JotForm = {
                         this.forms.push(form);
                     }
                 }.bind(this));
-                if($$('div[id^=recaptcha_]').length==0) {
+
+                var hasCaptcha = $$('div[id^=recaptcha_input]').length || $$('.form-captcha').length;
+
+                if (!hasCaptcha || $$('*[class*="validate"]').length > hasCaptcha) {
                     this.validator();
-                }
+                };
+
                 this.fixIESubmitURL();
                 this.disableHTML5FormValidation();
+                
+                if($('progressBar')) {
+                    this.setupProgressBar();
+                }
             } catch (err) {
                  JotForm.error(err);
             }
@@ -664,7 +683,7 @@ var JotForm = {
     populateGet: function(){
         try{
             if('FrameBuilder' in window.parent && "get" in window.parent.FrameBuilder && window.parent.FrameBuilder.get != []){
-                /*
+
                 var outVals = {};
                 var getVals = window.parent.FrameBuilder.get;
                 $H(getVals).each(function(pair) {
@@ -675,11 +694,10 @@ var JotForm = {
                     } else {
                         outVals[pair[0]] = pair[1];
                     }
+
+
                 });
                 document.get = Object.extend(document.get, outVals);
-                */
-
-                document.get = Object.extend(document.get, window.parent.FrameBuilder.get);
             }
         }catch(e){}
     },
@@ -1116,11 +1134,11 @@ var JotForm = {
             }
             if($(ampm)) {
                 if(currentAmpm == 'PM') {
-                    $(ampm).value = 'PM';
-                    if($(ampm + 'Range')) $(ampm + 'Range').value = 'PM';
+                    if($(ampm).select('option[value="PM"]').length > 0) $(ampm).value = 'PM';
+                    if($(ampm + 'Range') && $(ampm + 'Range').select('option [value=PM]').length > 0) $(ampm + 'Range').value = 'PM';
                 } else {
-                    $(ampm).value = 'AM';
-                    if($(ampm + 'Range')) $(ampm + 'Range').value = 'AM';
+                    if($(ampm).select('option[value="AM"]').length > 0) $(ampm).value = 'AM';
+                    if($(ampm + 'Range') && $(ampm + 'Range').select('option [value=AM]').length > 0) $(ampm + 'Range').value = 'AM';
                 }
             }
         }
@@ -2150,6 +2168,10 @@ var JotForm = {
             condition.action = [].concat(condition.action); 
         });
     },
+
+    setCalculations: function(calculations) {
+        JotForm.calculations = calculations;
+    },
     /**
      * Shows a field
      * @param {Object} field
@@ -2257,8 +2279,12 @@ var JotForm = {
                 return JotForm.getDayOfWeek(fieldValue) != condValue;
             case "endsWith":
                 return fieldValue.endsWith(condValue);
+            case "notEndsWith":
+                return !fieldValue.endsWith(condValue);
             case "startsWith":
                 return fieldValue.startsWith(condValue);
+            case "notStartsWith":
+                return !fieldValue.startsWith(condValue);                
             case "contains":
                 return fieldValue.include(condValue);
             case "notContains":
@@ -2302,7 +2328,7 @@ var JotForm = {
      * 
      * @param {Object} id
      */
-    getInputType: function(id){
+    getInputType: function(id){  
         if(JotForm.typeCache[id]){ return JotForm.typeCache[id]; }
         var type = false;
         if($('input_'+id)){
@@ -2315,8 +2341,17 @@ var JotForm = {
             }
             // Neil: set type for autocomplete fields
             if($('input_'+id).hasClassName('form-autocomplete')){
-            type = "autocomplete";
+                type = "autocomplete";
             }
+
+            if($('input_'+id).hasClassName('form-slider')){
+                type = 'slider';
+            }
+
+            if($('input_'+id).hasClassName('form-widget')){
+                type = 'widget';
+            }
+            
         }else if($('input_'+id+'_pick')){
             type = 'datetime';
         }else if($('input_'+id+'_month')){
@@ -2329,6 +2364,8 @@ var JotForm = {
             type = 'address';
         } else if($$('input[id^=input_' + id +'_]')[0] && $$('input[id^=input_' + id +'_]')[0].hasClassName('form-grading-input')) {
             type = 'grading';
+        } else if($$('#id_'+id +' .pad').length > 0) {
+            type = 'signature';
         } else {
             if($$('#id_'+id+' input')[0]){
                 type = $$('#id_'+id+' input')[0].readAttribute('type').toLowerCase();
@@ -2730,6 +2767,279 @@ var JotForm = {
         JotForm.fieldConditions[field].conditions.push(condition);
     },
     
+    setCalculationResultReadOnly: function() {
+        $A(JotForm.calculations).each(function(calc, index) {
+            if(calc.readOnly && $('input_' + calc.resultField) != null) {
+                $('input_' + calc.resultField).setAttribute('readOnly', 'true');
+            }
+        });
+    },
+
+    setCalculationEvents: function() {
+
+        var setCalculationListener = function(el, ev, calc) {
+            $(el).observe(ev, function() {
+                el.addClassName('calculatedOperand');
+                JotForm.checkCalculation(calc);
+            });
+        };
+
+        $A(JotForm.calculations).each(function(calc, index) {
+
+            var ops = calc.operands.split(',');
+            for(var i = 0; i < ops.length; i++) {
+                
+                var opField = ops[i];
+                if(!opField || opField.empty() || !$('id_' + opField)) continue;
+
+                var ev;
+                var type = JotForm.getInputType(opField);
+                switch (type) {
+                    case 'radio':
+                    case 'checkbox':
+                        setCalculationListener($('id_' + opField), 'click', calc);
+                        break;
+                    
+                    case 'select':
+                    case 'file':
+                        setCalculationListener($('id_' + opField), 'change', calc);
+                        break;
+                    
+                    case 'datetime':
+                        setCalculationListener($('id_' + opField), 'date:changed', calc);
+                        $$("#id_" + opField + ' select').each(function(el) {
+                            setCalculationListener($(el), 'change', calc);
+                        });
+                        break;
+                    
+                    case 'time':
+                    case 'birthdate':
+                        $$("#id_" + opField + ' select').each(function(el) {
+                            setCalculationListener($(el), 'change', calc, index);
+                        });                        
+                        break;
+
+                    case 'address':
+                        setCalculationListener($('id_' + opField), 'keyup', calc, index);
+                        $$("#id_" + opField + ' select').each(function(el) {
+                            setCalculationListener($(el), 'change', calc, index);
+                        });
+                        break;
+
+                    case 'number':
+                        setCalculationListener($('id_' + opField), 'keyup', calc, index);
+                        setCalculationListener($('id_' + opField), 'click', calc, index);
+                        break;
+
+                    default:
+                        setCalculationListener($('id_' + opField), 'keyup', calc, index);
+                        break;
+                }
+            }
+        });
+    },
+
+    checkCalculation: function(calc) {
+
+        var result = calc.resultField;        
+        var showBeforeInput = calc.showBeforeInput;
+
+        if(!$('input_' + result)) return;
+
+        var getValue = function(data, numeric) {
+
+            if(!$('id_' + data)) return '';
+            if(!$('id_' + data).hasClassName('calculatedOperand') && showBeforeInput) return ''; //no input yet so ignore field
+
+            var type = JotForm.getInputType(data);
+
+            switch (type) {
+                case 'radio':
+                    $$("#id_" + data + ' input[type="radio"]').each(function(rad) {
+                        if(rad.checked) {
+                            val = rad.value;
+                        }
+                    });
+                    break;
+
+                case 'checkbox':
+                    if(numeric) {
+                        val = 0;
+                        $$("#id_" + data + ' input[type="checkbox"]').each(function(chk) {
+                            if(chk.checked) { 
+                                val += parseInt(chk.value.replace(/\D+/g, ''));
+                            }
+                        });
+                    } else {
+                        var valArr = [];
+                        $$("#id_" + data + ' input[type="checkbox"]').each(function(chk) {
+                            if(chk.checked) valArr.push(chk.value);
+                        });
+                        val = valArr.join();
+                    }
+                    break;
+
+                case 'number':
+                    if($$("#id_" + data + ' input[type="number"]').length > 1) { //ranges
+                        var valArr = [];
+                        $$("#id_" + data + ' input[type="number"]').each(function(el) { 
+                            valArr.push(el.value);
+                        });
+                        val = valArr.join(' ');
+                    } else {
+                        if(!$('input_' + data).value.empty()) {
+                            val = parseFloat($('input_' + data).value);
+                        }
+                    }
+                    break;
+
+                case 'combined':
+                case 'grading':
+                    var valArr = [];
+                    $$("#id_" + data + ' input[type="text"]').each(function(el) {
+                        if(!el.value.empty()) valArr.push(el.value);
+                    });
+                    $$("#id_" + data + ' input[type="tel"]').each(function(el) {
+                        if(!el.value.empty()) valArr.push(el.value);
+                    });
+                    val = valArr.join(' ');
+                    break;
+
+                case 'datetime':
+                    var valArr = [];
+                    $$("#id_" + data + ' input[type="tel"]').each(function(el) {
+                        valArr.push(el.value);
+                    });                
+                    $$("#id_" + data + ' select').each(function(el) {
+                        valArr.push(el.value);
+                    });
+
+                    if(valArr.length > 2 && !valArr[0].empty() && !valArr[1].empty() && !valArr[0].empty()) {
+                        val = valArr[0] + '/' + valArr[1] + '/' + valArr[2];
+                    }
+                    if(valArr.length > 4 && !valArr[3].empty() && !valArr[4].empty()) {
+                        val += ' ' + valArr[3] + ':' + valArr[4]; 
+                        if(valArr.length == 6 && !valArr[5].empty()) val += ' ' + valArr[5]; //ampm
+                    }
+
+                    break;
+
+                case 'time':
+                    var valArr = [];           
+                    $$("#id_" + data + ' select').each(function(el) {
+                        valArr.push(el.value);
+                    });
+                    if(!valArr[0].empty() && !valArr[1].empty()) {
+                        val = valArr[0] + ':' + valArr[1];
+                        if(valArr.length > 2 && !valArr[2].empty()) val += ' ' + valArr[2];
+                    }
+                    break;
+
+                case 'birthdate':
+                    var valArr = [];           
+                    $$("#id_" + data + ' select').each(function(el) {
+                        valArr.push(el.value);
+                    });
+                    if(!valArr[0].empty() && !valArr[1].empty() && !valArr[2].empty()) {
+                        val = valArr[0] + ' ' + valArr[1] + ' ' + valArr[2];
+                    } 
+                    break;
+
+                case 'address':
+                    var valArr = [];
+                    $$("#id_" + data + ' input[type="text"]').each(function(el) {
+                        if(!el.value.empty()) valArr.push(el.value);
+                    });                
+                    $$("#id_" + data + ' select').each(function(el) {
+                        if(!el.value.empty()) valArr.push(el.value);
+                    });
+                    val = valArr.join(', ');
+                    break;
+
+                case 'file':
+                    val = $('input_' + data).value;
+                    val = val.substring(val.lastIndexOf("\\") + 1);
+                    break;
+
+                default:
+                    if($('input_' + data) && typeof $('input_' + data).value !== 'undefined') {
+                        val = $('input_' + data).value;
+                    }
+                    break;
+            }
+
+            if(numeric && typeof val !== 'number') {
+                 val = val.replace(/\D+/g, '');
+            }
+
+            return val;
+        }
+
+        var calculate = function(equation, numeric) {
+            var out = '';
+            for(var i = 0; i < equation.length; i++) {
+
+                character = equation.charAt(i);
+
+                if(character === '[' && !numeric) {
+                    var end = equation.indexOf(']', i);
+                    try {
+                        var num = calculate(equation.substring(i+1, end), true);
+                        if(num) {
+                            num = new MathProcessor().parse(num);
+                            num = num.toFixed(calc.decimalPlaces);
+                            num = num.replace(/(\.[0-9]*?)0+$/, "$1");
+                            out += num.replace(/\.$/, "");
+                        }
+                    } catch(e) {
+                        console.log('equation error');
+                    }
+                    i = end;
+                } else if(character === '{') {
+                    var end = equation.indexOf('}', i);
+                    var qid = equation.substring(i+1, end);
+                    var val = getValue(qid, numeric);
+                    if(val == '' && numeric) return false;
+                    out += getValue(qid, numeric);
+
+                    i += end-i;
+                } else {
+                    out += character;
+                }
+            }
+            return out;
+        };
+
+        var output = calculate(calc.equation);
+        $('input_' + result).value = output;
+
+        if (document.createEvent) {
+            var evt = document.createEvent('HTMLEvents');
+            evt.initEvent('keyup', true, true);
+            $('input_' + result).dispatchEvent(evt);
+        }
+        if ($('input_' + result).fireEvent) {
+            $('input_' + result).fireEvent('onkeyup');
+        }
+    },
+
+    widgetsWithConditions: [],
+
+    /**
+     * When widget value is updated check whether to trigger conditions
+     */
+    triggerWidgetCondition: function(id) { 
+        if(JotForm.widgetsWithConditions.include(id)) { 
+            if (document.createEvent) {
+                var evt = document.createEvent('HTMLEvents');
+                evt.initEvent('change', true, true);
+                $('input_' + id).dispatchEvent(evt);
+            } else if ($('input_' + id).fireEvent) {
+                return $('input_' + id).fireEvent('onchange');
+            }
+        }
+    },
+
     /**
      * Sets all events and actions for form conditions
      */
@@ -2744,7 +3054,12 @@ var JotForm = {
                     // Loop through all rules
                     $A(condition.terms).each(function(term){
                         var id = term.field;
+
                         switch (JotForm.getInputType(id)) {
+                            case "widget":
+                                JotForm.setFieldConditions('input_' + id, 'change', condition);
+                                JotForm.widgetsWithConditions.push(id);
+                        break;
                             case "combined":
                                 JotForm.setFieldConditions('id_' + id, 'keyup', condition);
                             break;
@@ -2910,7 +3225,11 @@ var JotForm = {
             }
             // If there is a setup fee, do not update the recurring price on the form
             if (!pair.value.recurring) {
-                $(pair.key + '_price').update(parseFloat(price).toFixed(2));
+                if(pair.value.price === "0"){
+                    $(pair.key + '_price').update('Free');
+                } else {
+                    $(pair.key + '_price').update(parseFloat(price).toFixed(2));
+                }
             }
             if ($(pair.key).checked) {
                     if ($(pair.value.quantityField) || $(pair.value.specialPriceField)) {
@@ -2990,7 +3309,12 @@ var JotForm = {
             if ($(pair.value.quantityField)) {
                 function countQuantityTotal(){
                         if(JotForm.isVisible($(pair.value.quantityField))){
-                            $(pair.key).checked = !($(pair.value.quantityField).value <= 0) ? true : false;
+                            // Neil: temporary fix for 287973
+                            // because we run the change event for quantity upon loading (to evaluate the conditions), 
+                            // the associated product checkbox should not change if quantity did not change value
+                            if($(pair.value.quantityField).tagName !== 'SELECT' ||  $(pair.value.quantityField).getSelected().index > 0){
+                                $(pair.key).checked = !($(pair.value.quantityField).value <= 0) ? true : false;
+                            }
                             JotForm.countTotal(prices);
                         }
                     }
@@ -3018,8 +3342,12 @@ var JotForm = {
             if ($(pair.value.specialPriceField)) {
                 function countSpecialTotal(){
                         if(JotForm.isVisible($(pair.value.specialPriceField))){
-                           $(pair.key).checked = true;
-                           JotForm.countTotal(prices);
+                            // because we run the change event for quantity upon loading (to evaluate the conditions), 
+                            // the associated product checkbox should not change if quantity did not change value
+                            if($(pair.value.specialPriceField).tagName !== 'SELECT' ||  $(pair.value.specialPriceField).getSelected().index > 0){
+                                $(pair.key).checked = true;
+                            }
+                            JotForm.countTotal(prices);
                         }
                     }
                 $(pair.value.specialPriceField).observe('change', function(){
@@ -4212,6 +4540,25 @@ var JotForm = {
             }
         }
 
+        if(window.JCFServerCommon !== undefined) {
+            var widgetInputs = $$('.widget-required');
+            widgetInputs.each(function(el) {
+                if($(JotForm.currentSection) && $(JotForm.currentSection).select('.form-section').length > 0) {
+                    if(el.up('.form-section').id === $(JotForm.currentSection).select('.form-section')[0].id){
+                        if(el.value.length === 0) {
+                            ret = false;
+                        }
+                    }
+                } else {
+                    if(el.up('.form-section').visible()){
+                        if(el.value.length === 0) {
+                            ret = false;
+                        }
+                    }                    
+                }
+            });
+        }
+
         var c = "";
         if(form && form.id){
             c = "#"+form.id+" ";
@@ -5002,6 +5349,152 @@ var JotForm = {
       //initiate the custom placeholders
       element.showCustomPlaceHolder();
 
+    },
+
+    /*
+    ** Return true if field has any kind of content - user inputted or otherwise and does not have error
+    */
+    fieldHasContent: function(id) {
+        
+        if($('id_'+id).hasClassName('form-line-error')) return false;
+        if($('id_'+id).select('.form-custom-hint').length > 0) return false;
+
+        var type = JotForm.getInputType(id);
+        switch(type){
+            case "address":
+            case "combined":
+                return $$('#id_'+id+' input').collect(function(e){ return e.value; }).any();
+            case "number":
+                return $$('#id_'+id+' input').collect(function(e){ return e.value && e.value != 0; }).any();
+            case "birthdate":
+                return JotForm.getBirthDate(id);
+            case "datetime":
+                var date = JotForm.getDateValue(id); 
+                return !(date == "T00:00" || date == '');
+            case "time":
+                return JotForm.get24HourTime(id);
+            case "checkbox":
+            case "radio":
+                return $$('#id_'+id+' input').collect(function(e){ return e.checked; }).any();
+            case "select":
+                return $$('#id_'+id+' select').collect(function(e){ return e.value; }).any();
+            case "grading":
+                return $$('input[id^=input_' + id +'_]').collect(function(e){ return e.value; }).any();
+            case "signature":
+                return jQuery("#id_" + id).find(".pad").jSignature('getData','base30')[1].length > 0;
+            case "slider":
+                return $('input_'+id).value > 0;
+            case "file":
+                if($$('#id_'+id+' input')[0].readAttribute('multiple') === 'multiple') {
+                    return $('id_'+id).select('.qq-upload-list li').length > 0;
+                } else {
+                    return $('input_'+id).value;
+                }
+                break;
+            default:
+                if($('input_'+id) && $('input_'+id).value) {
+                    return $('input_'+id).value;
+                } else {
+                    return false;
+                }
+
+        }
+    },
+
+    /*
+    ** Show progress bar on screen and set up listeners
+    */
+    setupProgressBar: function() {
+        JotForm.progressBar = new ProgressBar("progressBar", {'height':'20px', 'width': '95%'});
+        var countFields = ['select','radio','checkbox','file','combined','email','address','combined','datetime','time',
+        'birthdate','number','radio','number','radio','autocomplete','radio','text','textarea','signature', 'div', 'slider'];
+        var totalFields = 0;
+        var completedFields = 0;
+
+        var updateProgress = function() {
+            completedFields = 0;
+            $$('.form-line').each(function(el) {
+                var id = el.id.split("_")[1];
+                var type = JotForm.getInputType(id);
+                if($A(countFields).include(type)) {
+                    if(JotForm.fieldHasContent(id)) {
+                        completedFields++;
+                    }
+                }
+            });
+
+            var percentage = parseInt(100/totalFields*completedFields);
+            if(isNaN(percentage)) percentage = 0;
+            JotForm.progressBar.setPercent(percentage);
+            $('progressPercentage').update(percentage + '% ');
+            $('progressCompleted').update(completedFields);
+            if(percentage == 100) {
+                $('progressSubmissionReminder').show();
+            } else {
+                $('progressSubmissionReminder').hide();
+            }
+        };
+
+        var setListener = function(el, ev) {
+            $(el).observe(ev, function() {
+                updateProgress();
+            });
+        };        
+
+        $$('.form-line').each(function(el) {
+            var id = el.id.split("_")[1];
+            var type = JotForm.getInputType(id);
+            if(!countFields.include(type)) {
+                return;
+            }
+
+            totalFields++;
+            switch (type) {
+                case 'radio':
+                case 'checkbox':
+                    setListener($('id_' + id), 'click');
+                    break;
+                
+                case 'select':
+                case 'file':
+                    setListener($('id_' + id), 'change');
+                    break;
+                
+                case 'datetime':
+                    setListener($('id_' + id), 'date:changed');
+                    $$("#id_" + id + ' select').each(function(el) {
+                        setListener($(el), 'change');
+                    });
+                    break;
+                
+                case 'time':
+                case 'birthdate':
+                    $$("#id_" + id + ' select').each(function(el) {
+                        setListener($(el), 'change');
+                    });                        
+                    break;
+
+                case 'address':
+                    setListener($('id_' + id), 'keyup');
+                    break;
+
+                case 'number':
+                    setListener($('id_' + id), 'keyup');
+                    setListener($('id_' + id), 'click');
+                    break;
+
+                case 'signature':
+                    setListener($('id_' + id), 'click');
+                    break;
+
+                default:
+                    setListener($('id_' + id), 'keyup');
+                    break;
+            }
+        });
+        $('progressTotal').update(totalFields);
+
+        updateProgress();
     },
 
     /**

@@ -60,6 +60,10 @@
     background:#f5f5f5;
 }
 
+.form-textarea {
+    font-family: "Lucida Grande", Verdana;
+}
+
 .form-textarea-limit{
     
 }
@@ -508,6 +512,10 @@
 
 .form-pagebreak-next{
     margin:0 0 0 20px;
+}
+
+.button-hidden {
+    display:none;
 }
 
 .form-required {

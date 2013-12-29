@@ -61,6 +61,7 @@ Object.extend(document, {
         background:'#FFFFFF',
         top:'25%',        // Top location
         left:'25%',       // Left location
+        position : 'absolute',
         winZindex: 10001,
         borderWidth:10,   // Width of the surrounding transparent border
         borderColor:'#000', // Color of the surrounding transparent border
@@ -109,8 +110,9 @@ Object.extend(document, {
      */
     window: function(options){
 
-        options = Object.extend( Object.deepClone(document.windowDefaults), options || {});
+        var topOverridden = ("top" in options); //If user supplied top in options
 
+        options = Object.extend( Object.deepClone(document.windowDefaults), options || {});
         options = Object.extend({
             onClose:Prototype.K,    // Event will run when the window is closed
             onInsert:Prototype.K,   // When the window inserted to document but not yet displayed
@@ -125,7 +127,7 @@ Object.extend(document, {
         var winWidth     =    (options.width? (options.width == 'auto'? 'auto' : options.width + 'px' ): '');
         var titleStyle   =    { background: options.titleBackground, zIndex:1000, position:'relative', padding: '2px', borderBottom: '1px solid #C27A00', height:'35px', MozBorderRadius: '3px 3px 0px 0px', WebkitBorderRadius: '3px 3px 0px 0px', borderRadius:'3px 3px 0px 0px'};
         var dimmerStyle  =    { background:options.dimColor, height:'100%', width:'100%', position:'fixed', top:'0px', left:'0px', opacity:options.dimOpacity, zIndex:options.dimZindex };
-        var windowStyle  =    { top:options.top,left: options.left,position: 'absolute', padding: options.borderWidth+'px',height: "auto", width: winWidth, zIndex: options.winZindex };
+        var windowStyle  =    { top:options.top,left: options.left,position: options.position, padding: options.borderWidth+'px',height: "auto", width: winWidth, zIndex: options.winZindex };
         var buttonsStyle =    { padding: '0px', display:'inline-block', width:'100%', borderTop: '1px solid #ffffff', background:options.buttonsBackground, zIndex:999, position:'relative', textAlign:options.buttonsAlign, MozBorderRadius:'0 0 3px 3px', WebkitBorderRadius: '0px 0px 3px 3px', borderRadius:'0px 0px 3px 3px' };
         var contentStyle =    { zIndex: 1000, height: options.height !== false? options.height+'px' : "auto", position: 'relative', display: 'inline-block', width: '100%'};
         var wrapperStyle =    { zIndex:600, MozBorderRadius:'3px', WebkitBorderRadius:'3px', borderRadius:'3px' };
@@ -279,7 +281,6 @@ Object.extend(document, {
 
         // set styles
         win.setStyle(windowStyle);
-
         background.setStyle(backgroundStyle).setCSSBorderRadius(options.borderRadius);
 
         if(!options.titleClass){
@@ -348,17 +349,6 @@ Object.extend(document, {
         }
 
         // Center the box on screen
-        var vp = document.viewport.getDimensions();
-        var vso = $(document.body).cumulativeScrollOffset();
-        var bvp = win.getDimensions();
-        var top = ((vp.height - bvp.height) / 2) + vso.top;
-        var left = ((vp.width - bvp.width) / 2) + vso.left;
-
-        win.setStyle({top:top+"px", left:left+"px"});
-        if(dimmer){
-            dimmer.setStyle({height:vp.height+'px', width:vp.width+'px'/*, top:vso.top+'px', left:vso.left+'px'*/  });
-        }
-
         win.reCenter = function(){
             var vp = document.viewport.getDimensions();
             var vso = $(document.body).cumulativeScrollOffset();
@@ -366,12 +356,21 @@ Object.extend(document, {
             var top = ((vp.height - bvp.height) / 2) + vso.top;
             var left = ((vp.width - bvp.width) / 2) + vso.left;
 
-            win.setStyle({top:top+"px", left:left+"px"});
+            //if top is given by user, use that value instead
+            if(topOverridden){
+                top = options.top.toString();
+                if(top.indexOf('%') === -1 && top.indexOf('px') === -1){
+                    top += "px";
+                }
+            }else{
+                top += "px";
+            }
+            win.setStyle({top:top, left:left+"px"});
             if (dimmer){
                 dimmer.setStyle({height:vp.height+'px', width:vp.width+'px'/*, top:vso.top+'px', left:vso.left+'px'  */});
             }
         };
-
+        win.reCenter();
 
         options.onDisplay(win);
 
@@ -630,6 +629,10 @@ Protoplus.ui = {
             } else {
                 val = elem.value;
             }
+            if(options.escapeHTML === true){
+                val = val.escapeHTML();
+            }
+
             try{
                 if (val === "" && outer.defaultText) {
                 outer.update(outer.defaultText);
@@ -3361,7 +3364,11 @@ Protoplus.ui = {
             if(opt.selected){
                 span.update(options.onSelect(opt.text));
             }
-            var li = new Element('li', {value:opt.value}).insert(opt.text);
+            //var li = new Element('li', {value:opt.value}).insert(opt.text);
+            var li = document.createElement('li');
+            li.setAttribute("value",opt.value.escapeHTML());
+            li.innerHTML = opt.text.escapeHTML();
+            
             li.hover(function(){
                 li.setStyle('background:#ccc');
             }, function(){
@@ -3373,7 +3380,7 @@ Protoplus.ui = {
 
                 closeList();
             });
-            list.insert(li);
+            list.appendChild(li);
         });
 
         cont.observe('blur', function(){
