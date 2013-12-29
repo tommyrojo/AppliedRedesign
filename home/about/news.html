@@ -166,10 +166,12 @@
     var pathArray = location.pathname.split("/");
     var length = pathArray.length - 1;
     filename = pathArray[length].replace(".html","");
+
+    $("#landing-content-video").css("height", "466px");
+    $("#landing-content-main").css("height", "526px");
+    $("#training-content-area").css("height", "450px");
     
     $("#toggle1").css("color","orange");
-    $("#training-content-area").css();
-    $("#landing-content-main").css();
 
     $(".contact-us").click(function(e){
         document.location.href = "../contact/contact.html?pageRef=" + filename;
@@ -250,9 +252,9 @@
             var swap4 = $("#landing-content-right-swap-4");
             var swap5 = $("#landing-content-right-swap-5");
 
-            var which = e.toElement.id;
+            var which = this.id;
             clicked = which;
-            e.toElement.style.color = 'orange';
+            this.style.color = 'orange';
             
             $("#tblToggle td").each(function(){
                 if(which !== $(this).attr('id'))
@@ -261,8 +263,8 @@
 
             if(which === "toggle1")
             {
-                $("#training-content-area").css();
-                $("#landing-content-main").css();
+                $("#training-content-area").css("height", "466px");
+                $("#landing-content-main").css("height", "526px");
                 swap1.css("display","block");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -271,8 +273,8 @@
             }
             if(which === "toggle2")
             {
-                $("#training-content-area").css();
-                $("#landing-content-main").css();
+                $("#training-content-area").css("height", "718px");
+                $("#landing-content-main").css("height", "778px");
                 swap1.css("display","none");
                 swap2.css("display","block");
                 swap3.css("display","none");
@@ -281,8 +283,8 @@
             }
             if(which === "toggle3")
             {
-                $("#training-content-area").css();
-                $("#landing-content-main").css();
+                $("#training-content-area").css("height", "618px");
+                $("#landing-content-main").css("height", "678px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","block");
@@ -291,8 +293,8 @@
             }
             if(which === "toggle4")
             {
-                $("#training-content-area").css();
-                $("#landing-content-main").css();
+                $("#training-content-area").css("height", "618px");
+                $("#landing-content-main").css("height", "678px");
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
@@ -301,8 +303,9 @@
             }
             if(which === "toggle5")
             {
-                $("#training-content-area").css();
-                $("#landing-content-main").css();
+                $("#training-content-area").css("height", "466px");
+                $("#landing-content-main").css("height", "526px");
+
                 swap1.css("display","none");
                 swap2.css("display","none");
                 swap3.css("display","none");
