@@ -131,8 +131,8 @@
 	var length = pathArray.length - 1;
 	filename = pathArray[length].replace(".html","");
 
-	$("#landing-content-video").css("height","580px");
-	$("#about-content-main").css("height","650px");
+	$("#landing-content-video").css("height","690px");
+	$("#about-content-main").css("height","730px");
 
 	$('[id^=content-partners-images-]').click(function(){
 		var item = $(this)[0].id.substr(24,25);
@@ -209,7 +209,7 @@
     })  
 
 	$(".contact-us").click(function(e){
-		document.location.href = "../../contact/contact.html?pageRef=" + filename;
+		document.location.href = "../contact/contact.html?pageRef=" + filename;
 	});
 </script>
 </html>
