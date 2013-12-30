@@ -373,13 +373,14 @@ body{
 
 #contact-content-area-right{
 	float:left;
-	font-size: 13px;
+	font-size: 12px;
 	width: 40%;
 	height: 100%;
-	padding-top: 16px;
-	padding-left: 40px;
+	padding-top: 40px;
 	color: #4D4D4E;
 }
+
+.required-contact{color: #F1592A; font-weight: normal;}
 
 
 #landing-content-video-right{
