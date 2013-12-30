@@ -105,11 +105,9 @@ body{
 #content-video-right-area{
 	width: 445px;
 	height: 250px;
-	padding-left: 20px;
-	padding-top: 20px;
 	background-color: #708793;
 	border: 1px solid #CDCCCC;
-	opacity: 0.5;
+	opacity: 0.98;
 	filter: alpha(opacity=50);
  	-webkit-transition: opacity .5s linear;
 }
