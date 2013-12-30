@@ -1,43 +1,24 @@
--HTML CHANGES 
-Make sure all pages have the hover click changes
-nx 
-	(not sure if the HTML is out of line or of this is a new template)
-	used to be buttons here, no longer? looked good :(
-tooling (make video fit, move contact us down, make page taller for case studies section)
+--updated todo for tom
+Need to do drop down menu and get it up on all pages
+Need to add validation to contact and support pages
+Need to add thank you landing page redirect from contact and support pages
+Need to add a uniform look for the buttons on support
 
--contact page no image by default
--resize resources page
--contact page QA
--fix all pages so they make sense for demo
--tab control for news items: general, cad, cam, cae, all 
--Update Footer to be uniform across all pages with links
--Update Menu to be uniform across all pages and make fit
--update PDF and white paper links
+--nice to have
+autosizing for support page, currently only sized for 4 files, after that the output spills out over the page
+tabs at the top of training and news items
 
---if there's time
-	update contact page with file upload
-	update training page with file upload/contact page tabbing to show how to better manage that tall list of courses
-	play with a quick responsive update, at least for the menu
-	orgainze javascript and css
+--future
+add feature to add news items
+refactor js and place in their own js files for unique functionality and to common.js for 'common' functionality
+refactor CSS and pull out unnecessary JS that could be replaced with CSS functionality
+move to twitter bootstrap api so we can have a mobile option, if desired.
 
-training (need permanant fix for all styling)
-	NX CAD Release 967px
-	foundation 967px
-	synchronous 967px
+--distant future
+move current site, after refactor of JS and CSS into a template from
+wire in Knockout.JS (similar to prototype for predictive).
+host in Amazon S3
 
-cnc (fix page)
-
-nx contact us not working
-
-
-do 
-Sold to ID*
-Product (select: same fields from Contact)
-Company Name*
-Country (select: USA / Canada)
-Company Website
-Contact Full Name*
-Contact Email*
-Contact Phone*
-Problem Description (text box)
-Attachment (choose file to upload)
+--galaxy far far away
+data driven from MongoDB or some other NoSQL solution
+allow site to be edited through administrator access (simple page edits in DIV area with full HTML styling)
