@@ -3,10 +3,25 @@
 	<title>Client Support - Applied CAx</title>
 	<meta name="description" content="Applied CAx provides clients with the world's most advanced engineering software, training and support. CAD, CAM, CAE, PLM - We do this every day.">
 	<link rel="stylesheet" type="text/css" href="../css/refresh.css">
+	<link type="text/css" rel="stylesheet" href="../css/styles/form.css?v3.1.1740"/>
+	<link type="text/css" rel="stylesheet" href="../css/calendarview.css?v3.1.1740"/>
+	<link type="text/css" media="print" rel="stylesheet" href="https://static-interlogyllc.netdna-ssl.com/css/printForm.css?3.1.1740" />
 </head>
+<script src="../js/json2.js?v=3.1.1740" type="text/javascript"></script>
+<script type="text/javascript" src="../js/prototype.js?v=3.1.1740"></script>
+<script src="../js/protoplus.js?v=3.1.1740" type="text/javascript"></script>
+<script src="../js/protoplus-ui.js?v=3.1.1740" type="text/javascript"></script>
+<script src="../js/jotform.js?v=3.1.1740" type="text/javascript"></script>
+<script src="../js/calendarview.js?v=3.1.1740" type="text/javascript"></script>
+<script type="text/javascript">
+   JotForm.init(function(){
+      $('input_4').hint('ex: myname@example.com');
+   });
+</script>
 <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../js/knockout-2.3.0.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/common-support.js"></script>
+
 <style>
 
   #txtTrial{
@@ -35,6 +50,7 @@
   
   .field {
     height: 30px;
+    width: 300px;
     background-color: #EBECEC;
   }
 
@@ -58,6 +74,31 @@
     padding: 0px 10px 0px 10px;
   }
 </style>
+<style type="text/css">
+    .form-label{
+        width:150px !important;
+    }
+    .form-label-left{
+        width:150px !important;
+    }
+    .form-line{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .form-label-right{
+        width:150px !important;
+    }
+    .form-all{
+        width:516px;
+        color:Black !important;
+        font-family:'Verdana';
+        font-size:12px;
+    }
+    .form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header{
+        color:Black;
+    }
+
+</style>
 <body>
 	<div id="page-wrap">
 		<div id="header">
@@ -74,8 +115,8 @@
 			</ul>
 		</div>
 		<div id="landing-content-banner"></div>
-		<div id="contact-content-main" style="height: 465px">
-			<div id="contact-content-area" style="height: 400px">
+		<div id="contact-content-main" style="height: 635px">
+			<div id="contact-content-area" style="height: 570px">
 				<div id="contact-content-area-left">
 					<h2>Client Support</h2>
 					<p>Contact us with support issues regarding your software. Our engineers will follow up soon to determine a solution.</p>
@@ -91,134 +132,185 @@
   </a>
 </div>
 
-				</div>
-				<div id="contact-content-area-right">
-					<form action="thankyou.php" method="post">
-					    <table class="contact">
-						    <tr width="550px">
-						      <td class="label">Sold to ID&nbsp;<span class="chevron">></span></td>
-						      <td class="field">
-						      		<input type="text" name="soldtoid">
-					      		</td>
-						    </tr>
-						    <tr>
-						    	<td class="label">Product&nbsp;<span class="chevron">></span></td><td class="field">
-						    		<select id="product-select">
-						    			<option value="nx">NX</option>
-						    			<option value="nxfordesign">NX for Design (CAD)</option>
-						    			<option value="nxformanufacturing">NX for Manufacturing (CAM)</option>
-						    			<option value="nxforsimulation">NX for Simulation (CAE)</option>
-					    				<option value="femap">Femap & NX Nastran</option>					    				
-					    				<option value="fibersim">Fibersim</option>
-					    				<option value="teamcenterplm">Teamcenter PLM</option>
-					    				<option value="bct">BCT Technology</option>
-				    					<option value="cnc">CNC Post-Sim Kits</option>
-						    		</select>
-						    	</td>
-						    </tr>
-						    <tr>
-						      <td class="label">Company Name&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="Company"></td>
-						    </tr>
-						    <tr>
-						    	<td class="label">Country&nbsp;<span class="chevron">></span></td><td class="field">
-						    		<select id="country-select">
-						    			<option value="USA">USA</option>
-						    			<option value="Canada">Canada</option>
-						    		</select>
-						    	</td>
-						    </tr>
-						    <tr>
-						      <td class="label">Company Website&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="website"></td>
-						    </tr>
-						    <tr>
-						      <td class="label">Contact Full Name&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="fullname"></td>
-						    </tr>
-						    <tr>
-						      <td class="label">Email&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="email"></td>
-						    </tr>
-						    <tr>
-						      <td class="label">Phone&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="Phone"></td>
-						    </tr>
+</div>
+<div id="contact-content-area-right">
+	<form class="jotform-form" action="https://secure.jotform.us/submit.php" method="post" enctype="multipart/form-data" name="form_33604636176153" id="33604636176153" accept-charset="utf-8">
+	<input type="hidden" name="formID" value="33604636176153" />
+	<div class="form-all contact">
+		<table>
+			<tr>
+				<td class="label">Sold to ID</td>
+				<td class="field">          
+					<input type="text" class="field validate[required]" data-type="input-textbox" id="input_7" name="q7_soldTo" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">Product</td>
+				<td class="field">
+					<div style="float: left" id="cid_8" class="field">
+				<select id="input_8" name="q8_product">
+					<option value="">  </option>
+					<option value="NX"> NX </option>
+					<option value="NX for Design (CAD)"> NX for Design (CAD) </option>
+					<option value="NX for Manufacturing (CAM)"> NX for Manufacturing (CAM) </option>
+					<option value="NX for Simulation (CAE)"> NX for Simulation (CAE) </option>
+					<option value="Femap &amp; NX Nastran"> Femap &amp; NX Nastran </option>
+					<option value="Fibersim"> Fibersim </option>
+					<option value="BCT Technology"> BCT Technology </option>
+					<option value="CNC Post-Sim Kits"> CNC Post-Sim Kits </option>
+				</select>
+	        	</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">Company Name</td>
+				<td class="field">          
+					<input type="text" id="input_9" name="q9_companyName" size="20" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">Country</td>
+				<td class="field">
+					<div id="cid_10" class="form-input">
+		          <select class="form-dropdown" style="width:150px" id="input_10" name="q10_country">
+		            <option value="">  </option>
+		            <option value="USA"> USA </option>
+		            <option value="Canada"> Canada </option>
+		          </select>
+		        </div>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">Company Website</td>
+				<td class="field">
+					<div id="cid_11" class="form-input">
+		          <input type="text" class=" form-textbox" data-type="input-textbox" id="input_11" name="q11_companyWebsite" size="20" value="" />
+		        </div>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">Contact Full Name</td>
+				<td class="field">          
+					<input type="text" class=" form-textbox validate[required]" data-type="input-textbox" id="input_12" name="q12_contactFull" size="20" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">Email</td>
+				<td class="field">          
+					<div id="cid_4" class="form-input"><span class="form-sub-label-container"><input type="email" class="validate[required, Email]" id="input_4" name="q4_email4" size="30" value="" />
+		            </span>
+		        </div>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">Phone</td>
+				<td class="field">          
+					<input type="text" class="validate[required, Numeric]" id="input_13" name="q13_phone" size="20" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">Problem Description</td>
+				<td class="field">
+		  		<div id="cid_6" class="form-input">
+		  			<textarea id="input_6" name="q6_problemDescription" style="border: 0px; background-color: #EBECEC;" cols="57" rows="6"></textarea>
+		        </div>		
+				</td>
+			</tr>
+			<tr>
+				<td class="label"></td>
+				<td id="file-uploader">
+	        	<div id="cid_5" class="form-input"><span class="form-sub-label-container"><div id="attachment" class="qq-uploader-buttonText-value">
+	          Attachment
+	        	</div>
+	        	<input class="form-upload-multiple" type="file" id="input_5" name="q5_uploadFile[]" multiple="multiple" file-accept="*" file-maxsize="307201" />
+	        	<label class="form-sub-label" for="input_5"> You can upload any type of file. Max: 300 MB </label></span>
+	    		</div>
+		        <div id="cid_2" class="form-input-wide">
+		          <div style="text-align:left" class="form-buttons-wrapper">
+		            <button id="input_2" type="submit" class="qq-uploader-buttonText-value">
+		              Submit
+		            </button>
+		          </div>
+		        </div>
+				</td>
+			</tr>
+		</table>
 
-					    	<tr>
-						      <td class="label" valign="top">Problem Description&nbsp;<span class="chevron">></span></td><td><textarea id="text-area-field" rows="4" cols="30" name="Comments"></textarea></td>
-						    </tr>
-						    <tr>
-						    	<td colspan="3" style="float: right">
-						    		<button type="submit" style="border: 1; color: #FFFFFF; background-color: #F1592A;">Attachment</button>       
-						    		<button type="submit" style="border: 1; color: #FFFFFF; background-color: #F1592A;">Submit</button>
-						    	</td>
-						    </tr>
-						    <tr>
-						      <td colspan="3">
-						 
-						      </td>
-						    </tr>
-					  </table>
-					</form>
-				</div>
+	</div>
+	<input type="hidden" id="simple_spc" name="simple_spc" value="33604636176153" />
+	<script type="text/javascript">
+	document.getElementById("si" + "mple" + "_spc").value = "33604636176153-33604636176153";
+	</script>
+	</form>
+</div>
+</div>
+</div>
+	<div id="footer">
+		<div id="footer-left">
+			<table>
+				<tr>
+					<td width="80px">Home</td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
+				</tr>
+				<tr>
+					<td>Support</td>
+					<td>+ <span class="menu-item">NX CAD</span></td>
+					<td>+ <span class="menu-item">NX 9</span></td>
+					<td>News + Events</td>
+				</tr>
+				<tr>
+					<td class="contact-us">Contact</td>
+					<td>+ <span class="menu-item">NX CAM</span></td>
+					<td>+ <span class="menu-item">Femap 11</span></td>
+					<td>Our Story</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>+ <span class="menu-item">NX CAE</span></td>
+					<td>+ <span class="menu-item">Fibersim 13</span></td>                   <td>Our Clients</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>+ <span class="menu-item">Femap & NX Nastran</span></td>
+					<td>+ <span class="menu-item">Teamcenter 10</span></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>+ <span class="menu-item">BCT Solutions</span></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>+ <span class="menu-item">CNC Programming</span></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div id="footer-right">	
+			<table>
+				<tr>
+					<td><span class="newsletter-join"><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=v5odganab&p=oi&m=1113476676565&sit=eq8jkb8hb" target="blank">Join our Newsletter ></a></span></td>
+				</tr>
+				<tr>
+					<td><span class="newsletter-blurb"><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=v5odganab&p=oi&m=1113476676565&sit=eq8jkb8hb" target="blank">Get the latest webinars, training and promotions from Applied CAx</a></span></td>
+				</tr>
+			</table>
+			<div id="spacer"></div>
+			<div id="follow-us">Follow us:</div>
+			<div>
+				<div id="linkedin"></div><div id="youtube"></div><div id="twitter"></div>
 			</div>
 		</div>
-		<div id="footer">
-			<div id="footer-left">
-				<table>
-					<tr>
-						<td width="80px">Home</td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
-					</tr>
-					<tr>
-						<td>Support</td>
-						<td>+ <span class="menu-item">NX CAD</span></td>
-						<td>+ <span class="menu-item">NX 9</span></td>
-						<td>News + Events</td>
-					</tr>
-					<tr>
-						<td class="contact-us">Contact</td>
-						<td>+ <span class="menu-item">NX CAM</span></td>
-						<td>+ <span class="menu-item">Femap 11</span></td>
-						<td>Our Story</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">NX CAE</span></td>
-						<td>+ <span class="menu-item">Fibersim 13</span></td>                   <td>Our Clients</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">Femap & NX Nastran</span></td>
-						<td>+ <span class="menu-item">Teamcenter 10</span></td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">BCT Solutions</span></td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>+ <span class="menu-item">CNC Programming</span></td>
-						<td>&nbsp;</td>
-					</tr>
-				</table>
-			</div>
-			<div id="footer-right">	
-				<table>
-					<tr>
-						<td><span class="newsletter-join"><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=v5odganab&p=oi&m=1113476676565&sit=eq8jkb8hb" target="blank">Join our Newsletter ></a></span></td>
-					</tr>
-					<tr>
-						<td><span class="newsletter-blurb"><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=v5odganab&p=oi&m=1113476676565&sit=eq8jkb8hb" target="blank">Get the latest webinars, training and promotions from Applied CAx</a></span></td>
-					</tr>
-				</table>
-				<div id="spacer"></div>
-				<div id="follow-us">Follow us:</div>
-				<div>
-					<div id="linkedin"></div><div id="youtube"></div><div id="twitter"></div>
-				</div>
-			</div>
 		</div>
 		<div id="gutter">&nbsp;</div>
 	</div>
 </body>
+<script>
+	//will need to add something to allow for multiple file selections for upload. 
+	//Look at .ajaxStop method to listen to the file upload completion
+	//then get the height of the TD then adjust the size of the main content area.
+	//same functionality could be used in training,news and software pages.
+</script>
 </html>
