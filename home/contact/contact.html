@@ -5,6 +5,7 @@
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/refresh.css">
 </head>
+
 <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../js/knockout-2.3.0.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
@@ -32,6 +33,7 @@
     text-align: right;
     padding-right: 20px;
     color: #7B9AA9;
+	font-size: 12px;
   }
   
   .field {
@@ -45,10 +47,7 @@
     vertical-align: text-top;
   }
 
-  .chevron{
-  	color: #A8A8A8
-  }
-  
+
   .contact input {
     background-color: transparent;
     border: 0px solid;
@@ -80,34 +79,33 @@
 				<div id="contact-content-area-left">
 					<h2>Contact Us</h2>
 					<p>
-						Contact Applied CAx for a free technical evaluation and consultation for engineering software and training services.
+						Request a call back with an Applied CAx account executive for software and/or training services.
 					<p>
-						Our engineers take into account your current workflow, goals and points of pain to offer a reccommendation.
+						Our engineers take into account your current workflow, goals and points of pain to offer a recommendation.
 					</p>
 					<p>
-						Our mission is to equip you with the best possible software solution to meet and further the goals of your organization.
-					</p>
+						Our mission is to equip your organization with the world's most advanced engineering software, training and support.			</p>
 				</div>
 				<div id="contact-content-area-right">
 					<form action="thankyou.php" method="post">
 					    <table class="contact">
 						    <tr>
-						      <td class="label">Your Name&nbsp;<span class="chevron">></span></td>
+						      <td class="label"><span class="required-contact">*</span> Full Name:</td>
 						      <td class="field">
 						      		<input type="text" name="realname">
 					      		</td>
 						    </tr>
 						    <tr>
-						      <td class="label">Company&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="Company"></td>
+						      <td class="label"><span class="required-contact">*</span> Company:</td><td class="field"><input type="text" name="Company"></td>
 						    </tr>
 						    <tr>
-						      <td class="label">Email&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="email"></td>
+						      <td class="label"><span class="required-contact">*</span> Email:</td><td class="field"><input type="text" name="email"></td>
 						    </tr>
 						    <tr>
-						      <td class="label">Phone&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="Phone"></td>
+						      <td class="label"><span class="required-contact">*</span> Phone:</td><td class="field"><input type="text" name="Phone"></td>
 						    </tr>
 						    <tr>
-						    	<td class="label">Product&nbsp;<span class="chevron">></span></td><td class="field">
+						    	<td class="label"><span class="required-contact">*</span> Product:</td><td class="field">
 						    		<select id="product-select">
 						    			<option value="nx">NX</option>
 						    			<option value="nxfordesign">NX for Design (CAD)</option>
@@ -122,14 +120,14 @@
 						    	</td>
 						    </tr>
 					    	<tr>
-						      <td class="label" valign="top">Comments&nbsp;<span class="chevron">></span></td><td><textarea id="text-area-field" rows="4" cols="30" name="Comments"></textarea></td>
+						      <td class="label" valign="top">Comments:</td><td><textarea id="text-area-field" rows="4" cols="30" name="Comments"></textarea></td>
 						    </tr>
                             <tr>
-                                <td class="label" valign="top">What is 3 + 4?&nbsp;<span class="chevron">></span></td><td class="field"><input type="text" name="Math"></td>
+                                <td class="label" valign="top"><span class="required-contact">*</span> What is 3 + 4?</td><td class="field"><input type="text" name="Math"></td>
                             </tr>
 						    <tr>
 						      <td colspan="3">
-						        <button type="submit" style="border: 1; color: #FFFFFF; background-color: #F1592A;">Submit</button>
+						        <button type="submit" style="margin-top: 4px; border: 1; color: #FFFFFF; background-color: #F1592A; font-weight: bold; width: 100px; height: 20px; float: right;">Submit</button>
 						      </td>
 						    </tr>
 					  </table>
