@@ -15,21 +15,128 @@
 	    min-width: 1152px;
 	}
 </style>
+<style>
+	div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
+	margin: 0; padding: 0; border: 0;
+	}
+
+	nav {
+		margin: 0px auto; 
+		text-align: center;
+	}
+
+	nav ul ul {
+		display: none;
+	}
+
+	nav ul li:hover > ul {
+		display: block;
+	}
+
+
+	nav ul {
+		background: #F5F6F7; 
+		box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+		list-style: none;
+		position: relative;
+		display: inline-table;
+	}
+	nav ul:after {
+		content: ""; clear: both; display: block;
+	}
+
+	nav ul li {
+		float: left;
+		padding-right: 7px;
+	}
+	nav ul li:hover {
+		background: #4b545f;
+	}
+	nav ul li:hover a {
+		color: orange;
+	}
+			
+	nav ul li a {
+		display: block; 
+		margin: 0px 34px;
+		padding: 15px 20px;
+		color: #F1592A; text-decoration: none;
+	}
+
+	nav ul ul {
+		background: #5B5B5C; border-radius: 0px; padding: 0;
+		position: absolute; top: 100%;
+		z-index: 1;
+	}
+	nav ul ul li {
+		float: none; 
+		border-top: 1px solid #6b727c;
+		border-bottom: 1px solid #575f6a; position: relative;
+		z-index: 1;
+	}
+	nav ul ul li a {
+		padding: 15px 33px;
+		color: #fff;
+	}	
+	nav ul ul li a:hover {
+		background: #4b545f;
+	}
+			
+	nav ul ul ul {
+		position: absolute; left: 100%; top:0;
+	}
+		
+
+	#page-wrap {
+	     width: 1072px;
+	     margin: 0 auto;
+	}
+
+</style>
 <body>
 	<div id="page-wrap">
 		<div id="header">
 		</div>
-		<div id="header-gutter">
-			<ul id="navlist">
-				<li id="index">Home</li>
-				<li id="news">News + Events</li>
-				<li id="software">Software</li>  
-				<li id="training">Training</li>
-				<li id="resources">Resources</li>
-				<li id="support">Support</li>
-				<li id="contact-us">Contact</li>
-			</ul>
-		</div>
+		<div id="page-wrap">
+		<div>
+			<nav style='min-width: 1072px'>
+				<ul style="width: 1072px">
+					<li id="index"><a href="#">Home</a></li>
+					<li id="news"><a href="#">News + Events</a>
+						<ul>
+							<li id="story"><a href="#">Our Story</a></li>
+							<li id="clients"><a href="#">Our Clients</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Software</a>
+						<ul>
+							<li id="nx"><a href="#">NX</a>
+								<ul>
+									<li id="nxfordesign"><a href="#">NX for Design</a></li>
+									<li id="nxformanufacturing"><a href="#">NX for Manufacturing</a></li>
+									<li id="nxforsimulation"><a href="#">NX for Simulation</a></li>
+								</ul>
+							</li>
+							<li id="femap"><a href="#">Femap</a></li>
+							<li id="fibersim"><a href="#">Fibersim</a></li>
+							<li id="teamcenterplm"><a href="#">Teamcenter</a></li>
+							<li id="bct"><a href="#">BCT Solutions</a></li>
+							<li id="cnc"><a href="#">CNC Programming</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Training</a>
+						<ul>
+							<li id="cad"><a href="#">CAD</a></li>
+							<li id="cam"><a href="#">CAM</a></li>
+							<li id="cae"><a href="#">CAE</a></li>
+							<li id="resources"><a href="#">Resources</a></li>
+						</ul>
+					</li>
+					<li id="support"><a href="#">Support</a></li>
+					<li id="contact-us"><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>		
 		<div id="content-video">
 			<div id="content-video-left">
 				<p class="emphasis">Applied CAx is a gold-level Siemens PLM solutions partner.</p>

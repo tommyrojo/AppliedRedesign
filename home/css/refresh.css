@@ -1481,9 +1481,10 @@ padding-right: 5px;}
  	-webkit-transition: opacity .5s linear;
 }
 
-#ourclients { background-image: url(../images/about/clients.jpg); 
+#ourclients { background-image: url(../images/about/clients.jpg);
+float: left; 
 background-repeat: no-repeat; 
-height: 638px;
-width: 864px;
+height: 864px;
+width: 638px;
 background-position: left top; 
-	box-shadow: 2px 2px 2px #888888;}
+box-shadow: 2px 2px 2px #888888;}

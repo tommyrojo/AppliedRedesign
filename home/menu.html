@@ -6,17 +6,23 @@
 	<title>CSS Dropdown Menu</title>
 	<link href="css\refresh.css" rel="stylesheet" />
 </head>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/knockout-2.3.0.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<style>
+	#outer {
+	    width: auto !important;
+	    width: 1152px;
+	    min-width: 1152px;
+	}
+</style>
 <style>
 	body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
 	margin: 0; padding: 0; border: 0;
 	}
 
-	body {
-		font-family: Helvetica, sans-serif; font-size: 16px; line-height: 24px;
-	}
-
 	nav {
-		margin: 100px auto; 
+		margin: 0px auto; 
 		text-align: center;
 	}
 
@@ -32,7 +38,6 @@
 	nav ul {
 		background: #F5F6F7; 
 		box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-		padding: 0 20px;
 		list-style: none;
 		position: relative;
 		display: inline-table;
@@ -43,6 +48,7 @@
 
 	nav ul li {
 		float: left;
+		padding-right: 7px;
 	}
 	nav ul li:hover {
 		background: #4b545f;
@@ -52,7 +58,9 @@
 	}
 			
 	nav ul li a {
-		display: block; padding: 15px 20px;
+		display: block; 
+		margin: 0px 34px;
+		padding: 15px 20px;
 		color: #F1592A; text-decoration: none;
 	}
 
@@ -79,44 +87,54 @@
 		
 
 	#page-wrap {
-	     width: 1072;
+	     width: 1072px;
 	     margin: 0 auto;
 	}
 
 </style>
 <body>
 	<div id="page-wrap">
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">News + Events</a>
-					<ul>
-						<li><a href="#">Our Story</a></li>
-						<li><a href="#">Our Clients</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Software</a>
-					<ul>
-						<li><a href="#">NX 9</a>
-							<ul>
-								<li><a href="#">NX for Design</a></li>
-								<li><a href="#">NX for Manufacturing</a></li>
-								<li><a href="#">NX for Simulation</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Femap 11</a></li>
-						<li><a href="#">Fibersim 13</a></li>
-						<li><a href="#">Teamcenter 10</a></li>
-						<li><a href="#">BCT Solutions</a></li>
-						<li><a href="#">CNC Programming</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Training</a></li>
-				<li><a href="#">Resources</a></li>
-				<li><a href="#">Support</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
+		<div id="header">
+		</div>
+		<div>
+			<nav style='min-width: 1072px'>
+				<ul style="width: 1072px">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">News + Events</a>
+						<ul>
+							<li><a href="#">Our Story</a></li>
+							<li><a href="#">Our Clients</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Software</a>
+						<ul>
+							<li><a href="#">NX</a>
+								<ul>
+									<li><a href="#">NX for Design</a></li>
+									<li><a href="#">NX for Manufacturing</a></li>
+									<li><a href="#">NX for Simulation</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Femap</a></li>
+							<li><a href="#">Fibersim</a></li>
+							<li><a href="#">Teamcenter</a></li>
+							<li><a href="#">BCT Solutions</a></li>
+							<li><a href="#">CNC Programming</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Training</a>
+						<ul>
+							<li><a href="#">CAD</a></li>
+							<li><a href="#">CAM</a></li>
+							<li><a href="#">CAE</a></li>
+							<li><a href="#">Resources</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Support</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
 	</div>
 </body>
 </html>
