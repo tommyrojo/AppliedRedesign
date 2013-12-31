@@ -92,7 +92,8 @@ body{
 }
 
 .black-arrow{
-	color: black;
+	color: #5B5B5C;
+	font-weight: normal;
 }
 
 #content-video-right{
