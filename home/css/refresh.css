@@ -1489,3 +1489,37 @@ height: 864px;
 width: 638px;
 background-position: left top; 
 box-shadow: 2px 2px 2px #888888;}
+
+#about-quotes{
+	margin-top: 170px;
+	color: #4D4D4E;
+width: 33%;
+float: right;
+font-size: 12px;
+
+}
+
+.blockquote {
+  background: #FFFFFF;
+  border-left: 8px solid #F1592A;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  box-shadow: 2px 2px 2px #888888;
+}
+.blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 8em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.35em;
+}
+
+.blockquote:after {
+content: no-close-quote;
+}
+
+.blockquote p {
+  display: inline;
+}
