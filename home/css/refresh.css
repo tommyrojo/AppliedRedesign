@@ -1481,16 +1481,8 @@ padding-right: 5px;}
  	-webkit-transition: opacity .5s linear;
 }
 
-#ourclients1 { background-image: url(../images/about/client1.jpg); 
+#ourclients { background-image: url(../images/about/clients.jpg); 
 background-repeat: no-repeat; 
-height: 411px;
-width: 600px;
+height: 638px;
+width: 864px;
 background-position: left top; }
-
-
-#ourclients2 { background-image: url(../images/about/client2.jpg); 
-background-repeat: no-repeat; 
-height: 415px;
-width: 600px;
-background-position: left top; }
-
