@@ -273,6 +273,15 @@
 <script>
 	$(function(){ 
 
+		$(function() {
+	       var zIndexNumber = 1000;
+	       // Put your target element(s) in the selector below!
+	       $("div").each(function() {
+	               $(this).css('zIndex', zIndexNumber);
+	               zIndexNumber -= 10;
+	       });
+		});
+
 		$("#circle3").css("background-color", "#F1592A")
 
 		$('[id^=content-partners-images-]').click(function(){
