@@ -66,13 +66,11 @@
 	nav ul ul {
 		background: #5B5B5C; border-radius: 0px; padding: 0;
 		position: absolute; top: 100%;
-		z-index: 1;
 	}
 	nav ul ul li {
 		float: none; 
 		border-top: 1px solid #6b727c;
 		border-bottom: 1px solid #575f6a; position: relative;
-		z-index: 1;
 	}
 	nav ul ul li a {
 		padding: 15px 33px;
@@ -94,11 +92,11 @@
 
 </style>
 <body>
-	<div id="page-wrap">
+	<div id="page-wrap" style="position:relative">
 		<div id="header">
 		</div>
 		<div id="page-wrap">
-		<div>
+		<div style="position: relative;z-index:1000">
 			<nav style='min-width: 1072px'>
 				<ul style="width: 1072px">
 					<li id="index"><a href="#">Home</a></li>
@@ -145,8 +143,8 @@
                 <div id="intro-link-gutter"><span class="intro-link"><a href="about/ourstory.html" style="padding-right: 20px">Our Story</a></span> | <span class="intro-link" style="padding-left: 20px"><a href="about/ourclients.html">Professional Testimonials</a></span></div>
 			</div>
 			<div id="content-video-right">
-				<div id="content-video-right-area">
-					<iframe width="445" height="250" src="//www.youtube.com/embed/2Ga7nT7OVg4?rel=0" frameborder="0" allowfullscreen></iframe>
+				<div id="content-video-right-area" style="background-color: red; position:relative; z-index:100">
+					<iframe width="445" height="250" src="//www.youtube.com/embed/2Ga7nT7OVg4?wmode=opaque" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
@@ -273,14 +271,14 @@
 <script>
 	$(function(){ 
 
-		$(function() {
-	       var zIndexNumber = 1000;
-	       // Put your target element(s) in the selector below!
-	       $("div").each(function() {
-	               $(this).css('zIndex', zIndexNumber);
-	               zIndexNumber -= 10;
-	       });
-		});
+		//$(function() {
+	    //   var zIndexNumber = 1000;
+	    //   // Put your target element(s) in the selector below!
+	    //   $("div").each(function() {
+	    //           $(this).css('zIndex', zIndexNumber);
+	    //           zIndexNumber -= 10;
+	    //   });
+		//});
 
 		$("#circle3").css("background-color", "#F1592A")
 
