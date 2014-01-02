@@ -3,25 +3,55 @@
 	<title>Femap and NX Nastran from Siemens PLM - Real FEA Made Easy - Applied CAx</title>
 	<meta name="description" content="Applied CAx provides clients with the world's most advanced engineering software, training and support. CAD, CAM, CAE, PLM - We do this every day.">
 	<link rel="stylesheet" type="text/css" href="../../css/refresh.css">
+	<link rel="stylesheet" type="text/css" href="../../css/menu.css">
 </head>
 <script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../../js/knockout-2.3.0.js"></script>
 <script type="text/javascript" src="../../js/common.js"></script>
 <body>
-	<div id="page-wrap">
+	<div id="page-wrap" style="position:relative">
 		<div id="header">
 		</div>
-		<div id="header-gutter">
-			<ul id="navlist">
-				<li id="index">Home</li>
-				<li id="news">News + Events</li>
-				<li id="software">Software</li>  
-				<li id="training">Training</li>
-				<li id="resources">Resources</li>
-				<li id="support">Support</li>
-				<li id="contact-us">Contact</li>
-			</ul>
-		</div>
+		<div id="page-wrap">
+		<div style="position: relative;z-index:1000">
+			<nav style='min-width: 1072px'>
+				<ul style="width: 1072px">
+					<li id="index"><a href="#">Home</a></li>
+					<li id="news"><a href="#">News + Events</a>
+						<ul>
+							<li id="story"><a href="#">Our Story</a></li>
+							<li id="clients"><a href="#">Our Clients</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Software</a>
+						<ul>
+							<li id="nx"><a href="#">NX</a>
+								<ul>
+									<li id="nxfordesign"><a href="#">NX for Design</a></li>
+									<li id="nxformanufacturing"><a href="#">NX for Manufacturing</a></li>
+									<li id="nxforsimulation"><a href="#">NX for Simulation</a></li>
+								</ul>
+							</li>
+							<li id="femap"><a href="#">Femap</a></li>
+							<li id="fibersim"><a href="#">Fibersim</a></li>
+							<li id="teamcenterplm"><a href="#">Teamcenter</a></li>
+							<li id="bct"><a href="#">BCT Solutions</a></li>
+							<li id="cnc"><a href="#">CNC Programming</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Training</a>
+						<ul>
+							<li id="cad"><a href="#">CAD</a></li>
+							<li id="cam"><a href="#">CAM</a></li>
+							<li id="cae"><a href="#">CAE</a></li>
+							<li id="resources"><a href="#">Resources</a></li>
+						</ul>
+					</li>
+					<li id="support"><a href="#">Support</a></li>
+					<li id="contact-us"><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>		
 		<div id="landing-content-femap-banner"></div>
 		<div id="landing-content-main">
 			<div id="landing-content-video">

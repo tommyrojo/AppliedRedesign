@@ -6,6 +6,7 @@
 	<link type="text/css" rel="stylesheet" href="../css/styles/form.css?v3.1.1740"/>
 	<link type="text/css" rel="stylesheet" href="../css/calendarview.css?v3.1.1740"/>
 	<link type="text/css" media="print" rel="stylesheet" href="https://static-interlogyllc.netdna-ssl.com/css/printForm.css?3.1.1740" />
+	<link rel="stylesheet" type="text/css" href="../css/menu.css">
 </head>
 <script src="../js/json2.js?v=3.1.1740" type="text/javascript"></script>
 <script type="text/javascript" src="../js/prototype.js?v=3.1.1740"></script>
@@ -102,20 +103,49 @@
 
 </style>
 <body>
-	<div id="page-wrap">
+	<div id="page-wrap" style="position:relative">
 		<div id="header">
 		</div>
-		<div id="header-gutter">
-			<ul id="navlist">
-				<li id="index">Home</li>
-				<li id="news">News + Events</li>
-				<li id="software">Software</li>  
-				<li id="training">Training</li>
-				<li id="resources">Resources</li>
-				<li id="support">Support</li>
-				<li id="contact-us">Contact</li>
-			</ul>
-		</div>
+		<div id="page-wrap">
+		<div style="position: relative;z-index:1000">
+			<nav style='min-width: 1072px'>
+				<ul style="width: 1072px">
+					<li id="index"><a href="#">Home</a></li>
+					<li id="news"><a href="#">News + Events</a>
+						<ul>
+							<li id="story"><a href="#">Our Story</a></li>
+							<li id="clients"><a href="#">Our Clients</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Software</a>
+						<ul>
+							<li id="nx"><a href="#">NX</a>
+								<ul>
+									<li id="nxfordesign"><a href="#">NX for Design</a></li>
+									<li id="nxformanufacturing"><a href="#">NX for Manufacturing</a></li>
+									<li id="nxforsimulation"><a href="#">NX for Simulation</a></li>
+								</ul>
+							</li>
+							<li id="femap"><a href="#">Femap</a></li>
+							<li id="fibersim"><a href="#">Fibersim</a></li>
+							<li id="teamcenterplm"><a href="#">Teamcenter</a></li>
+							<li id="bct"><a href="#">BCT Solutions</a></li>
+							<li id="cnc"><a href="#">CNC Programming</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Training</a>
+						<ul>
+							<li id="cad"><a href="#">CAD</a></li>
+							<li id="cam"><a href="#">CAM</a></li>
+							<li id="cae"><a href="#">CAE</a></li>
+							<li id="resources"><a href="#">Resources</a></li>
+						</ul>
+					</li>
+					<li id="support"><a href="#">Support</a></li>
+					<li id="contact-us"><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>		
 		<div id="landing-content-banner"></div>
 		<div id="contact-content-main" style="height: 635px">
 			<div id="contact-content-area" style="height: 570px">
