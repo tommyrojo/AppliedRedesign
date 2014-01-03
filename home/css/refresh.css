@@ -636,11 +636,11 @@ display: block;}
 
 #landing-video-teamcenter{
 	height: 194px;
-	background: url(../images/promo_placeholder.jpg) no-repeat;
+	background: url(../images/promo_teamcenter_evaluation.jpg) no-repeat;
 }
 
 #landing-video-teamcenter:hover{
-	background: url(../images/promo_placeholder.jpg) no-repeat;
+	background: url(../images/promo_teamcenter_evaluation.jpg) no-repeat;
 }
 
 #landing-video-fibersim{
