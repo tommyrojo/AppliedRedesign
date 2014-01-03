@@ -1561,3 +1561,13 @@ content: no-close-quote;
 .blockquote p {
   display: inline;
 }
+
+#landing-bct1 {
+	width: 210px;
+	height: 56px;
+	background-image: url(../images/bct/BCTlogo.jpg);
+	background-repeat: no-repeat;
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
