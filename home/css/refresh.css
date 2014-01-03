@@ -807,19 +807,19 @@ display: block;}
 	}
 	
 .training-small-text a:link {
-	color: #FDFCE8;
+	color: #CAFFFF;
 text-decoration: none;}
 
 .training-small-text a:visited {
-	color: #FDFCE8;
+	color: #CAFFFF;
 text-decoration: none;}
 
 .training-small-text a:hover {
-color: orange;
+color: FDFCE8;
 text-decoration: none;}
 
 .training-small-text a:active {
-color: orange;
+color: FDFCE8;
 text-decoration: none;}
 
 #content-news{
@@ -1430,10 +1430,10 @@ color: #5B5B5C;}
 border-top: thin dotted;
 padding-top: 10px;}
 .intro-link {font-size: 16px; font-weight: bold;}
-.intro-link a:link {color:#FDFCE8; text-decoration: none;}
-.intro-link a:visited {color:#FDFCE8; text-decoration: none;}
-.intro-link a:hover {color:orange; text-decoration: none;}
-.intro-link a:active {color:orange; text-decoration: none;}
+.intro-link a:link {color:#CAFFFF; text-decoration: none;}
+.intro-link a:visited {color:#CAFFFF; text-decoration: none;}
+.intro-link a:hover {color:#FDFCE8; text-decoration: none;}
+.intro-link a:active {color:#FDFCE8; text-decoration: none;}
 
 #intro-link-gutter {width: 75%;
 border-top: thin dotted;
@@ -1442,8 +1442,8 @@ padding-top: 10px;}
 .intro-copy-link {font-weight: bold;}
 .intro-copy-link a:link {color:#FDFCE8; text-decoration: none;}
 .intro-copy-link a:visited {color:#FDFCE8; text-decoration: none;}
-.intro-copy-link a:hover {color:orange; text-decoration: none;}
-.intro-copy-link a:active {color:orange; text-decoration: none;}
+.intro-copy-link a:hover {color:#CAFFFF; text-decoration: none;}
+.intro-copy-link a:active {color:#CAFFFF; text-decoration: none;}
 
 .news-item-date {font-weight: normal; font-size: 11px;
 color: #666;
