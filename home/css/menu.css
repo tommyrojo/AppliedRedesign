@@ -20,6 +20,8 @@
 		list-style: none;
 		position: relative;
 		display: inline-table;
+		margin-top: 0px;
+		margin-bottom: 0px;
 	}
 	nav ul:after {
 		content: ""; clear: both; display: block;
