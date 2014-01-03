@@ -627,11 +627,11 @@ display: block;}
 
 #landing-video-femap{
 	height: 194px;
-	background: url(../images/promo_placeholder.jpg) no-repeat;
+	background: url(../images/promo_femap_trial.jpg) no-repeat;
 }
 
 #landing-video-femap:hover{
-	background: url(../images/promo_placeholder.jpg) no-repeat;
+	background: url(../images/promo_femap_trial.jpg) no-repeat;
 }
 
 #landing-video-teamcenter{
