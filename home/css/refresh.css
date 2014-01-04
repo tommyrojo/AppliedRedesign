@@ -1571,3 +1571,23 @@ content: no-close-quote;
 	padding-right: 10px;
 	padding-bottom: 10px;
 }
+
+#landing-bct2 {
+	width: 288px;
+	height: 216px;
+	background-image: url(../images/bct/bct-inspector.jpg);
+	background-repeat: no-repeat;
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+#landing-bct3 {
+	width: 270px;
+	height: 216px;
+	background-image: url(../images/bct/bct-3d-raster.jpg);
+	background-repeat: no-repeat;
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
