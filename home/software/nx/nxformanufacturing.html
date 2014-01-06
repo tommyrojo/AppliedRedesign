@@ -5,19 +5,31 @@
 	<meta name="robots" content="all">
 	<link rel="stylesheet" type="text/css" href="../../css/refresh.css">
 	<link rel="stylesheet" type="text/css" href="../../css/menu.css">
+	<link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 </head>
 
 <script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../../js/knockout-2.3.0.js"></script>
 <script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/jquery.youtubepopup.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("a.youtube").YouTubePopup({ autoplay: 0 });
+    });
+</script>
 <body>
 	<div id="page-wrap" style="position:relative">
 		<div id="header">
+			<div style="float:right; font-size: 18px; font-weight:bold; margin: 105px 280px 0px 0px;color:#F1592A">
+				800-746-8134
+			</div>
 		</div>
 		<div id="page-wrap">
 		<div style="position: relative;z-index:1000">
 			<nav style='min-width: 1072px'>
-				<ul style="width: 1072px">
+				<ul style="width: 1073px; padding-left:0px;">
+					<li class="no-hover" style="width:8%">&nbsp;</li>
 					<li id="index"><a href="#">Home</a></li>
 					<li id="news"><a href="#">News + Events</a>
 						<ul>
@@ -167,7 +179,10 @@
 		<div id="landing-content-sub">
 			<div id="landing-content-gutter">
 				<div id="landing-content-gutter-left">
-					<div id="landing-video-nx-cam">
+					<div>
+						<a class="youtube" href="http://www.youtube.com/watch?v=Y1mqPOH9Aa4"
+            				title="Siemens NX for Manufacturing: RML Group Video Case Study">
+            				<img src="../../images/promo_rml.jpg" height="194px" alt="Siemens NX for Manufacturing: RML Group Video Case Study"></a>
 					</div>
 				</div>
 				<div id="landing-content-gutter-right">
@@ -261,6 +276,10 @@
 	var pathArray = location.pathname.split("/");
 	var length = pathArray.length - 1;
 	filename = pathArray[length].replace(".html","");
+
+	$(document).on("dialogopen", ".ui-dialog", function(event, ui){
+		$(this).css("top","550px")
+	});
 
 	$(".contact-us").click(function(e){
 		document.location.href = "../../contact/contact.html?pageRef=" + filename;

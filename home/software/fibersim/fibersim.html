@@ -6,19 +6,31 @@
 	<meta name="robots" content="all">
 	<link rel="stylesheet" type="text/css" href="../../css/refresh.css">
 	<link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 </head>
 
 <script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../../js/knockout-2.3.0.js"></script>
 <script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/jquery.youtubepopup.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("a.youtube").YouTubePopup({ autoplay: 0 });
+    });
+</script>
 <body>
 	<div id="page-wrap" style="position:relative">
 		<div id="header">
+			<div style="float:right; font-size: 18px; font-weight:bold; margin: 105px 280px 0px 0px;color:#F1592A">
+				800-746-8134
+			</div>
 		</div>
 		<div id="page-wrap">
 		<div style="position: relative;z-index:1000">
 			<nav style='min-width: 1072px'>
-				<ul style="width: 1072px">
+				<ul style="width: 1073px; padding-left:0px;">
+					<li class="no-hover" style="width:8%">&nbsp;</li>
 					<li id="index"><a href="#">Home</a></li>
 					<li id="news"><a href="#">News + Events</a>
 						<ul>
@@ -140,7 +152,6 @@
 						<li>Open architecture</li></ul>
 						<p><strong>Advanced Composite Engineering Environment</strong></p>
                         <p>ACEE provides a flexible and automated environment for defining complex parts. The software is flexible enough to easily accommodate the demands of designing a wide variety of composite parts and the complete range of materials and manufacturing processes used to create them. Automation tools in ACEE reduce potential for error and, by speeding the design process, leave engineers free to focus their expertise on design innovation, process selection, part performance and quality. ACEE tools for preliminary design and automation include specialized design methods for defining industry- and part-specific laminate specifications and requirements, dynamic generation of ply boundaries and drop-offs and variable offset surfaces.</p>
-						
 					</div>
 				</div>
 			</div>
@@ -148,9 +159,12 @@
 		<div id="landing-content-sub">
 			<div id="landing-content-gutter">
 				<div id="landing-content-gutter-left">
-                <div id="landing-video-fibersim"></div>
-
-			</div>
+					<div>
+						<a class="youtube" href="http://www.youtube.com/watch?v=daEo4nDfHGE"
+            				title="Fibersim: Optimizing Composite Aerostructures to Reduce Weight">
+            				<img src="../../images/promo_aerostructures.jpg" height="194px" alt="Fibersim: Optimizing Composite Aerostructures to Reduce Weight"></a>
+					</div>
+				</div>
 				<div id="landing-content-gutter-right">
 					<div id="landing-content-gutter-right-text">
 						<div class="label">Case Studies + White Papers:</div><div class="label">Product Resources:</div><br />
@@ -234,6 +248,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div id="subfooter"><span class="address"><strong>Applied CAx </strong><span class="divider"> | </span>6700 North New York Avenue, Suite 231<span class="divider"> | </span>Portland, OR 97203-2836<span class="divider"> | </span>800-746-8134 (phone)<span class="divider"> | </span>888-316-3603 (fax) </span><span class="copyright">Copyright &#169; 2014 Applied CAx</span></div>
 		<div id="gutter">&nbsp;</div>
 	</div>
@@ -242,6 +257,10 @@
 	var pathArray = location.pathname.split("/");
 	var length = pathArray.length - 1;
 	filename = pathArray[length].replace(".html","");
+
+	$(document).on("dialogopen", ".ui-dialog", function(event, ui){
+		$(this).css("top","550px")
+	});
 
 	$("#landing-content-video").css("height", "466px");
 	$("#landing-content-main").css("height", "526px");

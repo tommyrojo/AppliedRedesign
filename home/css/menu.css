@@ -29,7 +29,6 @@
 
 	nav ul li {
 		float: left;
-		padding-right: 7px;
 	}
 	nav ul li:hover {
 		background: #4b545f;
@@ -40,9 +39,9 @@
 			
 	nav ul li a {
 		display: block; 
-		margin: 0px 34px;
-		padding: 15px 20px;
-		color: #F1592A; text-decoration: none;
+		padding: 15px 42px;
+		color: #F1592A; 
+		text-decoration: none;
 	}
 
 	nav ul ul {
@@ -52,10 +51,12 @@
 	nav ul ul li {
 		float: none; 
 		border-top: 1px solid #6b727c;
-		border-bottom: 1px solid #575f6a; position: relative;
+		border-bottom: 1px solid #575f6a; 
+		position: relative;
+		padding-right: 3%;
 	}
 	nav ul ul li a {
-		padding: 15px 33px;
+		padding: 15px 20px;
 		color: #fff;
 	}	
 	nav ul ul li a:hover {
@@ -64,4 +65,8 @@
 			
 	nav ul ul ul {
 		position: absolute; left: 100%; top:0;
+	}
+
+	.no-hover:hover{
+		background-color: transparent;
 	}
