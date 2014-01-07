@@ -3,7 +3,7 @@
 	<title>404 error - Applied CAx</title>
 	<meta name="description" content="Applied CAx provides clients with the world's most advanced engineering software, training and support. CAD, CAM, CAE, PLM - We do this every day.">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
-	<meta name="none" content="all">
+	<meta name="robots" content="none">
 	<link rel="stylesheet" type="text/css" href="../css/refresh.css">
 	<link rel="stylesheet" type="text/css" href="../css/menu.css">
 </head>
