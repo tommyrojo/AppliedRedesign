@@ -1,0 +1,223 @@
+<html>
+<head>
+	<title>403 error - Applied CAx</title>
+	<meta name="description" content="Applied CAx provides clients with the world's most advanced engineering software, training and support. CAD, CAM, CAE, PLM - We do this every day.">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	<meta name="robots" content="none">
+	<link rel="stylesheet" type="text/css" href="../css/refresh.css">
+	<link rel="stylesheet" type="text/css" href="../css/menu.css">
+</head>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/knockout-2.3.0.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<body>
+	<div id="page-wrap" style="position:relative">
+        <div id="header">
+			<div style="float:right; font-size: 18px; font-weight:bold; margin: 105px 280px 0px 0px;color:#F1592A">
+				800-746-8134
+			</div>
+		</div>
+            <div id="page-wrap">
+            <div style="position: relative;z-index:1000">
+                <nav style='min-width: 1072px'>
+                    <ul style="width: 1072px; padding-left:0px;">
+                    	<li class="no-hover" style="width:8%">&nbsp;</li>
+                        <li id="index"><a href="#">Home</a></li>
+                        <li id="news"><a href="#">News + Events</a>
+                            <ul>
+                                <li id="story"><a href="#">Our Story</a></li>
+                                <li id="clients"><a href="#">Our Clients</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Software</a>
+                            <ul>
+                                <li id="nx"><a href="#">NX</a>
+                                    <ul>
+                                        <li id="nxfordesign"><a href="#">NX for Design</a></li>
+                                        <li id="nxformanufacturing"><a href="#">NX for Manufacturing</a></li>
+                                        <li id="nxforsimulation"><a href="#">NX for Simulation</a></li>
+                                    </ul>
+                                </li>
+                                <li id="femap"><a href="#">Femap</a></li>
+                                <li id="fibersim"><a href="#">Fibersim</a></li>
+                                <li id="teamcenterplm"><a href="#">Teamcenter</a></li>
+                                <li id="bct"><a href="#">BCT Solutions</a></li>
+                                <li id="cnc"><a href="#">CNC Programming</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Training</a>
+                            <ul>
+                                <li id="cad"><a href="#">CAD</a></li>
+                                <li id="cam"><a href="#">CAM</a></li>
+                                <li id="cae"><a href="#">CAE</a></li>
+                                <li id="resources"><a href="#">Resources</a></li>
+                            </ul>
+                        </li>
+                        <li id="support"><a href="#">Support</a></li>
+                        <li id="contact-us"><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div> 
+		<div id="about-content-main" style="height: 600px">
+			<div id="landing-content-video" style="height: 540px">
+	            	<div id="landing-content-video-left">
+						<div>
+							<h1>403</h1>
+							<p>
+							You are trying to access a page that has restricted access.
+							</p>
+                            <p>
+                            Please select a page from the menu and try again.
+                            </p>
+						</div>            	
+					</div>
+                </div>
+        	</div>
+		<div id="content-partners">
+			<div id="content-partners-images">Our Partners:</div>
+			<div id="content-partners-images-1"></div>
+			<div id="content-partners-images-2"></div>
+			<div id="content-partners-images-3"></div>
+			<div id="content-partners-images-4"></div>
+		</div>
+				<div id="footer">
+			<div id="footer-left">
+                <table>
+                    <tr>
+                        <td width="80px"><span id="home-index" class="home-item">Home</span></td><td width="160px">Training Classes</td><td width="160px">Software</td><td>Resources</td>
+                    </tr>
+                    <tr>
+                        <td><span id="home-support" class="home-item">Support</span></td>
+                        <td>+ <span id="training-cad" class="menu-item">NX CAD</span></td>
+                        <td>+ <span id="software-nx" class="menu-item">NX 9</span></td>
+                        <td><span id='resources-news' class="menu-item">News + Events</span></td>
+                    </tr>
+                    <tr>
+                        <td class="contact-us">Contact</td>
+                        <td>+ <span id="training-cam" class="menu-item">NX CAM</span></td>
+                        <td>+ <span id="software-femap" class="menu-item">Femap 11</span></td>
+                        <td><span id='resources-story' class="menu-item">Our Story</span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="training-cae" class="menu-item">NX CAE</span></td>
+                        <td>+ <span id="software-fibersim" class="menu-item">Fibersim 13</span></td><td><span id='resources-clients' class="menu-item">Our Clients</span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="training-femap" class="menu-item">Femap & NX Nastran</span></td>
+                        <td>+ <span id="software-teamcenter" class="menu-item">Teamcenter 10</span></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="software-bct" class="menu-item">BCT Solutions</span></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>+ <span id="software-postsimkits" class="menu-item">CNC Programming</span></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+			<div id="footer-right">	
+				<table>
+					<tr>
+						<td><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=v5odganab&p=oi&m=1113476676565&sit=eq8jkb8hb" target="blank"><span class="newsletter-join">Subscribe to our Newsletter</span></a></td>
+					</tr>
+					<tr>
+						<td><span class="newsletter-blurb"><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=v5odganab&p=oi&m=1113476676565&sit=eq8jkb8hb" target="blank">Get the latest webinars, training and promotions from Applied CAx</a></span></td>
+					</tr>
+				</table>
+				<div id="spacer"></div>
+				<div id="follow-us">Follow us:</div>
+                <div>
+                    <div id="linkedin" class="media"></div><div id="youtube" class="media"></div><div id="twitter" class="media"></div>
+                </div>
+			</div>
+		</div>
+		<div id="subfooter"><span class="address"><strong>Applied CAx </strong><span class="divider"> | </span>6700 North New York Avenue, Suite 231<span class="divider"> | </span>Portland, OR 97203-2836<span class="divider"> | </span>800-746-8134 (phone)<span class="divider"> | </span>888-316-3603 (fax) </span><span class="copyright">Copyright &#169; 2014 Applied CAx</span></div>
+		<div id="gutter">&nbsp;</div>
+	</div>
+
+</body>
+<script>
+	var pathArray = location.pathname.split("/");
+	var length = pathArray.length - 1;
+	filename = pathArray[length].replace(".html","");
+
+	$(".contact-us").click(function(e){
+		document.location.href = "../../contact/contact.html?pageRef=" + filename;
+	});
+
+	$(".media").click(function(){
+        var item = $(this)[0].id;
+
+        if(item.substr(0,8) === 'linkedin')
+            document.location.href = "http://www.linkedin.com/company/applied-cax-llc";
+        else if(item.substr(0,7) === 'youtube')
+            document.location.href = "http://www.youtube.com/user/AppliedCAx";
+        else if(item.substr(0,7) === 'twitter')
+            document.location.href = "https://twitter.com/AppliedCAx";
+    });
+
+    $(".home-item").click(function(){
+        var item = $(this)[0].id;
+        
+        if(item.substr(0,5) === 'home-')
+        {
+            var page = item.substr(5, item.length);
+
+            if(page === "index")
+                document.location.href = "../index.html"
+            else if(page === "support")
+                document.location.href = "../support/support.html"
+            else if(page === "contact")
+                document.location.href = "../contact/contact.html"
+        }
+
+    });
+
+    $(".menu-item").click(function(){
+        var item = $(this)[0].id;
+
+        if(item.substr(0,9) === 'training-')
+        {
+            var page = item.substr(9, item.length);
+            document.location.href = "../training/training.html?pageref=" + page;
+        }
+        else if(item.substr(0,9) === 'software-')
+        {
+            var page = item.substr(9, item.length);
+
+            if(page === "nx")
+                document.location.href = "../software/nx/nx.html";
+            else if(page === "femap")
+                document.location.href = "../software/femap/femap.html";
+            else if(page === "fibersim")
+                document.location.href = "../software/fibersim/fibersim.html";
+            else if(page === "teamcenter")
+                document.location.href = "../software/teamcenter/teamcenterplm.html";
+            else if(page === "bct")
+                document.location.href = "../software/bct/bct.html";
+            else if(page === "postsimkits")
+                document.location.href = "../software/postsimkits/cnc.html";
+        }
+        else if(item.substr(0,10) === 'resources-')
+        {
+            var page = item.substr(10, item.length);
+
+            if(page === 'news')
+                document.location.href = "../about/news.html";
+            else if (page === 'story')
+                document.location.href = "../about/ourstory.html";
+            else if (page === 'clients')
+                document.location.href = "../about/ourclients.html";
+        }
+
+    })  
+</script>
+</html>
