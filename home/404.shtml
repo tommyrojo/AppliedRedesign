@@ -58,14 +58,17 @@
                     </ul>
                 </nav>
             </div> 
-		<div id="about-content-main" style="height: 1120px">
-			<div id="landing-content-video" style="height: 1060px">
+		<div id="about-content-main" style="height: 600px">
+			<div id="landing-content-video" style="height: 540px">
 	            	<div id="landing-content-video-left">
 						<div>
 							<h1>404</h1>
 							<p>
-							This page is no longer available or has moved. Please select a page from the menu and try again.
+							This page is no longer available or has moved.
 							</p>
+                            <p>
+                            Please select a page from the menu and try again.
+                            </p>
 						</div>            	
 					</div>
                 </div>
