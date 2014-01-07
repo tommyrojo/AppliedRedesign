@@ -2,16 +2,17 @@
 
 $Category = $_POST['Category'];
 
-$nx = $_POST['NX'];
-$nxfordesign = $_POST['NX CAD'];
-$nxformanufacturing = $_POST['NX CAM'];
-$nxforsimulation = $_POST['NX CAE'];
-$femap = $_POST['Femap'];
-$fibersim = $_POST['Fibersim'];
-$teamcenterplm = $_POST['Teamcenter'];
-$bct = $_POST['BCT'];
-$cnc = $_POST['CNC Programming'];
-$training = $_POST['Training'];
+$nx = $_POST['nx'];
+$nxfordesign = $_POST['nxfordesign'];
+$nxformanufacturing = $_POST['nxformanufacturing'];
+$nxforsimulation = $_POST['nxforsimulation'];
+$femap = $_POST['femap'];
+$fibersim = $_POST['fibersim'];
+$teamcenterplm = $_POST['teamcenterplm'];
+$bct = $_POST['bct'];
+$cnc = $_POST['cnc'];
+$training = $_POST['training'];
+$product = $_POST['product'];
 
 
 $Company = $_POST['Company'];
@@ -65,18 +66,7 @@ Phone: $Phone
 
 ---------------------------
 
-We are interested in:
-
-NX: $nx
-NX CAD: $nxfordesign
-NX CAM: $nxformanufacturing
-NX CAE: $nxforsimulation
-Femap: $femap
-Fibersim: $fibersim
-Teamcenter: $teamcenterplm
-BCT: $bct
-CNC Programming: $cnc
-Training: $training
+We are interested in: $product
 						    
 ---------------------------
 

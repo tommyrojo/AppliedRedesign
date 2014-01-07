@@ -127,21 +127,21 @@
 						    <tr>
 						      <td class="label"><span class="required-contact">*</span> Full Name:</td>
 						      <td class="field">
-						      		<input type="text" name="realname">
-					      		</td>
+						      		<input type="text" name="realname" id="name">
+				      		    </td>
 						    </tr>
 						    <tr>
-						      <td class="label"><span class="required-contact">*</span> Company:</td><td class="field"><input type="text" name="Company"></td>
+						      <td class="label"><span class="required-contact">*</span> Company:</td><td class="field"><input type="text" name="Company" id="company"></td>
 						    </tr>
 						    <tr>
-						      <td class="label"><span class="required-contact">*</span> Email:</td><td class="field"><input type="text" name="email"></td>
+						      <td class="label"><span class="required-contact">*</span> Email:</td><td class="field"><input type="text" name="email" id="email"></td>
 						    </tr>
 						    <tr>
-						      <td class="label"><span class="required-contact">*</span> Phone:</td><td class="field"><input type="text" name="Phone"></td>
+						      <td class="label"><span class="required-contact">*</span> Phone:</td><td class="field"><input type="text" name="Phone" id="phone"></td>
 						    </tr>
 						    <tr>
 						    	<td class="label"><span class="required-contact">*</span> Product:</td><td class="field">
-						    		<select id="product-select">
+						    		<select name='product' id="product-select">
 						    			<option value="nx">NX</option>
 						    			<option value="nxfordesign">NX for Design (CAD)</option>
 						    			<option value="nxformanufacturing">NX for Manufacturing (CAM)</option>
@@ -151,20 +151,26 @@
 					    				<option value="teamcenterplm">Teamcenter PLM</option>
 					    				<option value="bct">BCT Technology</option>
 				    					<option value="cnc">CNC Post-Sim Kits</option>
+                                        <option value="training">Training: CAD/CAM/CAE</option>
 						    		</select>
 						    	</td>
 						    </tr>
 					    	<tr>
-						      <td class="label" valign="top">Comments:</td><td><textarea id="text-area-field" rows="4" cols="30" name="Comments"></textarea></td>
+						      <td class="label" valign="top">Comments:</td><td><textarea id="text-area-field" rows="4" cols="30" name="Comments" style="color: #868686; font-weight: bold; padding: 0px 10px; font-family: arial;"></textarea></td>
 						    </tr>
                             <tr>
-                                <td class="label" valign="top"><span class="required-contact">*</span> What is 3 + 4?</td><td class="field"><input type="text" name="Math"></td>
+                                <td class="label" valign="top"><span class="required-contact">*</span> What is 3 + 4?</td><td class="field"><input type="text" name="Math" id="math"></td>
                             </tr>
 						    <tr>
 						      <td colspan="3">
-						        <button type="submit" style="margin-top: 4px; border: 1; color: #FFFFFF; background-color: #F1592A; font-weight: bold; width: 100px; height: 20px; float: right;">Submit</button>
+						        <button type="submit" id="btnSubmit" style="margin-top: 4px; border: 1; color: #FFFFFF; background-color: #F1592A; font-weight: bold; width: 100px; height: 20px; float: right;">Submit</button>
 						      </td>
 						    </tr>
+                            <tr>
+                                <td>
+                                    <input name="Category" type="hidden" value="Website Information Request Form" />
+                                </td>
+                            </tr>
 					  </table>
 					</form>
 				</div>
@@ -234,6 +240,61 @@
 	</div>
 </body>
 <script>
+    $("#btnSubmit").click(function(e){
+                var emailRegex = /^[a-zA-Z0-9.!#$%&amp;'*+\-\/=?\^_`{|}~\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*$/;
+                var alphaRegex = /^[a-z]+$/i;
+                var alphaNumericRegex = /^[a-z0-9]+$/i;
+                var numericDashRegex = /^[\d\-\s]+$/;
+                var alphaRegex = /^[a-z]+$/i;
+
+                var name = $("#name").val();
+                var productselect = $("#product-select").val();
+                var company = $("#company").val();
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var phone = $("#phone").val();
+                
+                var errorTitle = "The following fields are required:";
+                var error = "";
+
+                if (alphaRegex.exec(name) === null){
+                    error += "\nFull Name";
+                    $("#name").val("");
+                }
+
+                if (productselect === ""){
+                    error += "\nProduct";
+                    $("#product-select").val("");
+                }
+                if (alphaNumericRegex.exec(company) === null){
+                    error += "\nCompanyName";
+                    $("#company").val("");
+                }
+
+                if (emailRegex.exec(email) === null){
+                    error += "\nEmail";
+                    $("#email").val("");
+                }
+
+                if (numericDashRegex.exec(phone) === null){
+                    error += "\nPhone";
+                    $("#phone").val("");
+                }
+
+                if ($("#math").val() !== "7")
+                {
+                    error += "\nPlease check your math!";
+                    $("math").val("");
+                }
+
+                if(error.length > 0)
+                {
+                    alert(errorTitle + error);
+                    return false;
+                }
+
+                return true;
+            });
 
 	var urlParams;
 	(
