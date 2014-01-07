@@ -14,6 +14,7 @@
 <script src="../js/protoplus.js?v=3.1.1740" type="text/javascript"></script>
 <script src="../js/protoplus-ui.js?v=3.1.1740" type="text/javascript"></script>
 <script src="../js/jotform.js?v=3.1.1740" type="text/javascript"></script>
+<script src="../js/validate.js" type="text/javascript"></script>
 <script src="../js/calendarview.js?v=3.1.1740" type="text/javascript"></script>
 <script type="text/javascript">
    JotForm.init(function(){
@@ -170,7 +171,7 @@
 </div>
 
 </div>
-<div id="contact-content-area-right">
+<div id="contact-content-area-right" style="padding-top: 0px;">
 	<form class="jotform-form" action="https://secure.jotform.us/submit.php" method="post" enctype="multipart/form-data" name="form_33604636176153" id="33604636176153" accept-charset="utf-8">
 	<input type="hidden" name="formID" value="33604636176153" />
 	<div class="form-all contact">
@@ -249,7 +250,7 @@
 				<td class="label">Problem Description:</td>
 				<td class="field">
 		  		<div id="cid_6" class="form-input">
-		  			<textarea id="input_6" name="q6_problemDescription" style="border: 0px; background-color: #EBECEC;" cols="57" rows="6"></textarea>
+		  			<textarea id="input_6" name="q6_problemDescription" style="color: #868686; font-weight: bold; padding: 0px 10px; font-family: arial; border: 0px; background-color: #EBECEC;" cols="57" rows="6"></textarea>
 		        </div>		
 				</td>
 			</tr>
@@ -344,11 +345,69 @@
 		<div id="subfooter"><span class="address"><strong>Applied CAx </strong><span class="divider"> | </span>6700 North New York Avenue, Suite 231<span class="divider"> | </span>Portland, OR 97203-2836<span class="divider"> | </span>800-746-8134 (phone)<span class="divider"> | </span>888-316-3603 (fax) </span><span class="copyright">Copyright &#169; 2014 Applied CAx</span></div>
 		<div id="gutter">&nbsp;</div>
 	</div>
-</body>
-<script>
+	<script>
 	//will need to add something to allow for multiple file selections for upload. 
 	//Look at .ajaxStop method to listen to the file upload completion
 	//then get the height of the TD then adjust the size of the main content area.
 	//same functionality could be used in training,news and software pages.
-</script>
+
+	jQuery.noConflict();
+	jQuery(document).ready(function($){
+		$("#input_2").click(function(e){
+			var emailRegex = /^[a-zA-Z0-9.!#$%&amp;'*+\-\/=?\^_`{|}~\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*$/;
+			var alphaRegex = /^[a-z]+$/i;
+			var alphaNumericRegex = /^[a-z0-9]+$/i;
+			var numericDashRegex = /^[\d\-\s]+$/;
+			var alphaRegex = /^[a-z]+$/i;
+
+			var soldToId = $("#input_7").val();
+			var Product = $("#input_8").val();
+			var CompanyName = $("#input_9").val();
+			var FullName = $("#input_12").val();
+			var Email = $("#input_4").val();
+			var Phone = $("#input_13").val();
+			
+			var errorTitle = "The following fields are required:";
+			var error = "";
+
+			if (alphaRegex.exec(soldToId) === null){
+				error += "\nSold To Id";
+				$("#input_7").val("");
+			}
+
+			if (Product === ""){
+				error += "\nProduct";
+				$("#input_8").val("");
+			}
+			if (alphaNumericRegex.exec(CompanyName) === null){
+				error += "\nCompanyName";
+				$("#input_9").val("");
+			}
+			if (alphaRegex.exec(FullName) === null){
+				error += "\nFullName";
+				$("#input_12").val("");
+			}
+
+			if (emailRegex.exec(Email) === null){
+				error += "\nEmail";
+				$("#input_4").val("");
+			}
+
+			if (numericDashRegex.exec(Phone) === null){
+				error += "\nPhone";
+				$("#input_13").val("");
+			}
+
+			if(error.length > 0)
+			{
+				alert(errorTitle + error);
+				return false;
+			}
+
+			return true;
+		});
+	});
+
+	</script>
+</body>
 </html>
