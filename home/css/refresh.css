@@ -818,20 +818,20 @@ display: block;}
 	}
 	
 .training-small-text a:link {
-	color: #CAFFFF;
-text-decoration: none;}
+	color: #ebb65f;
+	text-decoration: none;}
 
 .training-small-text a:visited {
-	color: #CAFFFF;
-text-decoration: none;}
+	color: #ebb65f;
+	text-decoration: none;}
 
 .training-small-text a:hover {
-color: FDFCE8;
-text-decoration: none;}
+	color: FDFCE8;
+	text-decoration: #FDFCE8;}
 
 .training-small-text a:active {
-color: FDFCE8;
-text-decoration: none;}
+	color: FDFCE8;
+	text-decoration: #FDFCE8;}
 
 #content-news{
 	float: left;
