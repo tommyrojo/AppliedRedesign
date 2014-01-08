@@ -1586,3 +1586,12 @@ content: no-close-quote;
 	padding-bottom: 10px;
 	background: url(../images/icons_partner_bct.png) no-repeat;
 }
+
+.new-window {
+	height: 12px;
+	width: 12px;
+	background: url(../images/new-window.gif) no-repeat;
+	display: inline-block;
+    	*display: inline; /* for older IE */
+    	*zoom: 1; /* for older IE */
+}
