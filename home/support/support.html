@@ -177,7 +177,7 @@
 	<div class="form-all contact">
 		<table>
 			<tr>
-				<td class="label"><span class="required-contact">*</span> Sold to ID:</td>
+				<td class="label">Sold to ID:</td>
 				<td class="field">          
 					<input type="text" class="field validate[required]" data-type="input-textbox" id="input_7" name="q7_soldTo" value="" />
 				</td>
@@ -246,6 +246,9 @@
 					<input type="text" class="validate[required, Numeric]" id="input_13" name="q13_phone" size="20" value="" />
 				</td>
 			</tr>
+            <tr>
+	            <td class="label" valign="top"><span class="required-contact">*</span> What is 13 - 12?</td><td class="field"><input type="text" name="Math" id="math"></td>
+	        </tr>
 			<tr>
 				<td class="label">Problem Description:</td>
 				<td class="field">
@@ -370,20 +373,15 @@
 			var errorTitle = "The following fields are required:";
 			var error = "";
 
-			if (alphaNumericRegex.exec(soldToId) === null){
-				error += "\nSold To Id";
-				$("#input_7").val("");
-			}
-
 			if (Product === ""){
 				error += "\nProduct";
 				$("#input_8").val("");
 			}
-			if (alphaNumericRegex.exec(CompanyName) === null){
+			if (CompanyName === null || CompanyName === ""){
 				error += "\nCompanyName";
 				$("#input_9").val("");
 			}
-			if (alphaRegex.exec(FullName) === null){
+			if (FullName === null || FullName === ""){
 				error += "\nFullName";
 				$("#input_12").val("");
 			}
@@ -397,6 +395,12 @@
 				error += "\nPhone";
 				$("#input_13").val("");
 			}
+
+			if ($("#math").val() !== "1")
+                {
+                    error += "\nPlease check your math!";
+                    $("math").val("");
+                }
 
 			if(error.length > 0)
 			{

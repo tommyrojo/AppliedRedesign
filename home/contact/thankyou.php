@@ -23,7 +23,7 @@ $Phone = $_POST['Phone'];
 $country = $_POST['country'];
 $City = $_POST['City'];
 $State = $_POST['State'];
-$Referred_By = $_POST['Referred_By'];
+$Referred_By = $_POST['referral'];
 
 
 $Comments = $_POST['Comments'];
@@ -63,6 +63,7 @@ Company: $Company
 Contact Name: $realname
 Email: $email
 Phone: $Phone
+Referral: $Referred_By
 
 ---------------------------
 
@@ -103,6 +104,7 @@ mail($Toemail, $Category, $MessageText, $header);
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Applied CAx</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 <body>
 
@@ -124,6 +126,13 @@ var google_conversion_value = 0;
 <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1033447653/?value=0&amp;label=6-AdCKueuAUQ5dHk7AM&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
-
+<script>
+	$(document).ready(function () {
+	    // Handler for .ready() called.
+	    window.setTimeout(function () {
+	        location.href = "/contact/contact.html?pageref=thankyou";
+	    }, 500)
+	});
+</script>
 </body>
 </html>

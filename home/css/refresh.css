@@ -227,7 +227,7 @@ body{
 	font-size: 13px;
 	padding: 20px;
 	border: 1px solid #FFFFFF;
-	height: 325px;
+	height: 425px;
 	width: 992px;
 }
 
@@ -681,6 +681,13 @@ display: block;}
 	background: url(../images/promo_placeholder.jpg) no-repeat;
 }
 
+#thank-you{
+	display: none;
+	color: #7B9AA9;
+	font-size: 24px;
+	padding-left:100;
+	font-weight: bold;
+}
 
 #landing-content-gutter-left{
 	float: left;
@@ -748,8 +755,6 @@ display: block;}
 	height:25px;
 	width: 275px;
 }
-
-
 
 .circle {
 	border-radius: 50%;
@@ -1057,7 +1062,7 @@ display: block;}
 #contact-content-main{
 	float: left;
 	width: 1052px;
-	height: 390px;
+	height: 490px;
 	margin-top: 20px;
 	background-color: #F5F6F7;
 	border: 1px solid #CDCCCC;

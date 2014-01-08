@@ -122,6 +122,9 @@
 						Our mission is to equip your organization with the world's most advanced engineering software, training and support.			</p>
 				</div>
 				<div id="contact-content-area-right">
+                    <div id="thank-you" style="font-size: 13px; font-weight:bold; color:#F1592A; padding-top: 60px;">
+                    Thank you for your submission. Our sales team will be in contact soon to answer any questions.</div>
+                    <div id="contact-us-form">
 					<form action="thankyou.php" method="post">
 					    <table class="contact">
 						    <tr>
@@ -142,7 +145,8 @@
 						    <tr>
 						    	<td class="label"><span class="required-contact">*</span> Product:</td><td class="field">
 						    		<select name='product' id="product-select">
-						    			<option value="nx">NX</option>
+						    			<option value="">---select one---<option>
+                                        <option value="nx">NX</option>
 						    			<option value="nxfordesign">NX for Design (CAD)</option>
 						    			<option value="nxformanufacturing">NX for Manufacturing (CAM)</option>
 						    			<option value="nxforsimulation">NX for Simulation (CAE)</option>
@@ -155,6 +159,21 @@
 						    		</select>
 						    	</td>
 						    </tr>
+                            <tr>
+                                <td class="label"><span class="required-contact">*</span>Referral:</td><td class="field">
+                                    <select name='referral' id="referral-select">
+                                        <option value="">---select one---<option>
+                                        <option value="Google">Google</option>
+                                        <option value="Bing">Bing</option>
+                                        <option value="Yahoo">Yahoo</option>
+                                        <option value="LinkedIn">LinkedIn</option>
+                                        <option value="YouTube">YouTube</option>                                       
+                                        <option value="Publication">Publication</option>
+                                        <option value="Referral">Referral</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </td>
+                            </tr>
 					    	<tr>
 						      <td class="label" valign="top">Comments:</td><td><textarea id="text-area-field" rows="4" cols="30" name="Comments" style="color: #868686; font-weight: bold; padding: 0px 10px; font-family: arial;"></textarea></td>
 						    </tr>
@@ -173,6 +192,7 @@
                             </tr>
 					  </table>
 					</form>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -253,11 +273,12 @@
                 var name = $("#name").val();
                 var email = $("#email").val();
                 var phone = $("#phone").val();
+                var referral = $("#referral-select").val();
                 
                 var errorTitle = "The following fields are required:";
                 var error = "";
 
-                if (alphaRegex.exec(name) === null){
+                if (name === null){
                     error += "\nFull Name";
                     $("#name").val("");
                 }
@@ -266,7 +287,7 @@
                     error += "\nProduct";
                     $("#product-select").val("");
                 }
-                if (alphaNumericRegex.exec(company) === null){
+                if (company === null){
                     error += "\nCompanyName";
                     $("#company").val("");
                 }
@@ -279,6 +300,12 @@
                 if (numericDashRegex.exec(phone) === null){
                     error += "\nPhone";
                     $("#phone").val("");
+                }
+
+                if (referral === "")
+                {
+                    error += "\nReferral";
+                    $("#referral-select").val("");
                 }
 
                 if ($("#math").val() !== "7")
@@ -378,21 +405,28 @@
 
     })  
 
-	if (urlParams["pageRef"] !== undefined){
+	if (urlParams["pageref"] !== undefined){
 		var bannerToSwap = $("#landing-content-banner");
-		var referralPage = urlParams["pageRef"];
+		var referralPage = urlParams["pageref"];
 
-		var NewFileName = "url('../images/" + referralPage + "_Header.jpg') "
+        if(referralPage === "thankyou")
+        {
+            $("#contact-us-form").css("display","none");
+            $("#thank-you").css("display","block");
+        }   
+        else{
+            var NewFileName = "url('../images/" + referralPage + "_Header.jpg') "
 
-		bannerToSwap.css("background-image", NewFileName);
+            bannerToSwap.css("background-image", NewFileName);
+            
+    		$("#product-select").children().each(function(element, index, array){
+    			if (index.value === referralPage){
+    				index.selected = true;
+    			};
+    		});
 
-		$("#product-select").children().each(function(element, index, array){
-			if (index.value === referralPage){
-				index.selected = true;
-			};
-		});
-
-		$("#landing-content-banner").css("display","block");
+    		$("#landing-content-banner").css("display","block");
+        }
 	}
 	else{
 		$("#landing-content-banner").css("display","none");

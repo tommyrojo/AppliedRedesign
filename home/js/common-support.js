@@ -58,7 +58,7 @@ jQuery(document).ready(function($){
 		document.location.href = "http://www.appliedcax.com/training/training.html";
 		e.stopImmediatePropagation();
 	})
-	$("#cad").click(function(e){
+	$("#cad").click(function(e)
 		document.location.href = "http://www.appliedcax.com/training/training.html";
 		e.stopImmediatePropagation();
 	})
