@@ -370,7 +370,7 @@
 			var errorTitle = "The following fields are required:";
 			var error = "";
 
-			if (alphaRegex.exec(soldToId) === null){
+			if (alphaNumericRegex.exec(soldToId) === null){
 				error += "\nSold To Id";
 				$("#input_7").val("");
 			}
