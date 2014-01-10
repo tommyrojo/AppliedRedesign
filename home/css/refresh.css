@@ -1089,6 +1089,7 @@ display: block;}
 	margin-left: 20px;
 	color: #5B5B5C;
 	font-weight: bold;
+	pointer-events: none;
 }
 
 #content-partners-images-1{
@@ -1217,6 +1218,7 @@ td:hover{
 	width: 36px;
 	padding-top: 10px;
 	padding-right: 15px;
+	cursor: pointer;
 }
 
 #product-select{
@@ -1232,6 +1234,7 @@ td:hover{
 	width: 36px;
 	padding-top: 10px;
 	padding-right: 15px;
+	cursor: pointer;
 }
 
 #twitter{
@@ -1241,6 +1244,7 @@ td:hover{
 	width: 36px;
 	padding-top: 10px;
 	padding-right: 15px;
+	cursor: pointer;
 }
 
 #content-news h4{
@@ -1272,7 +1276,9 @@ td:hover{
 }
 
 .news-item {
-	font-size: 12px;}
+	font-size: 12px;
+	cursor:pointer;
+}
 
 .news-item a:link{
 	color: #4D4D4E;
@@ -1356,9 +1362,13 @@ padding-top: 15px;
 font-size: 13px;
 color: #5B5B5C;}
 
+.home-item{
+	cursor: pointer;
+}
 
 .menu-item{
 	color: #5B5B5C;
+	cursor:pointer;
 }
 
 .menu-item:hover{
@@ -1418,6 +1428,10 @@ color: #5B5B5C;}
 .newsletter-blurb a:link{
 	color: #5B4B5C;
 	text-decoration: none;
+}
+
+#content-partners > div{
+	cursor:pointer;
 }
 
 .newsletter-blurb a:visited{

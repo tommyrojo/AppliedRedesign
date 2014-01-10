@@ -47,9 +47,7 @@ $header = "From: $realname <$email>\r\n";
 
 
 
-$Toemail="james.mcpherson@appliedcax.com,online.tom@gmail.com";
-
-///PBarrett@Sherpa-Design.com,George.Laird@PredictiveEngineering.com,kyle.dunscomb@appliedcax.com,ian.mcgahey@appliedcax.com,///
+$Toemail="james.mcpherson@appliedcax.com,PBarrett@Sherpa-Design.com,George.Laird@PredictiveEngineering.com,kyle.dunscomb@appliedcax.com,ian.mcgahey@appliedcax.com";
 
 $subject="Someone sent you a contact request";
 
