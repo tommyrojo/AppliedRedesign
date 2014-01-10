@@ -1595,3 +1595,11 @@ content: no-close-quote;
     	*display: inline; /* for older IE */
     	*zoom: 1; /* for older IE */
 }
+
+#news-dmu1 {
+	height: 279px;
+	width: 496px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background: url(../images/news/cnc-dmu50a.jpg) no-repeat;
+}
