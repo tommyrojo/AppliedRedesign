@@ -7,23 +7,7 @@
 	<meta name="google-site-verification" content="KQCwI_pYpSSL30EN4zLjKMwrFkk2hhc9j9AIXbeNuYk" />
 	<link rel="stylesheet" type="text/css" href="css/refresh.css">
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-7721704-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 </head>
-<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="js/knockout-2.3.0.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
 <style>
 	#outer {
 	    width: auto !important;
@@ -99,11 +83,11 @@
 		<div id="outer">
 			<div id="content-news">
 				<div><h4>News, Events & Promos:</h4></div>
-				<div id="content-news-container"><span class="news-item"><a href="about/news.html">DMG-Mori DMU 50 5-Axis CNC has been delivered to our shop.</a></span> <span class="news-link"><a href="about/news.html">Our plans</a></span></div>
-				<div id="content-news-container"><span class="news-item"><a href="about/news.html">CNC/CAM Webinar: Moving to 5-Axis Machining posted.</a></span> <span class="news-link"><a href="../news/news.html">Watch the recording</a></span></div>
-				<div id="content-news-container"><span class="news-item"><a href="about/news.html">Femap & NX Nastran "Best Practices" Seminar posted.</a></span> <span class="news-link"><a href="../news/news.html">Watch the recording</a></span></div>
-				<div id="content-news-container"><span class="news-item"><a href="about/news.html">Applied CAx & Sherpa Design among 100 fastest growing regional companies.</a></span> <span class="news-link"><a href="about/news.html">Our rank</a></span></div>
-				<div id="content-news-container"><span class="news-item"><a href="about/news.html">Femap Symposium 2013 in Cincinnati is a huge success.</a></span> <span class="news-link"><a href="../news/news.html">Watch the video recap</a></span></div>
+				<div class="content-news-container"><span class="news-item"><a href="about/news.html">DMG-Mori DMU 50 5-Axis CNC has been delivered to our shop.</a></span> <span class="news-link"><a href="about/news.html">Our plans</a></span></div>
+				<div class="content-news-container"><span class="news-item"><a href="about/news.html">CNC/CAM Webinar: Moving to 5-Axis Machining posted.</a></span> <span class="news-link"><a href="../news/news.html">Watch the recording</a></span></div>
+				<div class="content-news-container"><span class="news-item"><a href="about/news.html">Femap & NX Nastran "Best Practices" Seminar posted.</a></span> <span class="news-link"><a href="../news/news.html">Watch the recording</a></span></div>
+				<div class="content-news-container"><span class="news-item"><a href="about/news.html">Applied CAx & Sherpa Design among 100 fastest growing regional companies.</a></span> <span class="news-link"><a href="about/news.html">Our rank</a></span></div>
+				<div class="content-news-container"><span class="news-item"><a href="about/news.html">Femap Symposium 2013 in Cincinnati is a huge success.</a></span> <span class="news-link"><a href="../news/news.html">Watch the video recap</a></span></div>
                 <p></p><div id="news-newsletter"><span class="news-join"><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=v5odganab&p=oi&m=1113476676565&sit=eq8jkb8hb" target="blank">Request Our Newsletter</a></span><br><span class="news-join-blurb">Stay up to date on our latest webinars, training and software promos from Applied CAx.</span></div>
 			</div>
 			<div id="content-training">
@@ -231,7 +215,67 @@
         	<div id="gutter">&nbsp;</div>
 	</div>
 </body>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/knockout-2.3.0.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script src="js/detect-zoom.js"></script>
+<script src="js/scale.fix.js"></script>
 <script>
+	var zoom;
+	var device;
+
+	$("#content-video").css("height","290px");
+
+	function refresh() {
+        zoom = window.detectZoom.zoom().toFixed(2);
+        device = window.detectZoom.device().toFixed(2);
+
+        if (device <= .26) {
+		  zoomLevel = "-6";
+		  $("#content-video").css("height","550px");
+		  $("#content-news").css("height","880px");
+		  $("#content-training").css("height","900px");
+		  $(".content-news-container").css("height","80px");
+		  $(".content-news-container:hover").css("height", "80px");
+		  $("#content-training-border").css("height","540px");
+		  $("#footer").css("height","300px");
+		  $(".newsletter-join").css("height","60px");
+		  $("nav ul li a").css("padding","15px 30px");
+		}else if (device <= .34) {
+		  zoomLevel = "-5";
+		  $("#content-video").css("height","350px");
+
+		}else if (device <= .54) {
+		  zoomLevel = "-4";
+		} else if (device <= .64) {
+		  zoomLevel = "-3";
+		} else if (device <= .76) {
+		  zoomLevel = "-2";
+		} else if (device <= .92) {
+		  zoomLevel = "-1";
+		} else if (device <= 1.10) {
+		  zoomLevel = "0";
+		} else if (device <= 1.32) {
+		  zoomLevel = "1";
+		} else if (device <= 1.58) {
+		  zoomLevel = "2";
+		} else if (device <= 1.90) {
+		  zoomLevel = "3";
+		} else if (device <= 2.28) {
+		  zoomLevel = "4";
+		} else if (device <= 2.70) {
+		  zoomLevel = "5";
+		} else {
+		  zoomLevel = "unknown";
+		}
+
+		console.log(zoomLevel + " & " + device);
+    }
+    $(document).ready(function () {
+        refresh();
+        $(window).on('resize', refresh);
+    });
+
 	$(function(){ 
 
 		//$(function() {

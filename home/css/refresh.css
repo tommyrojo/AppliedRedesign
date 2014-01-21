@@ -1252,7 +1252,7 @@ td:hover{
 	padding-left: 10px;
 }
 
-#content-news-container{
+.content-news-container{
 	border-left: 8px solid #F1592A;
 	padding: 10px;
 	margin: 10px;
@@ -1262,7 +1262,7 @@ td:hover{
 	box-shadow: 2px 2px 2px #888888;
 }
 
-#content-news-container:hover{
+.content-news-container:hover{
 	border-left: 8px solid F1592A;
 	padding: 10px;
 	margin: 10px;
