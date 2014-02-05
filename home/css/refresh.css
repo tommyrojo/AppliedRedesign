@@ -1614,6 +1614,22 @@ content: no-close-quote;
 	height: 279px;
 	width: 496px;
 	padding-top: 0px;
-	padding-bottom: 0px;
+	padding-bottom: 20px;
 	background: url(../images/news/cnc-dmu50a.jpg) no-repeat;
+}
+
+#news-poy {
+	height: 473px;
+	width: 380px;
+	padding-top: 0px;
+	padding-bottom: 20px;
+	background: url(../images/news/applied-poy.jpg) no-repeat;
+}
+
+.label-swap{
+	position:absolute; 
+	top: 337;
+	width: 677px; 
+	height: 60px; 
+	background-color: rgba(0,0,0,0.7);
 }
